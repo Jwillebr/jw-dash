@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Dashboard</title>
+</head>
+<body style="font-family:Arial,sans-serif;background:#EAECF0">
+<p id="msg" style="padding:40px;color:#718096">Loading dashboard&hellip;</p>
+<script>
+// Generic loader: fetches the dashboard page from a key-protected API and
+// injects it. Contains no data and no credentials — the access key comes
+// from the ?key= parameter in the URL and is never stored here.
+(async function () {
+  var API = "https://overcgxkyxuzvolttqsm.supabase.co/functions/v1/threeyp-dash";
+  var msg = document.getElementById("msg");
+  try {
+    var key = new URLSearchParams(location.search).get("key") || "";
+    if (!key) throw new Error("missing access key (?key=...)");
+    var r = await fetch(API + "/site?key=" + encodeURIComponent(key), {cache: "no-store"});
+    var j = await r.json();
+    if (!j.html) throw new Error(j.error || "dashboard not published yet");
+    window.__3YP_API_BASE = API;
+    document.open();
+    document.write(j.html);
+    document.close();
+  } catch (e) {
+    msg.textContent = "Could not load dashboard: " + (e && e.message ? e.message : e);
+  }
+})();
+</script>
+</body>
+</html>
