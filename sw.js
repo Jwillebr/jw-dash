@@ -12,7 +12,7 @@
  */
 'use strict';
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL_CACHE = 'nwm-shell-' + VERSION;
 const DATA_CACHE = 'nwm-data-' + VERSION;
 const TILE_CACHE = 'nwm-tiles-' + VERSION;
@@ -86,7 +86,10 @@ self.addEventListener('fetch', (e) => {
       const c = await caches.open(TILE_CACHE);
       const hit = await c.match(e.request);
       const refresh = fetch(e.request)
-        .then((r) => { if (r.ok) { c.put(e.request, r.clone()); trimTiles(); } return r; })
+        .then((r) => {
+          if (r.ok || r.type === 'opaque') { c.put(e.request, r.clone()); trimTiles(); }
+          return r;
+        })
         .catch(() => null);
       return hit || (await refresh) || new Response('', { status: 504 });
     })());
