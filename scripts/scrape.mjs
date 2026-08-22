@@ -265,7 +265,7 @@ function pickWebsite(html) {
     }
   }
   RE.extLink.lastIndex = 0;
-  const skip = /facebook|instagram|twitter|x\.com|youtube|linkedin|pinterest|yelp|tripadvisor|google\.|wordpress|gravatar|vivino|wine-searcher|mailto|daveswines|addtoany|prioritywinepass|migwine|destination-napavalley|akismet|vimeo|davestravel/i;
+  const skip = /facebook|instagram|twitter|[/.]x\.com|youtube|linkedin|pinterest|yelp|tripadvisor|google\.|wordpress|gravatar|vivino|wine-searcher|mailto|daveswines|addtoany|prioritywinepass|migwine|destination-napavalley|akismet|vimeo|davestravel/i;
   const candidates = [];
   let m;
   while ((m = RE.extLink.exec(html))) {

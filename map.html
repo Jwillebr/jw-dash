@@ -447,7 +447,25 @@ button, input, select { font: inherit; color: inherit; }
   var state = {
     all: [], meta: null, q: '', apps: new Set(), vis: new Set(),
     selected: null, visible: [], markers: new Map(), ready: false,
+    bigTowns: new Set(),
   };
+
+  /* Towns with a couple of outliers ("Leesburg, VA", "Studio City") would each get
+     their own chip; fold anything under 3 wineries into the catch-all. */
+  function townOf(w) {
+    var t = w.city || '—';
+    return state.bigTowns.has(t) ? t : '—';
+  }
+  function computeBigTowns() {
+    var counts = {};
+    state.all.forEach(function (w) {
+      var t = w.city || '—';
+      counts[t] = (counts[t] || 0) + 1;
+    });
+    state.bigTowns = new Set(Object.keys(counts).filter(function (t) {
+      return t !== '—' && counts[t] >= 3;
+    }));
+  }
 
   /* ------------------------------------------------------------------ map -- */
   var map = L.map('map', {
@@ -568,7 +586,7 @@ button, input, select { font: inherit; color: inherit; }
     if (!state.fArchivedOn && w.archived) return false;
     if (!state.fApproxOn && w.precision === 'town') return false;
     if (state.fCaveOn && !w.cave) return false;
-    if (state.apps.size && !state.apps.has(w.city || '—')) return false;
+    if (state.apps.size && !state.apps.has(townOf(w))) return false;
     if (state.vis.size && !state.vis.has(policyOf(w).key)) return false;
     if (state.q) {
       var hay = (w.name + ' ' + (w.address || '') + ' ' + (w.city || '') + ' ' +
@@ -655,10 +673,7 @@ button, input, select { font: inherit; color: inherit; }
       var meta = document.createElement('span');
       meta.className = 'rmeta';
       var town = (w.city || (w.address || '').split(',')[1] || '').trim();
-      var same = w.appellation &&
-        town.toLowerCase().replace(/^st\.? /, 'st ') ===
-        w.appellation.toLowerCase().replace(/^st\.? /, 'st ').replace(/ (district|ava)$/, '');
-      meta.textContent = [w.appellation, same ? null : town, w.visiting]
+      meta.textContent = [town, w.visiting, w.cave ? 'wine cave' : null]
         .filter(Boolean).join(' · ') || 'Napa Valley';
 
       btn.appendChild(name);
@@ -690,7 +705,7 @@ button, input, select { font: inherit; color: inherit; }
   function renderChips() {
     var counts = {};
     state.all.forEach(function (w) {
-      var k = w.city || '—';
+      var k = townOf(w);
       counts[k] = (counts[k] || 0) + 1;
     });
     var keys = Object.keys(counts).sort(function (a, b) {
@@ -887,6 +902,7 @@ button, input, select { font: inherit; color: inherit; }
       if (!state.all.length) throw new Error('empty');
 
       buildMarkers();
+      computeBigTowns();
       renderChips();
       var want = readUrl();
       apply();
