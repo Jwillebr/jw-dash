@@ -1,0 +1,80 @@
+# Scrapes napawineproject.com and commits the refreshed data/wineries.json to
+# the branch you run it on. Start it from any device: GitHub → Actions →
+# "Scrape winery data" → Run workflow. Pushing the result to main makes the
+# Pages workflow redeploy the map with the new data automatically.
+name: Scrape winery data
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Only scrape this many reviews (leave empty for all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  actions: write   # lets the final step kick off the Pages deploy
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Geocoding results barely change; carrying the cache between runs means
+      # only new wineries hit the geocoders.
+      - uses: actions/cache@v4
+        with:
+          path: data/geocode-cache.json
+          key: geocode-cache-${{ github.run_id }}
+          restore-keys: geocode-cache-
+
+      - name: Scrape reviews
+        run: |
+          if [ -n "${{ inputs.limit }}" ]; then
+            node scripts/scrape.mjs --limit "${{ inputs.limit }}"
+          else
+            node scripts/scrape.mjs
+          fi
+
+      - name: Geocode
+        run: node scripts/geocode.mjs
+
+      - name: Report
+        run: |
+          node -e '
+            const d = require("./data/wineries.json");
+            console.log(`wineries: ${d.count}  on the map: ${d.mapped}`);
+            const t = d.wineries.filter(w => w.precision === "town").length;
+            console.log(`town-level approximations: ${t}`);
+          '
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/wineries.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update winery data (automated scrape)"
+            git push
+          fi
+
+      # A push made with the workflow's own token doesn't fire on:push workflows,
+      # so redeploy Pages explicitly when the data changed on main.
+      - name: Redeploy Pages
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main

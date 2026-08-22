@@ -1,0 +1,9 @@
+node_modules/
+
+# Scraper intermediates — regenerate with `npm run build`.
+# data/wineries.json is the map's input and IS committed.
+data/wineries.raw.json
+data/review-urls.json
+data/scrape-failures.json
+data/geocode-cache.json
+data/debug/

@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Napa Valley Winery Map</title>
+<meta name="description" content="Interactive map of every winery reviewed by The Napa Wine Project.">
+<meta name="theme-color" content="#8c2740">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Napa Wineries">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%238c2740'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="vendor/markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="vendor/markercluster/MarkerCluster.Default.css">
+<style>
+/* ---------------------------------------------------------------- tokens -- */
+:root {
+  color-scheme: light;
+  --surface-1: #fcfcfb;          /* panels */
+  --surface-2: #f3f1ec;          /* insets, chips */
+  --surface-3: #e7e4dc;          /* hover */
+  --border:    #d9d5cb;
+  --border-strong: #bdb7a9;
+  --text-primary:   #14120f;
+  --text-secondary: #52514e;
+  --text-muted:     #7c7a72;
+  --accent:      #8c2740;        /* chrome + single-series marks */
+  --accent-ink:  #ffffff;
+  --accent-soft: #f6e8ec;
+  --ring: #8c2740;
+
+  /* categorical slots — visiting policy. Validated all-pairs, light mode. */
+  --cat-1: #2a78d6;              /* walk-ins welcome */
+  --cat-2: #eb6834;              /* by appointment */
+  --cat-3: #1baf7a;              /* not open to the public */
+  --cat-0: #8a8880;              /* unknown */
+
+  --shadow-sm: 0 1px 2px rgb(20 18 15 / .08), 0 1px 3px rgb(20 18 15 / .06);
+  --shadow-md: 0 4px 16px rgb(20 18 15 / .12);
+  --sidebar-w: 350px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --surface-2: #242422;
+    --surface-3: #302f2c;
+    --border:    #3a3936;
+    --border-strong: #55534e;
+    --text-primary:   #f7f6f3;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #94928a;
+    --accent:      #e2718c;
+    --accent-ink:  #1a1a19;
+    --accent-soft: #3a2028;
+    --ring: #e2718c;
+    --cat-1: #3987e5;
+    --cat-2: #d95926;
+    --cat-3: #199e70;
+    --cat-0: #8a8880;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / .5);
+    --shadow-md: 0 4px 20px rgb(0 0 0 / .55);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-1: #1a1a19; --surface-2: #242422; --surface-3: #302f2c;
+  --border: #3a3936; --border-strong: #55534e;
+  --text-primary: #f7f6f3; --text-secondary: #c3c2b7; --text-muted: #94928a;
+  --accent: #e2718c; --accent-ink: #1a1a19; --accent-soft: #3a2028; --ring: #e2718c;
+  --cat-1: #3987e5; --cat-2: #d95926; --cat-3: #199e70; --cat-0: #8a8880;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / .5);
+  --shadow-md: 0 4px 20px rgb(0 0 0 / .55);
+}
+
+/* ------------------------------------------------------------------ base -- */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background: var(--surface-1);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+button, input, select { font: inherit; color: inherit; }
+:where(a) { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* --------------------------------------------------------------- top bar -- */
+.topbar {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 16px; padding-top: max(10px, env(safe-area-inset-top));
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+  z-index: 1100; box-shadow: var(--shadow-sm);
+  flex: 0 0 auto;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand h1 {
+  margin: 0; font-size: 17px; font-weight: 650; letter-spacing: -.012em;
+  white-space: nowrap;
+}
+.brand h1 .mark { color: var(--accent); }
+.brand .count {
+  font-size: 12.5px; color: var(--text-muted); white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.search { position: relative; flex: 1 1 auto; max-width: 460px; margin-left: auto; }
+.search svg {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; color: var(--text-muted); pointer-events: none;
+}
+#q {
+  width: 100%; padding: 8px 30px 8px 32px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; -webkit-appearance: none;
+}
+#q::placeholder { color: var(--text-muted); }
+.search .clear {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  border: 0; background: none; color: var(--text-muted); cursor: pointer;
+  padding: 4px 6px; line-height: 1; border-radius: 6px; font-size: 16px;
+}
+.search .clear:hover { background: var(--surface-3); color: var(--text-primary); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 11px; border-radius: 8px; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--border);
+  color: var(--text-secondary); white-space: nowrap;
+}
+.btn:hover { background: var(--surface-3); color: var(--text-primary); }
+.btn svg { width: 15px; height: 15px; }
+.btn.icon-only { padding: 7px; }
+#panelToggle { display: none; }
+
+/* --------------------------------------------------------------- layout --- */
+.layout { flex: 1 1 auto; display: flex; min-height: 0; position: relative; }
+
+#sidebar {
+  width: var(--sidebar-w); flex: 0 0 var(--sidebar-w);
+  display: flex; flex-direction: column; min-height: 0;
+  background: var(--surface-1); border-right: 1px solid var(--border);
+  z-index: 900;
+}
+.filters {
+  padding: 12px 14px; border-bottom: 1px solid var(--border);
+  display: grid; gap: 11px; flex: 0 0 auto;
+  max-height: 38vh; overflow-y: auto; overscroll-behavior: contain;
+}
+.toggles {
+  display: grid; gap: 6px; flex: 0 0 auto;
+  padding: 11px 14px; border-bottom: 1px solid var(--border);
+}
+.fgroup > .flabel {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 11px; font-weight: 650; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 6px;
+}
+.flabel button {
+  border: 0; background: none; color: var(--accent); cursor: pointer;
+  font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: none; padding: 0;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip {
+  padding: 4px 9px; border-radius: 999px; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 12.5px; line-height: 1.35;
+}
+.chip:hover { background: var(--surface-3); }
+.chip[aria-pressed="true"] {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 550;
+}
+.chip .n { opacity: .6; font-variant-numeric: tabular-nums; margin-left: 3px; }
+.switch { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); cursor: pointer; }
+.switch input { accent-color: var(--accent); width: 15px; height: 15px; margin: 0; }
+
+.listhead {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 9px 14px; font-size: 12px; color: var(--text-muted);
+  border-bottom: 1px solid var(--border); flex: 0 0 auto;
+}
+.listhead strong { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+#list { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; }
+.row {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  padding: 9px 14px; border: 0; border-bottom: 1px solid var(--border);
+  background: none; color: inherit;
+}
+.row:hover { background: var(--surface-2); }
+.row[aria-current="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.row .rname { display: flex; align-items: baseline; gap: 7px; font-weight: 550; letter-spacing: -.004em; }
+.row .dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 8px; align-self: center; }
+.row .rmeta {
+  font-size: 12.5px; color: var(--text-muted); margin-top: 1px; padding-left: 15px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.row .tag {
+  font-size: 10.5px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase;
+  color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 4px;
+  padding: 0 4px; align-self: center;
+}
+.empty { padding: 28px 18px; color: var(--text-muted); font-size: 13.5px; text-align: center; }
+
+/* ------------------------------------------------------------------ map --- */
+.mapwrap { flex: 1 1 auto; position: relative; min-width: 0; }
+#map { position: absolute; inset: 0; background: var(--surface-2); }
+.leaflet-container { font: inherit; background: var(--surface-2); }
+
+.legend {
+  position: absolute; left: 12px; bottom: 22px; z-index: 800;
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 10px; padding: 9px 11px; box-shadow: var(--shadow-md);
+  font-size: 12.5px; max-width: 220px;
+}
+.legend h2 {
+  margin: 0 0 6px; font-size: 10.5px; font-weight: 650; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.legend li { display: flex; align-items: center; gap: 7px; margin-top: 4px; color: var(--text-secondary); }
+.legend ul { list-style: none; margin: 0; padding: 0; }
+.legend .sw {
+  width: 11px; height: 11px; border-radius: 50%; flex: 0 0 11px;
+  border: 2px solid var(--surface-1); box-shadow: 0 0 0 1px rgb(0 0 0 / .18);
+}
+.legend .sw.approx { opacity: .45; }
+.legend .note { margin-top: 7px; padding-top: 6px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 11.5px; }
+
+/* markers */
+.wm-cluster {
+  background: var(--accent); color: var(--accent-ink);
+  border: 2px solid var(--surface-1); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 650; font-size: 12px; font-variant-numeric: tabular-nums;
+  box-shadow: var(--shadow-sm);
+}
+.marker-cluster { background: none; }
+.marker-cluster div { background: none; }
+
+/* popup */
+.leaflet-popup-content-wrapper {
+  background: var(--surface-1); color: var(--text-primary);
+  border-radius: 10px; box-shadow: var(--shadow-md); border: 1px solid var(--border);
+}
+.leaflet-popup-tip { background: var(--surface-1); border: 1px solid var(--border); }
+.leaflet-popup-content { margin: 12px 14px; width: 250px !important; }
+.leaflet-popup-close-button { color: var(--text-muted) !important; }
+.pop h3 { margin: 0 0 2px; font-size: 15.5px; letter-spacing: -.01em; }
+.pop h3 a { color: var(--text-primary); text-decoration-color: var(--border-strong); text-underline-offset: 2px; }
+.pop h3 a:hover { color: var(--accent); }
+.pop .badges { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 7px; }
+.pop .badge {
+  font-size: 11px; padding: 1px 7px; border-radius: 999px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary);
+}
+.pop .badge.pol { border-color: transparent; color: #fff; }
+.pop dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 9px; font-size: 13px; }
+.pop dt { color: var(--text-muted); }
+.pop dd { margin: 0; color: var(--text-secondary); overflow-wrap: anywhere; }
+.pop .actions { display: flex; gap: 7px; margin-top: 10px; }
+.pop .actions a {
+  text-align: center; padding: 6px 10px; border-radius: 7px; font-size: 12.5px;
+  font-weight: 550; text-decoration: none; white-space: nowrap;
+}
+.pop .actions .primary { flex: 1 1 auto; }
+.pop .actions .ghost { flex: 0 0 auto; }
+.pop .actions .primary { background: var(--accent); color: var(--accent-ink); }
+.pop .actions .ghost { background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary); }
+.pop .approx { margin-top: 8px; font-size: 11.5px; color: var(--text-muted); }
+
+/* ---------------------------------------------------------------- states -- */
+.overlay {
+  position: absolute; inset: 0; z-index: 1200; display: grid; place-items: center;
+  background: var(--surface-1); padding: 24px;
+}
+.overlay[hidden] { display: none; }
+.card { max-width: 560px; }
+.card h2 { margin: 0 0 8px; font-size: 19px; letter-spacing: -.015em; }
+.card p { margin: 0 0 12px; color: var(--text-secondary); }
+.card pre {
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 14px; overflow-x: auto; font-size: 13px; margin: 0 0 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.card .small { font-size: 12.5px; color: var(--text-muted); }
+.spinner {
+  width: 26px; height: 26px; border-radius: 50%; margin: 0 auto 12px;
+  border: 3px solid var(--border); border-top-color: var(--accent);
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2.4s; } }
+
+/* ---------------------------------------------------------------- mobile -- */
+@media (max-width: 820px) {
+  .brand .count { display: none; }
+  #panelToggle { display: inline-flex; }
+  #sidebar {
+    position: absolute; inset: auto 0 0 0; width: 100%; flex: none;
+    height: 68%; border-right: 0; border-top: 1px solid var(--border);
+    border-radius: 14px 14px 0 0; box-shadow: var(--shadow-md);
+    z-index: 1050;   /* Leaflet's control panes sit at 1000 */
+    transform: translateY(100%); transition: transform .22s ease;
+  }
+  #sidebar.open { transform: translateY(0); }
+  #sidebar::before {
+    content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong);
+  }
+  .filters { max-height: 30vh; padding-top: 16px; }
+  .legend { bottom: 12px; left: 8px; font-size: 11.5px; padding: 7px 9px; }
+}
+@media (prefers-reduced-motion: reduce) { #sidebar { transition: none; } }
+@media (max-width: 560px) {
+  .topbar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+  .search { max-width: none; order: 3; flex-basis: 100%; margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1><span class="mark">&#9679;</span> Napa Valley Winery Map</h1>
+    <span class="count" id="headCount">loading&hellip;</span>
+  </div>
+
+  <div class="search">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <circle cx="9" cy="9" r="6"/><path d="m13.5 13.5 4 4" stroke-linecap="round"/>
+    </svg>
+    <input id="q" type="search" placeholder="Search name, town or appellation&hellip;"
+           autocomplete="off" spellcheck="false" aria-label="Search wineries">
+    <button class="clear" id="qClear" type="button" hidden aria-label="Clear search">&times;</button>
+  </div>
+
+  <button class="btn icon-only" id="locate" type="button" title="Show my location" aria-label="Show my location">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="10" cy="10" r="4"/><path d="M10 1v3M10 16v3M1 10h3M16 10h3" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <button class="btn icon-only" id="reset" type="button" title="Reset map and filters" aria-label="Reset map and filters">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <path d="M3 10a7 7 0 1 1 2.1 5" stroke-linecap="round"/><path d="M3 15v-4h4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <button class="btn" id="panelToggle" type="button" aria-expanded="false" aria-controls="sidebar">List</button>
+</header>
+
+<div class="layout">
+  <aside id="sidebar" aria-label="Filters and winery list">
+    <div class="filters">
+      <div class="fgroup">
+        <div class="flabel"><span>Appellation</span><button type="button" id="clearApp" hidden>clear</button></div>
+        <div class="chips" id="appChips" role="group" aria-label="Filter by appellation"></div>
+      </div>
+      <div class="fgroup">
+        <div class="flabel"><span>Visiting</span><button type="button" id="clearVis" hidden>clear</button></div>
+        <div class="chips" id="visChips" role="group" aria-label="Filter by visiting policy"></div>
+      </div>
+    </div>
+
+    <div class="toggles">
+      <label class="switch"><input type="checkbox" id="fSync" checked> Only list wineries in view</label>
+      <label class="switch"><input type="checkbox" id="fColor" checked> Colour pins by visiting policy</label>
+      <label class="switch"><input type="checkbox" id="fApprox" checked> Include approximate locations</label>
+      <label class="switch"><input type="checkbox" id="fArchived"> Include archived / closed</label>
+    </div>
+
+    <div class="listhead">
+      <span><strong id="listCount">0</strong> shown</span>
+      <span id="listNote"></span>
+    </div>
+    <div id="list" role="list" aria-live="polite" aria-busy="false"></div>
+  </aside>
+
+  <div class="mapwrap">
+    <div id="map"></div>
+
+    <div class="legend" id="legend" hidden>
+      <h2 id="legendTitle">Visiting policy</h2>
+      <ul id="legendItems"></ul>
+      <div class="note" id="legendNote"></div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="card" id="overlayCard">
+        <div class="spinner"></div>
+        <p style="text-align:center">Loading winery data&hellip;</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/markercluster/leaflet.markercluster.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var NAPA = [[38.05, -122.72], [38.90, -122.05]];
+  var SOURCE = 'https://www.napawineproject.com/reviews/';
+
+  /* Visiting policy is the only categorical encoding on the map: three slots plus
+     an unknown neutral, which is the most a categorical palette can carry when any
+     two marks may end up adjacent. Appellation has 16 values, so it filters. */
+  var POLICY = [
+    { key: 'walkin', label: 'Walk-ins welcome',      css: '--cat-1', match: /walk-in/i },
+    { key: 'appt',   label: 'By appointment',        css: '--cat-2', match: /appointment/i },
+    { key: 'closed', label: 'Not open to the public',css: '--cat-3', match: /not open/i },
+    { key: 'unknown',label: 'Not recorded',          css: '--cat-0', match: null },
+  ];
+  var policyOf = function (w) {
+    for (var i = 0; i < POLICY.length - 1; i++) {
+      if (w.visiting && POLICY[i].match.test(w.visiting)) return POLICY[i];
+    }
+    return POLICY[POLICY.length - 1];
+  };
+  var cssVar = function (name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  };
+
+  /* ------------------------------------------------------------- elements -- */
+  var $ = function (id) { return document.getElementById(id); };
+  var els = {
+    q: $('q'), qClear: $('qClear'), list: $('list'), listCount: $('listCount'),
+    listNote: $('listNote'), headCount: $('headCount'), appChips: $('appChips'),
+    visChips: $('visChips'), clearApp: $('clearApp'), clearVis: $('clearVis'),
+    fSync: $('fSync'), fColor: $('fColor'), fApprox: $('fApprox'), fArchived: $('fArchived'),
+    overlay: $('overlay'), overlayCard: $('overlayCard'), legend: $('legend'),
+    legendItems: $('legendItems'), legendTitle: $('legendTitle'), legendNote: $('legendNote'),
+    sidebar: $('sidebar'), panelToggle: $('panelToggle'),
+  };
+
+  var state = {
+    all: [], meta: null, q: '', apps: new Set(), vis: new Set(),
+    selected: null, visible: [], markers: new Map(), ready: false,
+  };
+
+  /* ------------------------------------------------------------------ map -- */
+  var map = L.map('map', {
+    zoomControl: false,
+    maxBounds: [[37.6, -123.4], [39.4, -121.4]],
+    maxBoundsViscosity: .7,
+    minZoom: 8, maxZoom: 18,
+  }).fitBounds(NAPA);
+  L.control.zoom({ position: 'topright' }).addTo(map);
+  L.control.scale({ imperial: true, metric: false, position: 'bottomright' }).addTo(map);
+
+  var dark = matchMedia('(prefers-color-scheme: dark)');
+  var tileUrl = function () {
+    return 'https://{s}.basemaps.cartocdn.com/' + (dark.matches ? 'dark_all' : 'rastertiles/voyager') +
+           '/{z}/{x}/{y}{r}.png';
+  };
+  var tiles = L.tileLayer(tileUrl(), {
+    maxZoom: 19,
+    attribution:
+      'Reviews &copy; <a href="' + SOURCE + '" target="_blank" rel="noopener">The Napa Wine Project</a> &middot; ' +
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &middot; ' +
+      '&copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+  }).addTo(map);
+  dark.addEventListener('change', function () { tiles.setUrl(tileUrl()); repaint(); });
+
+  var cluster = L.markerClusterGroup({
+    maxClusterRadius: 46,
+    showCoverageOnHover: false,
+    spiderfyDistanceMultiplier: 1.4,
+    disableClusteringAtZoom: 16,
+    chunkedLoading: true,
+    iconCreateFunction: function (c) {
+      var n = c.getChildCount();
+      var size = n < 10 ? 32 : n < 50 ? 38 : n < 200 ? 44 : 50;
+      return L.divIcon({
+        html: '<div class="wm-cluster" style="width:' + size + 'px;height:' + size + 'px">' + n + '</div>',
+        className: '', iconSize: [size, size],
+      });
+    },
+  }).addTo(map);
+
+  /* --------------------------------------------------------------- markers -- */
+  function markerStyle(w, selected) {
+    var approx = w.precision === 'town';
+    var fill = els.fColor.checked ? cssVar(policyOf(w).css) : cssVar('--accent');
+    return {
+      radius: selected ? 10 : (approx ? 6 : 7),
+      fillColor: fill,
+      fillOpacity: approx ? .38 : .92,
+      color: selected ? cssVar('--text-primary') : cssVar('--surface-1'),
+      weight: selected ? 3 : 2,
+      opacity: 1,
+      dashArray: approx ? '3 2' : null,
+    };
+  }
+
+  function popupHtml(w) {
+    var pol = policyOf(w);
+    var esc = function (s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    };
+    var rows = '';
+    if (w.address) rows += '<dt>Address</dt><dd>' + esc(w.address) + '</dd>';
+    if (w.phone) rows += '<dt>Phone</dt><dd><a href="tel:' + esc(w.phone.replace(/[^\d+]/g, '')) +
+      '">' + esc(w.phone) + '</a></dd>';
+    if (w.website) rows += '<dt>Site</dt><dd><a href="' + esc(w.website) + '" target="_blank" rel="noopener">' +
+      esc(w.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')) + '</a></dd>';
+
+    var badges = '';
+    if (w.appellation) badges += '<span class="badge">' + esc(w.appellation) + '</span>';
+    if (w.visiting) {
+      badges += '<span class="badge pol" style="background:' + cssVar(pol.css) + '">' + esc(w.visiting) + '</span>';
+    }
+    if (w.archived) badges += '<span class="badge">Archived</span>';
+
+    var dir = 'https://www.google.com/maps/dir/?api=1&destination=' +
+      encodeURIComponent(w.address ? w.address + ', CA' : w.lat + ',' + w.lng);
+
+    return '<div class="pop">' +
+      '<h3><a href="' + esc(w.url) + '" target="_blank" rel="noopener">' + esc(w.name) + '</a></h3>' +
+      (badges ? '<div class="badges">' + badges + '</div>' : '') +
+      (rows ? '<dl>' + rows + '</dl>' : '') +
+      '<div class="actions">' +
+        '<a class="primary" href="' + esc(w.url) + '" target="_blank" rel="noopener">Read the review</a>' +
+        '<a class="ghost" href="' + dir + '" target="_blank" rel="noopener">Directions</a>' +
+      '</div>' +
+      (w.precision === 'town'
+        ? '<p class="approx">Pin placed at the centre of ' + esc(w.city || 'town') +
+          ' &mdash; no street address was published.</p>'
+        : '') +
+      '</div>';
+  }
+
+  function buildMarkers() {
+    state.all.forEach(function (w) {
+      if (w.lat == null || w.lng == null) return;
+      var m = L.circleMarker([w.lat, w.lng], markerStyle(w, false));
+      m.bindPopup(function () { return popupHtml(w); }, { autoPanPadding: [40, 40], minWidth: 250 });
+      m.bindTooltip(w.name, { direction: 'top', offset: [0, -8], opacity: .95 });
+      m.on('click', function () { select(w.slug, false); });
+      state.markers.set(w.slug, m);
+    });
+  }
+
+  function repaint() {
+    state.markers.forEach(function (m, slug) {
+      var w = state.all.find(function (x) { return x.slug === slug; });
+      m.setStyle(markerStyle(w, slug === state.selected));
+    });
+    renderLegend();
+  }
+
+  /* --------------------------------------------------------------- filters -- */
+  function matches(w) {
+    if (!state.fArchivedOn && w.archived) return false;
+    if (!state.fApproxOn && w.precision === 'town') return false;
+    if (state.apps.size && !state.apps.has(w.appellation || '—')) return false;
+    if (state.vis.size && !state.vis.has(policyOf(w).key)) return false;
+    if (state.q) {
+      var hay = (w.name + ' ' + (w.address || '') + ' ' + (w.city || '') + ' ' +
+                 (w.appellation || '') + ' ' + (w.visiting || '')).toLowerCase();
+      var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var i = 0; i < terms.length; i++) if (hay.indexOf(terms[i]) === -1) return false;
+    }
+    return true;
+  }
+
+  function apply() {
+    state.fArchivedOn = els.fArchived.checked;
+    state.fApproxOn = els.fApprox.checked;
+
+    var kept = state.all.filter(matches);
+    var layers = [];
+    kept.forEach(function (w) {
+      var m = state.markers.get(w.slug);
+      if (m) layers.push(m);
+    });
+    cluster.clearLayers();
+    cluster.addLayers(layers);
+
+    state.kept = kept;
+    renderList();
+    renderChipCounts();
+    els.headCount.textContent = kept.length.toLocaleString() + ' of ' +
+      state.all.length.toLocaleString() + ' wineries';
+    els.clearApp.hidden = state.apps.size === 0;
+    els.clearVis.hidden = state.vis.size === 0;
+    syncUrl();
+  }
+
+  /* ------------------------------------------------------------------ list -- */
+  var LIST_CAP = 400;
+
+  function renderList() {
+    var kept = state.kept || [];
+    var shown = kept;
+    if (els.fSync.checked && state.ready) {
+      var b = map.getBounds();
+      shown = kept.filter(function (w) {
+        return w.lat != null && b.contains([w.lat, w.lng]);
+      });
+    }
+    state.visible = shown;
+    els.listCount.textContent = shown.length.toLocaleString();
+    els.listNote.textContent = shown.length > LIST_CAP ? 'first ' + LIST_CAP + ' listed' : '';
+
+    if (!shown.length) {
+      els.list.innerHTML = '<p class="empty">' +
+        (kept.length ? 'No wineries in this part of the map.<br>Zoom out or turn off &ldquo;only list wineries in view&rdquo;.'
+                     : 'Nothing matches these filters.') + '</p>';
+      return;
+    }
+
+    var frag = document.createDocumentFragment();
+    shown.slice(0, LIST_CAP).forEach(function (w) {
+      var pol = policyOf(w);
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'row';
+      btn.dataset.slug = w.slug;
+      btn.setAttribute('role', 'listitem');
+      if (w.slug === state.selected) btn.setAttribute('aria-current', 'true');
+
+      var name = document.createElement('span');
+      name.className = 'rname';
+      var dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.style.background = els.fColor.checked ? 'var(' + pol.css + ')' : 'var(--accent)';
+      if (w.precision === 'town') dot.style.opacity = '.4';
+      name.appendChild(dot);
+      name.appendChild(document.createTextNode(w.name));
+      if (w.archived) {
+        var tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = 'archived';
+        name.appendChild(tag);
+      }
+
+      var meta = document.createElement('span');
+      meta.className = 'rmeta';
+      var town = (w.city || (w.address || '').split(',')[1] || '').trim();
+      var same = w.appellation &&
+        town.toLowerCase().replace(/^st\.? /, 'st ') ===
+        w.appellation.toLowerCase().replace(/^st\.? /, 'st ').replace(/ (district|ava)$/, '');
+      meta.textContent = [w.appellation, same ? null : town, w.visiting]
+        .filter(Boolean).join(' · ') || 'Napa Valley';
+
+      btn.appendChild(name);
+      btn.appendChild(meta);
+      frag.appendChild(btn);
+    });
+    els.list.replaceChildren(frag);
+  }
+
+  function select(slug, pan) {
+    state.selected = slug;
+    var w = state.all.find(function (x) { return x.slug === slug; });
+    repaint();
+    els.list.querySelectorAll('.row').forEach(function (r) {
+      if (r.dataset.slug === slug) r.setAttribute('aria-current', 'true');
+      else r.removeAttribute('aria-current');
+    });
+    var row = els.list.querySelector('.row[data-slug="' + CSS.escape(slug) + '"]');
+    if (row) row.scrollIntoView({ block: 'nearest' });
+    if (w && pan && w.lat != null) {
+      map.flyTo([w.lat, w.lng], Math.max(map.getZoom(), 14), { duration: .6 });
+      var m = state.markers.get(slug);
+      if (m) cluster.zoomToShowLayer(m, function () { m.openPopup(); });
+    }
+    syncUrl();
+  }
+
+  /* ----------------------------------------------------------------- chips -- */
+  function renderChips() {
+    var counts = {};
+    state.all.forEach(function (w) {
+      var k = w.appellation || '—';
+      counts[k] = (counts[k] || 0) + 1;
+    });
+    var keys = Object.keys(counts).sort(function (a, b) {
+      if (a === '—') return 1;
+      if (b === '—') return -1;
+      return counts[b] - counts[a] || a.localeCompare(b);
+    });
+    els.appChips.replaceChildren();
+    keys.forEach(function (k) {
+      var c = document.createElement('button');
+      c.type = 'button';
+      c.className = 'chip';
+      c.dataset.app = k;
+      c.setAttribute('aria-pressed', state.apps.has(k) ? 'true' : 'false');
+      c.innerHTML = (k === '—' ? 'Unlisted' : k) + ' <span class="n">' + counts[k] + '</span>';
+      els.appChips.appendChild(c);
+    });
+
+    els.visChips.replaceChildren();
+    POLICY.forEach(function (p) {
+      var n = state.all.filter(function (w) { return policyOf(w).key === p.key; }).length;
+      if (!n) return;
+      var c = document.createElement('button');
+      c.type = 'button';
+      c.className = 'chip';
+      c.dataset.vis = p.key;
+      c.setAttribute('aria-pressed', state.vis.has(p.key) ? 'true' : 'false');
+      c.innerHTML = p.label + ' <span class="n">' + n + '</span>';
+      els.visChips.appendChild(c);
+    });
+  }
+
+  function renderChipCounts() {
+    els.appChips.querySelectorAll('.chip').forEach(function (c) {
+      c.setAttribute('aria-pressed', state.apps.has(c.dataset.app) ? 'true' : 'false');
+    });
+    els.visChips.querySelectorAll('.chip').forEach(function (c) {
+      c.setAttribute('aria-pressed', state.vis.has(c.dataset.vis) ? 'true' : 'false');
+    });
+  }
+
+  function renderLegend() {
+    /* A single-colour map needs no legend box; the policy encoding does, and its
+       labels are also the relief for the light-mode contrast warning. */
+    if (!els.fColor.checked) { els.legend.hidden = true; return; }
+    els.legend.hidden = false;
+    els.legendItems.replaceChildren();
+    POLICY.forEach(function (p) {
+      var n = (state.kept || []).filter(function (w) { return policyOf(w).key === p.key; }).length;
+      if (!n) return;
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="sw" style="background:var(' + p.css + ')"></span>' +
+        p.label + ' <span class="n" style="opacity:.6">' + n + '</span>';
+      els.legendItems.appendChild(li);
+    });
+    var approx = (state.kept || []).filter(function (w) { return w.precision === 'town'; }).length;
+    els.legendNote.textContent = approx
+      ? approx + ' faded pins are town-level approximations'
+      : '';
+    els.legendNote.hidden = !approx;
+  }
+
+  /* ------------------------------------------------------------------- url -- */
+  var urlTimer;
+  function syncUrl() {
+    clearTimeout(urlTimer);
+    urlTimer = setTimeout(function () {
+      var p = new URLSearchParams();
+      if (state.q) p.set('q', state.q);
+      if (state.apps.size) p.set('app', [...state.apps].join('|'));
+      if (state.vis.size) p.set('vis', [...state.vis].join('|'));
+      if (state.selected) p.set('w', state.selected);
+      if (els.fArchived.checked) p.set('archived', '1');
+      if (!els.fApprox.checked) p.set('approx', '0');
+      var qs = p.toString();
+      history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    }, 250);
+  }
+
+  function readUrl() {
+    var p = new URLSearchParams(location.search);
+    state.q = p.get('q') || '';
+    els.q.value = state.q;
+    els.qClear.hidden = !state.q;
+    (p.get('app') || '').split('|').filter(Boolean).forEach(function (v) { state.apps.add(v); });
+    (p.get('vis') || '').split('|').filter(Boolean).forEach(function (v) { state.vis.add(v); });
+    if (p.get('archived') === '1') els.fArchived.checked = true;
+    if (p.get('approx') === '0') els.fApprox.checked = false;
+    return p.get('w');
+  }
+
+  /* -------------------------------------------------------------- wiring --- */
+  var debounce = function (fn, ms) {
+    var t; return function () { clearTimeout(t); t = setTimeout(fn, ms); };
+  };
+  els.q.addEventListener('input', debounce(function () {
+    state.q = els.q.value.trim();
+    els.qClear.hidden = !state.q;
+    apply();
+  }, 160));
+  els.qClear.addEventListener('click', function () {
+    els.q.value = ''; state.q = ''; els.qClear.hidden = true; apply(); els.q.focus();
+  });
+
+  els.appChips.addEventListener('click', function (e) {
+    var c = e.target.closest('.chip'); if (!c) return;
+    state.apps.has(c.dataset.app) ? state.apps.delete(c.dataset.app) : state.apps.add(c.dataset.app);
+    apply();
+  });
+  els.visChips.addEventListener('click', function (e) {
+    var c = e.target.closest('.chip'); if (!c) return;
+    state.vis.has(c.dataset.vis) ? state.vis.delete(c.dataset.vis) : state.vis.add(c.dataset.vis);
+    apply();
+  });
+  els.clearApp.addEventListener('click', function () { state.apps.clear(); apply(); });
+  els.clearVis.addEventListener('click', function () { state.vis.clear(); apply(); });
+
+  [els.fArchived, els.fApprox].forEach(function (el) { el.addEventListener('change', apply); });
+  els.fSync.addEventListener('change', renderList);
+  els.fColor.addEventListener('change', function () { repaint(); renderList(); });
+
+  els.list.addEventListener('click', function (e) {
+    var row = e.target.closest('.row'); if (!row) return;
+    select(row.dataset.slug, true);
+    if (innerWidth <= 820) togglePanel(false);
+  });
+
+  els.panelToggle.addEventListener('click', function () {
+    togglePanel(!els.sidebar.classList.contains('open'));
+  });
+  function togglePanel(open) {
+    els.sidebar.classList.toggle('open', open);
+    els.panelToggle.setAttribute('aria-expanded', String(open));
+    els.panelToggle.textContent = open ? 'Map' : 'List';
+  }
+
+  $('reset').addEventListener('click', function () {
+    state.q = ''; els.q.value = ''; els.qClear.hidden = true;
+    state.apps.clear(); state.vis.clear(); state.selected = null;
+    els.fArchived.checked = false; els.fApprox.checked = true;
+    map.flyToBounds(NAPA, { duration: .6 });
+    apply(); repaint();
+  });
+
+  var meMarker;
+  $('locate').addEventListener('click', function () {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      var ll = [pos.coords.latitude, pos.coords.longitude];
+      if (meMarker) map.removeLayer(meMarker);
+      meMarker = L.circleMarker(ll, {
+        radius: 7, color: cssVar('--surface-1'), weight: 3,
+        fillColor: cssVar('--text-primary'), fillOpacity: 1,
+      }).addTo(map).bindTooltip('You are here', { direction: 'top', offset: [0, -8] });
+      map.flyTo(ll, 13, { duration: .6 });
+    }, function () { /* permission denied — nothing to do */ }, { timeout: 8000 });
+  });
+
+  map.on('moveend zoomend', function () { if (els.fSync.checked) renderList(); });
+
+  addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== els.q) { e.preventDefault(); els.q.focus(); els.q.select(); }
+    if (e.key === 'Escape') {
+      if (document.activeElement === els.q && els.q.value) { els.qClear.click(); }
+      else { map.closePopup(); state.selected = null; repaint(); renderList(); }
+    }
+  });
+
+  /* ------------------------------------------------------------------ boot -- */
+  function fail(title, bodyHtml) {
+    els.overlayCard.innerHTML = '<h2>' + title + '</h2>' + bodyHtml;
+    els.overlay.hidden = false;
+  }
+
+  fetch('data/wineries.json', { cache: 'no-store' })
+    .then(function (r) {
+      // Parse before judging the status: the service worker's offline payload
+      // arrives as a 503 whose body says so.
+      return r.json()
+        .catch(function () { throw new Error('HTTP ' + r.status); })
+        .then(function (j) {
+          if (!r.ok && !j.offline) throw new Error('HTTP ' + r.status);
+          return j;
+        });
+    })
+    .then(function (data) {
+      state.meta = data;
+      state.all = (data.wineries || []).slice().sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+      if (data.offline) throw new Error('offline');
+      if (!state.all.length) throw new Error('empty');
+
+      buildMarkers();
+      renderChips();
+      var want = readUrl();
+      apply();
+      state.ready = true;
+      els.overlay.hidden = true;
+
+      var mapped = state.all.filter(function (w) { return w.lat != null; });
+      if (mapped.length) {
+        map.fitBounds(L.latLngBounds(mapped.map(function (w) { return [w.lat, w.lng]; })).pad(.05));
+      }
+      renderList();
+      renderLegend();
+      if (want) select(want, true);
+
+      var missing = state.all.length - mapped.length;
+      if (missing) {
+        console.info(missing + ' winery/wineries have no location and are not on the map.');
+      }
+    })
+    .catch(function (err) {
+      var msg = err && err.message;
+      if (msg === 'offline') {
+        fail('You&rsquo;re offline',
+          '<p>No cached winery data is available yet. Connect once so the map can ' +
+          'store its data, and it will work offline from then on.</p>');
+      } else if (msg === 'empty') {
+        fail('No wineries in the dataset yet', '<p><code>data/wineries.json</code> loaded but is empty. ' +
+          'Re-run the scraper and check its summary output.</p>' +
+          '<pre>npm run build</pre>');
+      } else {
+        fail('Winery data not loaded',
+          '<p>This map reads <code>data/wineries.json</code>, which is produced by the ' +
+          'scraper in <code>scripts/</code>. Generate it and serve the folder over HTTP ' +
+          '(<code>file://</code> blocks the fetch):</p>' +
+          '<pre>npm run build   # scrape + geocode\nnpm run serve   # http://localhost:8080/map.html</pre>' +
+          '<p class="small">Reviews are sourced from ' +
+          '<a href="' + SOURCE + '" target="_blank" rel="noopener">The Napa Wine Project</a>. ' +
+          'Loader said: ' + (msg || 'unknown error') + '.</p>');
+      }
+    });
+})();
+
+/* Offline support: the service worker precaches the app shell, keeps the last
+   good copy of the winery data, and retains recently viewed basemap tiles —
+   useful in the parts of the valley where cell coverage drops out. */
+var secure = location.protocol === 'https:' ||
+    location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+if ('serviceWorker' in navigator && secure) {
+  addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () { /* non-fatal */ });
+  });
+}
+</script>
+</body>
+</html>

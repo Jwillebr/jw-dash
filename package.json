@@ -1,0 +1,17 @@
+{
+  "name": "napa-winery-map",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive map of the wineries reviewed at napawineproject.com",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scripts/scrape.mjs",
+    "geocode": "node scripts/geocode.mjs",
+    "build": "node scripts/scrape.mjs && node scripts/geocode.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node scripts/test-parse.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
