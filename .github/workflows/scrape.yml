@@ -47,13 +47,19 @@ jobs:
             node scripts/scrape.mjs
           fi
 
-      # Diagnostics for limited runs: show what the live pages actually contain,
-      # and fetch the site's winery spreadsheet so addresses can be joined from it.
+      # Diagnostics for limited runs: show what the live pages actually contain.
       - name: Debug dumps
         if: ${{ inputs.limit != '' }}
+        run: node scripts/debug-dump.mjs bremer-family-winery abloom-wine
+
+      # The site's spreadsheet is the authoritative source for addresses, towns,
+      # phones and websites — review pages rarely carry them.
+      - name: Fetch winery spreadsheet
         run: |
-          node scripts/debug-dump.mjs bremer-family-winery abloom-wine
-          curl -sSL -A "napa-winery-map/1.0" -o data/wineries-source.xls             "https://www.napawineproject.com/Wineries-Napa-Valley.xls"             && ls -la data/wineries-source.xls && file data/wineries-source.xls             || echo "XLS download failed"
+          curl -sSL -A "napa-winery-map/1.0" -o data/wineries-source.xls "https://www.napawineproject.com/Wineries-Napa-Valley.xls"
+          file data/wineries-source.xls
+          pip install --quiet xlrd
+          python3 scripts/xls-to-json.py
 
       - name: Geocode
         run: node scripts/geocode.mjs

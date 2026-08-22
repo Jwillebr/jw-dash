@@ -7,3 +7,4 @@ data/review-urls.json
 data/scrape-failures.json
 data/geocode-cache.json
 data/debug/
+data/source-list.json

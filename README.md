@@ -52,20 +52,18 @@ and `vendor/` is the whole deployable site (GitHub Pages, S3, anything static).
 
 ### How the data is produced
 
-**Scrape** (`scripts/scrape.mjs`) discovers review URLs from `/reviews/`, its
-letter pages and its pagination, then reads each review page. Every field is
-extracted by trying the most reliable source first and falling back:
+**Scrape** (`scripts/scrape.mjs`) discovers review URLs from `/reviews/` and reads
+each review page for the fields the pages actually carry: name, review URL, the
+prose visiting policy, archived status, and (as fallbacks) website and address.
 
-- **name** — schema.org JSON-LD → `<h1>` → `og:title` → `<title>` → index link text
-- **address** — JSON-LD `PostalAddress` → an address line in the prose that names a
-  Napa County town
-- **coordinates** — JSON-LD `geo` → coordinates in an embedded map link
-- **phone / website / appellation / visiting policy / archived** — JSON-LD where the
-  site publishes it, pattern matching otherwise
-
-Anything it can't determine is left `null`, never guessed. The run prints how many
-records got each field; if the site's markup shifts, that summary is the tell, and
-`--dump <slug>` shows you exactly what one page parsed to.
+**Join** — review pages rarely publish addresses, so the build also downloads the
+site's own winery spreadsheet (`Wineries-Napa-Valley.xls`, refreshed by its author)
+and `scripts/xls-to-json.py` converts it. `scripts/geocode.mjs` joins the two by
+winery name (accent/`&`/suffix-tolerant): the spreadsheet is authoritative for
+address, town, website, phone and wine-cave status; the review page for the review
+link, visiting wording and archived flag. Anything undetermined stays `null`,
+never guessed, and each run prints match and coverage counts —
+`node scripts/debug-dump.mjs <slug>` shows exactly what one live page parses to.
 
 **Geocode** (`scripts/geocode.mjs`) resolves each address with the US Census
 geocoder, falling back to OpenStreetMap Nominatim (rate-limited to 1 req/s, as its
@@ -81,14 +79,14 @@ after any change to the parsing regexes.
 ### Using the map
 
 - **Search** name, town, appellation or visiting policy — press `/` to jump to the box.
-- **Filter** by appellation and by visiting policy; toggle archived/closed brands and
-  approximate locations.
+- **Filter** by town and by visiting policy; a wine-cave toggle; toggles for
+  archived/closed brands and approximate locations.
 - **The list follows the map** by default; switch that off to list every match.
 - **Click a pin or a row** to open the winery, with its address, phone, site, a link
   to its review and a directions link. `Esc` clears the selection.
 - **Pin colour** encodes visiting policy (walk-in / by appointment / not open /
   unrecorded) — four values, which is what a categorical palette can carry legibly.
-  Appellation has sixteen values, so it filters rather than colours.
+  Towns filter rather than colour.
 - The URL tracks search, filters and selection, so any view can be linked or bookmarked.
 
 Light and dark themes both follow the OS setting, and the layout collapses to a
