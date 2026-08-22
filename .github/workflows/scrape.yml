@@ -47,6 +47,20 @@ jobs:
             node scripts/scrape.mjs
           fi
 
+      # Diagnostics for limited runs: show what the live pages actually contain.
+      - name: Debug dumps
+        if: ${{ inputs.limit != '' }}
+        run: node scripts/debug-dump.mjs bremer-family-winery abloom-wine
+
+      # The site's spreadsheet is the authoritative source for addresses, towns,
+      # phones and websites — review pages rarely carry them.
+      - name: Fetch winery spreadsheet
+        run: |
+          curl -sSL -A "napa-winery-map/1.0" -o data/wineries-source.xls "https://www.napawineproject.com/Wineries-Napa-Valley.xls"
+          file data/wineries-source.xls
+          pip install --quiet xlrd
+          python3 scripts/xls-to-json.py
+
       - name: Geocode
         run: node scripts/geocode.mjs
 
@@ -64,6 +78,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/wineries.json
+          [ -f data/wineries-source.xls ] && git add data/wineries-source.xls
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

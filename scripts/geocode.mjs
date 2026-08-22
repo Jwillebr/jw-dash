@@ -23,6 +23,7 @@ const REFRESH = argv.includes('--refresh');
 const NO_FALLBACK = argv.includes('--no-fallback');
 
 const RAW = path.join(DATA, 'wineries.raw.json');
+const SOURCE_LIST = path.join(DATA, 'source-list.json');
 const OUT = path.join(DATA, 'wineries.json');
 const CACHE_FILE = path.join(DATA, 'geocode-cache.json');
 
@@ -30,6 +31,62 @@ const CACHE_FILE = path.join(DATA, 'geocode-cache.json');
 const BOUNDS = { minLat: 38.0, maxLat: 38.95, minLng: -122.75, maxLng: -122.0 };
 const inNapa = (lat, lng) =>
   lat >= BOUNDS.minLat && lat <= BOUNDS.maxLat && lng >= BOUNDS.minLng && lng <= BOUNDS.maxLng;
+
+/* --- join with the site's spreadsheet ------------------------------------- */
+// The spreadsheet (see scripts/xls-to-json.py) is authoritative for address,
+// town, website and phone; review pages are authoritative for the review URL,
+// prose visiting notes and archived status. Rows are joined by winery name.
+
+const nameKey = (v) =>
+  String(v || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')   // Château -> Chateau
+    .replace(/&/g, ' and ').replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+
+const GENERIC = /\b(the|and|winery|wines|wine|vineyards|vineyard|cellars|cellar|estate|estates|caves|cave|co|company|napa|valley|family)\b/g;
+const looseKey = (v) => nameKey(v).replace(GENERIC, ' ').replace(/\s+/g, ' ').trim();
+
+function buildIndex(rows, keyFn) {
+  const map = new Map();
+  for (const row of rows) {
+    const k = keyFn(row.name);
+    if (!k) continue;
+    map.set(k, map.has(k) ? null : row);   // null marks an ambiguous key
+  }
+  return map;
+}
+
+function joinSpreadsheet(wineries) {
+  const src = readJson(SOURCE_LIST);
+  if (!src?.wineries?.length) {
+    console.warn('No data/source-list.json — run scripts/xls-to-json.py first. Continuing without the spreadsheet.');
+    return { matched: 0, total: wineries.length };
+  }
+  const exact = buildIndex(src.wineries, nameKey);
+  const loose = buildIndex(src.wineries, looseKey);
+  let matched = 0;
+  for (const w of wineries) {
+    const row = exact.get(nameKey(w.name)) ||
+                exact.get(nameKey(w.slug.replace(/-/g, ' '))) ||
+                loose.get(looseKey(w.name)) || null;
+    if (!row) continue;
+    matched++;
+    // Spreadsheet wins where it has a value; page extraction remains the fallback.
+    if (row.address) {
+      w.address = `${row.address}, ${row.city || 'Napa'}, CA`;
+      w.street = row.address;
+      w.city = row.city || w.city;
+      w.lat = null; w.lng = null;              // re-resolve from the better address
+    } else if (row.city) {
+      w.city = w.city || row.city;
+    }
+    w.website = row.website || w.website;
+    w.phone = row.phone || w.phone;
+    w.visiting = w.visiting || row.visiting;   // prose wording is more precise
+    w.cave = row.cave;
+  }
+  return { matched, total: wineries.length };
+}
 
 const normalize = (a) =>
   a.toLowerCase().replace(/[.,]/g, ' ').replace(/\s+/g, ' ')
@@ -105,6 +162,9 @@ async function main() {
     console.error(`No input. Run \`npm run scrape\` first (expected ${path.relative(process.cwd(), RAW)}).`);
     process.exit(1);
   }
+  const join = joinSpreadsheet(raw.wineries);
+  console.log(`Spreadsheet join: ${join.matched}/${join.total} reviews matched`);
+
   const cache = (!REFRESH && readJson(CACHE_FILE)) || {};
   const stats = { cached: 0, census: 0, nominatim: 0, town: 0, embedded: 0, failed: 0 };
   const out = [];
@@ -114,7 +174,7 @@ async function main() {
     const rec = {
       slug: w.slug, name: w.name, url: w.url, address: w.address, city: w.city,
       appellation: w.appellation, phone: w.phone, website: w.website,
-      visiting: w.visiting, archived: !!w.archived,
+      visiting: w.visiting, cave: !!w.cave, archived: !!w.archived,
       lat: null, lng: null, precision: null,
     };
 

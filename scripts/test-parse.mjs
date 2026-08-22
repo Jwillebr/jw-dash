@@ -74,6 +74,33 @@ test('title suffix is stripped and the index link is a name fallback', () => {
   assert.equal(r.name, 'Odd One');
 });
 
+// Mirrors the real napawineproject.com structure observed in CI: Yoast Article
+// JSON-LD carrying the AUTHOR's social links, the winery site as an anchor whose
+// text is its own domain, and a commenter's phone number below the comment form.
+const REAL = `<!doctype html><html><head>
+<title>Bremer Family Winery - The Napa Wine Project</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+ {"@type":"Article","author":{"name":"Dave","sameAs":["https://x.com/davedtc"]}},
+ {"@type":"Person","name":"Dave","url":"https://x.com/davedtc"}]}</script>
+</head><body>
+<h1>Bremer Family Winery</h1>
+<p>Their tasting room at 975 Deer Park Road, St. Helena, CA 94574 is open by
+appointment. <a href="http://www.bremerfamilywinery.com">www.bremerfamilywinery.com</a>
+<a href="https://www.daveswines.com/">THE CLUB</a>
+<a href="https://www.facebook.com/bremerfamilywinery"></a></p>
+<h2>Leave a Reply</h2>
+<p>Great visit! Call me at (760) 271-0389 &mdash; a happy commenter</p>
+</body></html>`;
+
+test('real-markup page: author links skipped, comments never mined', () => {
+  const r = parsePage(REAL, 'https://www.napawineproject.com/bremer-family-winery/', null);
+  assert.equal(r.name, 'Bremer Family Winery');
+  assert.equal(r.website, 'http://www.bremerfamilywinery.com');
+  assert.equal(r.address, '975 Deer Park Road, St. Helena, CA 94574');
+  assert.equal(r.phone, null);                       // commenter's number ignored
+  assert.equal(r.visiting, 'By appointment');
+});
+
 let failed = 0;
 for (const [name, fn] of cases) {
   try { fn(); console.log(`  ok   ${name}`); }

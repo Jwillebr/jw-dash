@@ -361,8 +361,8 @@ button, input, select { font: inherit; color: inherit; }
   <aside id="sidebar" aria-label="Filters and winery list">
     <div class="filters">
       <div class="fgroup">
-        <div class="flabel"><span>Appellation</span><button type="button" id="clearApp" hidden>clear</button></div>
-        <div class="chips" id="appChips" role="group" aria-label="Filter by appellation"></div>
+        <div class="flabel"><span>Town</span><button type="button" id="clearApp" hidden>clear</button></div>
+        <div class="chips" id="appChips" role="group" aria-label="Filter by town"></div>
       </div>
       <div class="fgroup">
         <div class="flabel"><span>Visiting</span><button type="button" id="clearVis" hidden>clear</button></div>
@@ -373,6 +373,7 @@ button, input, select { font: inherit; color: inherit; }
     <div class="toggles">
       <label class="switch"><input type="checkbox" id="fSync" checked> Only list wineries in view</label>
       <label class="switch"><input type="checkbox" id="fColor" checked> Colour pins by visiting policy</label>
+      <label class="switch"><input type="checkbox" id="fCave"> Only wineries with a wine cave</label>
       <label class="switch"><input type="checkbox" id="fApprox" checked> Include approximate locations</label>
       <label class="switch"><input type="checkbox" id="fArchived"> Include archived / closed</label>
     </div>
@@ -437,6 +438,7 @@ button, input, select { font: inherit; color: inherit; }
     listNote: $('listNote'), headCount: $('headCount'), appChips: $('appChips'),
     visChips: $('visChips'), clearApp: $('clearApp'), clearVis: $('clearVis'),
     fSync: $('fSync'), fColor: $('fColor'), fApprox: $('fApprox'), fArchived: $('fArchived'),
+    fCave: $('fCave'),
     overlay: $('overlay'), overlayCard: $('overlayCard'), legend: $('legend'),
     legendItems: $('legendItems'), legendTitle: $('legendTitle'), legendNote: $('legendNote'),
     sidebar: $('sidebar'), panelToggle: $('panelToggle'),
@@ -445,7 +447,25 @@ button, input, select { font: inherit; color: inherit; }
   var state = {
     all: [], meta: null, q: '', apps: new Set(), vis: new Set(),
     selected: null, visible: [], markers: new Map(), ready: false,
+    bigTowns: new Set(),
   };
+
+  /* Towns with a couple of outliers ("Leesburg, VA", "Studio City") would each get
+     their own chip; fold anything under 3 wineries into the catch-all. */
+  function townOf(w) {
+    var t = w.city || '—';
+    return state.bigTowns.has(t) ? t : '—';
+  }
+  function computeBigTowns() {
+    var counts = {};
+    state.all.forEach(function (w) {
+      var t = w.city || '—';
+      counts[t] = (counts[t] || 0) + 1;
+    });
+    state.bigTowns = new Set(Object.keys(counts).filter(function (t) {
+      return t !== '—' && counts[t] >= 3;
+    }));
+  }
 
   /* ------------------------------------------------------------------ map -- */
   var map = L.map('map', {
@@ -521,6 +541,7 @@ button, input, select { font: inherit; color: inherit; }
     if (w.visiting) {
       badges += '<span class="badge pol" style="background:' + cssVar(pol.css) + '">' + esc(w.visiting) + '</span>';
     }
+    if (w.cave) badges += '<span class="badge">Wine cave</span>';
     if (w.archived) badges += '<span class="badge">Archived</span>';
 
     var dir = 'https://www.google.com/maps/dir/?api=1&destination=' +
@@ -564,11 +585,13 @@ button, input, select { font: inherit; color: inherit; }
   function matches(w) {
     if (!state.fArchivedOn && w.archived) return false;
     if (!state.fApproxOn && w.precision === 'town') return false;
-    if (state.apps.size && !state.apps.has(w.appellation || '—')) return false;
+    if (state.fCaveOn && !w.cave) return false;
+    if (state.apps.size && !state.apps.has(townOf(w))) return false;
     if (state.vis.size && !state.vis.has(policyOf(w).key)) return false;
     if (state.q) {
       var hay = (w.name + ' ' + (w.address || '') + ' ' + (w.city || '') + ' ' +
-                 (w.appellation || '') + ' ' + (w.visiting || '')).toLowerCase();
+                 (w.appellation || '') + ' ' + (w.visiting || '') +
+                 (w.cave ? ' cave' : '')).toLowerCase();
       var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
       for (var i = 0; i < terms.length; i++) if (hay.indexOf(terms[i]) === -1) return false;
     }
@@ -578,6 +601,7 @@ button, input, select { font: inherit; color: inherit; }
   function apply() {
     state.fArchivedOn = els.fArchived.checked;
     state.fApproxOn = els.fApprox.checked;
+    state.fCaveOn = els.fCave.checked;
 
     var kept = state.all.filter(matches);
     var layers = [];
@@ -649,10 +673,7 @@ button, input, select { font: inherit; color: inherit; }
       var meta = document.createElement('span');
       meta.className = 'rmeta';
       var town = (w.city || (w.address || '').split(',')[1] || '').trim();
-      var same = w.appellation &&
-        town.toLowerCase().replace(/^st\.? /, 'st ') ===
-        w.appellation.toLowerCase().replace(/^st\.? /, 'st ').replace(/ (district|ava)$/, '');
-      meta.textContent = [w.appellation, same ? null : town, w.visiting]
+      meta.textContent = [town, w.visiting, w.cave ? 'wine cave' : null]
         .filter(Boolean).join(' · ') || 'Napa Valley';
 
       btn.appendChild(name);
@@ -684,7 +705,7 @@ button, input, select { font: inherit; color: inherit; }
   function renderChips() {
     var counts = {};
     state.all.forEach(function (w) {
-      var k = w.appellation || '—';
+      var k = townOf(w);
       counts[k] = (counts[k] || 0) + 1;
     });
     var keys = Object.keys(counts).sort(function (a, b) {
@@ -699,7 +720,7 @@ button, input, select { font: inherit; color: inherit; }
       c.className = 'chip';
       c.dataset.app = k;
       c.setAttribute('aria-pressed', state.apps.has(k) ? 'true' : 'false');
-      c.innerHTML = (k === '—' ? 'Unlisted' : k) + ' <span class="n">' + counts[k] + '</span>';
+      c.innerHTML = (k === '—' ? 'Elsewhere / unlisted' : k) + ' <span class="n">' + counts[k] + '</span>';
       els.appChips.appendChild(c);
     });
 
@@ -754,10 +775,11 @@ button, input, select { font: inherit; color: inherit; }
     urlTimer = setTimeout(function () {
       var p = new URLSearchParams();
       if (state.q) p.set('q', state.q);
-      if (state.apps.size) p.set('app', [...state.apps].join('|'));
+      if (state.apps.size) p.set('town', [...state.apps].join('|'));
       if (state.vis.size) p.set('vis', [...state.vis].join('|'));
       if (state.selected) p.set('w', state.selected);
       if (els.fArchived.checked) p.set('archived', '1');
+      if (els.fCave.checked) p.set('cave', '1');
       if (!els.fApprox.checked) p.set('approx', '0');
       var qs = p.toString();
       history.replaceState(null, '', qs ? '?' + qs : location.pathname);
@@ -769,9 +791,10 @@ button, input, select { font: inherit; color: inherit; }
     state.q = p.get('q') || '';
     els.q.value = state.q;
     els.qClear.hidden = !state.q;
-    (p.get('app') || '').split('|').filter(Boolean).forEach(function (v) { state.apps.add(v); });
+    (p.get('town') || '').split('|').filter(Boolean).forEach(function (v) { state.apps.add(v); });
     (p.get('vis') || '').split('|').filter(Boolean).forEach(function (v) { state.vis.add(v); });
     if (p.get('archived') === '1') els.fArchived.checked = true;
+    if (p.get('cave') === '1') els.fCave.checked = true;
     if (p.get('approx') === '0') els.fApprox.checked = false;
     return p.get('w');
   }
@@ -802,7 +825,7 @@ button, input, select { font: inherit; color: inherit; }
   els.clearApp.addEventListener('click', function () { state.apps.clear(); apply(); });
   els.clearVis.addEventListener('click', function () { state.vis.clear(); apply(); });
 
-  [els.fArchived, els.fApprox].forEach(function (el) { el.addEventListener('change', apply); });
+  [els.fArchived, els.fApprox, els.fCave].forEach(function (el) { el.addEventListener('change', apply); });
   els.fSync.addEventListener('change', renderList);
   els.fColor.addEventListener('change', function () { repaint(); renderList(); });
 
@@ -824,7 +847,7 @@ button, input, select { font: inherit; color: inherit; }
   $('reset').addEventListener('click', function () {
     state.q = ''; els.q.value = ''; els.qClear.hidden = true;
     state.apps.clear(); state.vis.clear(); state.selected = null;
-    els.fArchived.checked = false; els.fApprox.checked = true;
+    els.fArchived.checked = false; els.fApprox.checked = true; els.fCave.checked = false;
     map.flyToBounds(NAPA, { duration: .6 });
     apply(); repaint();
   });
@@ -879,6 +902,7 @@ button, input, select { font: inherit; color: inherit; }
       if (!state.all.length) throw new Error('empty');
 
       buildMarkers();
+      computeBigTowns();
       renderChips();
       var want = readUrl();
       apply();

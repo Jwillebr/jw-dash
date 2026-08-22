@@ -39,6 +39,9 @@ const NON_REVIEW = new RegExp(
     '^$', 'reviews', 'faq', 'about', 'contact', 'privacy', 'terms', 'sitemap',
     'project-notes', 'blog', 'news', 'press', 'links', 'search', 'shop', 'cart',
     'checkout', 'my-account', 'subscribe', 'newsletter', 'advertise', 'donate',
+    'services', 'consulting', 'cellar-curation', 'wine-tasting', 'resources',
+    'map', 'discoveries', 'priority-wine-pass', 'sign-up-info', 'sign-up-details',
+    'archived-napa-valley-winery-reviews',
     'wp-content', 'wp-admin', 'wp-json', 'feed', 'author', 'category', 'tag',
     'page', 'comments', 'wineries-of-napa-valley', 'napa-valley-wineries',
     'year-in-review', 'index',
@@ -52,6 +55,7 @@ const isReviewPath = (p) => {
   if (!s || NON_REVIEW.test(s)) return false;
   if (/^\d{4}(-|$)/.test(s)) return false;          // 2024-napa-valley-year-in-review
   if (/-review$|-in-review$/.test(s)) return false;
+  if (/^(concierge|sign-up|napa-valley-(wine|tasting))/.test(s)) return false;
   if (/\.(xls|xlsx|pdf|jpg|png|zip|csv)$/i.test(s)) return false;
   return /^[a-z0-9][a-z0-9-]{1,80}$/.test(s);
 };
@@ -141,7 +145,7 @@ const AVAS = [
   'Atlas Peak', 'Calistoga', 'Chiles Valley', 'Coombsville', 'Diamond Mountain District',
   'Howell Mountain', 'Los Carneros', 'Mount Veeder', 'Oak Knoll District', 'Oakville',
   'Rutherford', 'Spring Mountain District', "Stags Leap District", 'St. Helena',
-  'Wild Horse Valley', 'Yountville', 'Napa Valley',
+  'Wild Horse Valley', 'Yountville',
 ];
 
 function jsonLdNodes(html) {
@@ -254,15 +258,14 @@ function pickPhone(html, text) {
 
 function pickWebsite(html) {
   for (const node of jsonLdNodes(html)) {
-    const u = node.sameAs || node.url;
-    const candidate = Array.isArray(u) ? u[0] : u;
-    if (typeof candidate === 'string' && /^https?:\/\//.test(candidate) &&
-        !/napawineproject\.com/.test(candidate)) {
-      return candidate;
+    if (!/Winery|LocalBusiness/i.test(String(node['@type'] || ''))) continue;
+    const u = node.url || (Array.isArray(node.sameAs) ? node.sameAs[0] : node.sameAs);
+    if (typeof u === 'string' && /^https?:\/\//.test(u) && !/napawineproject\.com/.test(u)) {
+      return u;
     }
   }
   RE.extLink.lastIndex = 0;
-  const skip = /facebook|instagram|twitter|x\.com|youtube|linkedin|pinterest|yelp|tripadvisor|google\.|wordpress|gravatar|vivino|wine-searcher|mailto/i;
+  const skip = /facebook|instagram|twitter|[/.]x\.com|youtube|linkedin|pinterest|yelp|tripadvisor|google\.|wordpress|gravatar|vivino|wine-searcher|mailto|daveswines|addtoany|prioritywinepass|migwine|destination-napavalley|akismet|vimeo|davestravel/i;
   const candidates = [];
   let m;
   while ((m = RE.extLink.exec(html))) {
@@ -270,8 +273,17 @@ function pickWebsite(html) {
     if (skip.test(url)) continue;
     candidates.push({ url, label: decodeEntities(m[2]) });
   }
+  // The site links each winery as <a href="http://www.x.com">www.x.com</a> —
+  // an anchor whose text mirrors its own host is the winery's site.
+  const self = candidates.find((c) => {
+    try {
+      const host = new URL(c.url).host.replace(/^www\./, '');
+      return c.label.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/$/, '') === host ||
+             c.label.replace(/^www\./, '').startsWith(host);
+    } catch { return false; }
+  });
   const labelled = candidates.find((c) => /website|visit .*site|official/i.test(c.label));
-  return (labelled || candidates[0])?.url || null;
+  return (self || labelled)?.url || null;
 }
 
 function pickAppellation(text, address) {
@@ -286,7 +298,7 @@ function pickAppellation(text, address) {
 }
 
 function pickVisiting(text) {
-  const t = text.toLowerCase();
+  const t = text.toLowerCase().replace(/\s+/g, ' ');   // source line breaks split phrases
   if (/\bby appointment only\b|\bappointment only\b/.test(t)) return 'By appointment only';
   if (/\bby appointment\b|\bappointments? (are )?(required|recommended)\b/.test(t)) return 'By appointment';
   if (/\bwalk[- ]?ins? (are )?welcome\b|\bno appointment (is )?(necessary|needed|required)\b/.test(t)) return 'Walk-ins welcome';
@@ -294,7 +306,8 @@ function pickVisiting(text) {
   return null;
 }
 
-function pickArchived(html, text) {
+function pickArchived(html, rawText) {
+  const text = rawText.replace(/\s+/g, ' ');
   return /\barchived\b/i.test(text.slice(0, 1500)) ||
     /class=["'][^"']*\barchive[d]?\b/i.test(html.slice(0, 4000)) ||
     /no longer (in business|producing|exists)|winery (is )?closed|brand (is )?no longer/i.test(text);
@@ -303,7 +316,8 @@ function pickArchived(html, text) {
 // Exported so scripts/test-parse.mjs can exercise extraction without the network.
 export function parsePage(body, url, indexText) {
   const slug = slugFromUrl(url);
-  const text = htmlToText(body);
+  // Everything below the comment form is reader-written; never extract from it.
+  const text = htmlToText(body).split(/\n\s*(?:Leave a Reply|Post Comment|Comments\b)/i)[0];
 
   const name = pickName(body, slug, indexText);
   const address = pickAddress(body, text);
