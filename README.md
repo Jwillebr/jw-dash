@@ -117,6 +117,14 @@ https://jwillebr.github.io/jw-dash/map.html
 
 (`index.html`, the dashboard loader, is served unchanged alongside it.)
 
+### Automatic refresh
+
+The scrape workflow also runs on a weekly schedule (Mondays ~6am Pacific). When
+the site has new or changed wineries it commits the refreshed data and redeploys
+the map; when nothing changed it exits quietly. Manual runs via Actions → "Scrape
+winery data" still work any time. (If the repository sees no commits for 60 days,
+GitHub pauses scheduled workflows and emails you a re-enable link.)
+
 ### Attribution
 
 Winery reviews, names and details are the work of
