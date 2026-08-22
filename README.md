@@ -94,6 +94,31 @@ after any change to the parsing regexes.
 Light and dark themes both follow the OS setting, and the layout collapses to a
 map with a pull-up list sheet on phones.
 
+### On your phone
+
+The map is a PWA. Once it's hosted (below), open it on your phone and add it to
+the home screen — **Share → Add to Home Screen** on iOS, **⋮ → Add to Home
+screen** on Android — and it launches full-screen like an app.
+
+A service worker makes it resilient to the valley's patchy cell coverage: the
+app itself and the full winery dataset are cached on first visit, and any map
+area you've already viewed stays available offline. With no signal you can still
+search, filter, browse every winery and read addresses/phones; only unvisited
+basemap areas need a connection. After you publish new data, a reload picks it
+up (the data fetch is network-first).
+
+### Hosting (GitHub Pages)
+
+`.github/workflows/pages.yml` deploys the repo root to GitHub Pages on every
+push to `main` — no settings to click; the first run creates the site. After
+merging this branch and committing `data/wineries.json`, the map lives at:
+
+```
+https://jwillebr.github.io/jw-dash/map.html
+```
+
+(`index.html`, the dashboard loader, is served unchanged alongside it.)
+
 ### Attribution
 
 Winery reviews, names and details are the work of
