@@ -247,6 +247,16 @@ button, input, select { font: inherit; color: inherit; }
 .marker-cluster { background: none; }
 .marker-cluster div { background: none; }
 
+/* pin name labels (zoomed in) */
+.leaflet-tooltip.wm-label {
+  background: var(--surface-1); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  font-size: 11.5px; font-weight: 550; line-height: 1.25;
+  padding: 2px 7px; white-space: nowrap; opacity: .95;
+}
+.leaflet-tooltip.wm-label::before { display: none; }
+
 /* popup */
 .leaflet-popup-content-wrapper {
   background: var(--surface-1); color: var(--text-primary);
@@ -484,6 +494,7 @@ button, input, select { font: inherit; color: inherit; }
   };
   var tiles = L.tileLayer(tileUrl(), {
     maxZoom: 19,
+    crossOrigin: 'anonymous',
     attribution:
       'Reviews &copy; <a href="' + SOURCE + '" target="_blank" rel="noopener">The Napa Wine Project</a> &middot; ' +
       '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &middot; ' +
@@ -567,7 +578,7 @@ button, input, select { font: inherit; color: inherit; }
       if (w.lat == null || w.lng == null) return;
       var m = L.circleMarker([w.lat, w.lng], markerStyle(w, false));
       m.bindPopup(function () { return popupHtml(w); }, { autoPanPadding: [40, 40], minWidth: 250 });
-      m.bindTooltip(w.name, { direction: 'top', offset: [0, -8], opacity: .95 });
+      m._wname = w.name;
       m.on('click', function () { select(w.slug, false); });
       state.markers.set(w.slug, m);
     });
@@ -868,6 +879,23 @@ button, input, select { font: inherit; color: inherit; }
 
   map.on('moveend zoomend', function () { if (els.fSync.checked) renderList(); });
 
+  /* Show each pin's name once the zoom gives the text room to breathe; below
+     that, names appear on hover (desktop) or tap (the popup). */
+  var LABEL_ZOOM = 13;
+  var labelled = null;
+  function refreshLabels() {
+    var on = map.getZoom() >= LABEL_ZOOM;
+    if (on === labelled) return;
+    labelled = on;
+    state.markers.forEach(function (m) {
+      m.unbindTooltip();
+      m.bindTooltip(m._wname, on
+        ? { permanent: true, direction: 'right', offset: [9, 0], className: 'wm-label' }
+        : { direction: 'top', offset: [0, -8], opacity: .95 });
+    });
+  }
+  map.on('zoomend', refreshLabels);
+
   addEventListener('keydown', function (e) {
     if (e.key === '/' && document.activeElement !== els.q) { e.preventDefault(); els.q.focus(); els.q.select(); }
     if (e.key === 'Escape') {
@@ -902,6 +930,7 @@ button, input, select { font: inherit; color: inherit; }
       if (!state.all.length) throw new Error('empty');
 
       buildMarkers();
+      refreshLabels();
       computeBigTowns();
       renderChips();
       var want = readUrl();
@@ -952,7 +981,9 @@ var secure = location.protocol === 'https:' ||
     location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 if ('serviceWorker' in navigator && secure) {
   addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () { /* non-fatal */ });
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
+      .then(function (reg) { reg.update().catch(function () {}); })
+      .catch(function () { /* non-fatal */ });
   });
 }
 </script>
