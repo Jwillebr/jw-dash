@@ -1,7 +1,7 @@
 {
   "source": "https://www.napawineproject.com/reviews/",
-  "scrapedAt": "2026-08-23T01:12:08.330Z",
-  "geocodedAt": "2026-08-23T01:12:11.917Z",
+  "scrapedAt": "2026-08-23T01:52:05.702Z",
+  "geocodedAt": "2026-08-23T01:52:09.225Z",
   "count": 862,
   "mapped": 839,
   "wineries": [
@@ -17,6 +17,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.567462867001,
       "lng": -122.457077915999,
       "precision": "rooftop"
@@ -33,6 +34,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.405529256086,
       "lng": -122.329521669542,
       "precision": "rooftop"
@@ -49,6 +51,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5062404,
       "lng": -122.4793734,
       "precision": "street"
@@ -65,6 +68,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495544868542,
       "lng": -122.471236412622,
       "precision": "rooftop"
@@ -81,6 +85,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.594518,
       "lng": -122.60244,
       "precision": "rooftop",
@@ -98,6 +103,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Vineyard on Atlas Peak",
       "lat": 38.258964,
       "lng": -122.273045,
       "precision": "rooftop",
@@ -115,6 +121,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.496343652276,
       "lng": -122.481087100766,
       "precision": "rooftop"
@@ -131,6 +138,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Wheeler Farms Winery",
       "lat": 38.486932345735,
       "lng": -122.43681626374,
       "precision": "rooftop"
@@ -147,6 +155,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Waverly + Michael @ Saintsbury",
       "lat": 38.250022,
       "lng": -122.327373,
       "precision": "rooftop",
@@ -164,6 +173,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "TR downtown Napa, 608 Randolph Street",
       "lat": 38.300099046255,
       "lng": -122.228982496913,
       "precision": "rooftop"
@@ -180,6 +190,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Wine Shop",
       "lat": 38.504684754065,
       "lng": -122.46847973948,
       "precision": "rooftop"
@@ -196,6 +207,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4016,
       "lng": -122.3481,
       "precision": "town",
@@ -214,6 +226,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.297905,
       "lng": -122.287522,
       "precision": "rooftop",
@@ -231,6 +244,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.504803,
       "lng": -122.471149,
       "precision": "rooftop",
@@ -248,6 +262,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.581773128674,
       "lng": -122.450582549078,
       "precision": "rooftop"
@@ -264,6 +279,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.230209716427,
       "lng": -122.332613383591,
       "precision": "rooftop"
@@ -280,6 +296,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.37350187336,
       "lng": -122.244594971189,
       "precision": "rooftop"
@@ -296,6 +313,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Julia van der Vink + Rob Black, Made in Sonoma?",
       "lat": 38.297611765526,
       "lng": -122.229839345073,
       "precision": "rooftop"
@@ -312,6 +330,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.297905,
       "lng": -122.288157,
       "precision": "rooftop",
@@ -329,6 +348,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.300956,
       "lng": -122.281751,
       "precision": "rooftop",
@@ -346,6 +366,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4599,
       "lng": -122.4095,
       "precision": "town",
@@ -364,6 +385,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.531034890265,
       "lng": -122.499181427289,
       "precision": "rooftop"
@@ -380,6 +402,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.55513262054,
       "lng": -122.416841444355,
       "precision": "rooftop"
@@ -396,6 +419,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "TR in downtown Napa",
       "lat": 38.461851,
       "lng": -122.409744,
       "precision": "town",
@@ -414,6 +438,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.363042401699,
       "lng": -122.174377649702,
       "precision": "rooftop"
@@ -430,6 +455,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Olema is 2nd label",
       "lat": 38.609351,
       "lng": -122.59103,
       "precision": "rooftop",
@@ -447,6 +473,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Tradition Wines",
       "lat": 38.525923965234,
       "lng": -122.381140195276,
       "precision": "rooftop"
@@ -463,6 +490,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Nprofit, Melka WM, Selma Mansion, VM Found",
       "lat": 38.405212,
       "lng": -122.348958,
       "precision": "town",
@@ -481,6 +509,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.593044,
       "lng": -122.445501,
       "precision": "rooftop",
@@ -498,6 +527,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Morgan Maureze",
       "lat": 38.391292,
       "lng": -122.363549,
       "precision": "rooftop",
@@ -515,6 +545,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": "75, MB, V, Vinifera, Semper, HW",
       "lat": 38.487883982655,
       "lng": -122.448933154523,
       "precision": "rooftop"
@@ -531,6 +562,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.304775259289,
       "lng": -122.286275927788,
       "precision": "rooftop"
@@ -547,6 +579,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Ghost Horse",
       "lat": 38.516071,
       "lng": -122.411463,
       "precision": "rooftop",
@@ -564,6 +597,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.554890483287,
       "lng": -122.575043015247,
       "precision": "rooftop"
@@ -580,6 +614,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Jeff & Valerie Owens",
       "lat": 38.2975,
       "lng": -122.2742,
       "precision": "town",
@@ -598,6 +633,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.463727,
       "lng": -122.410467,
       "precision": "town",
@@ -616,6 +652,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.489736108067,
       "lng": -122.472377461185,
       "precision": "rooftop"
@@ -632,6 +669,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.333871084698,
       "lng": -122.358057561589,
       "precision": "rooftop"
@@ -648,6 +686,7 @@
       "visiting": "Walk-ins welcome",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.42405851336,
       "lng": -122.299339030213,
       "precision": "rooftop"
@@ -664,6 +703,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Also Blue Oak Vineyard, Coombsville",
       "lat": 38.509657,
       "lng": -122.388857,
       "precision": "rooftop",
@@ -681,6 +721,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259008,
       "lng": -122.273379,
       "precision": "rooftop",
@@ -698,6 +739,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.6135,
       "lng": -122.4247,
       "precision": "town",
@@ -715,6 +757,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5052,
       "lng": -122.4576,
       "precision": "town",
@@ -733,6 +776,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Amador wine also.",
       "lat": 38.5788,
       "lng": -122.567,
       "precision": "town",
@@ -751,6 +795,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "2021 is first release",
       "lat": 38.518111556902,
       "lng": -122.488997073639,
       "precision": "rooftop"
@@ -767,6 +812,7 @@
       "visiting": null,
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": 38.41,
       "lng": -122.2073,
       "precision": "town",
@@ -785,6 +831,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.2556417,
       "lng": -122.3379807,
       "precision": "street"
@@ -801,6 +848,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.564011081094,
       "lng": -122.462310444064,
       "precision": "rooftop"
@@ -817,6 +865,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.506533,
       "lng": -122.457713,
       "precision": "town",
@@ -835,6 +884,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.408337,
       "lng": -122.351415,
       "precision": "town",
@@ -853,6 +903,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Steve & Seanne",
       "lat": 38.36344,
       "lng": -122.337338,
       "precision": "rooftop",
@@ -870,6 +921,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.275313657507,
       "lng": -122.353355958432,
       "precision": "rooftop"
@@ -886,6 +938,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.343986533132,
       "lng": -122.326243626817,
       "precision": "rooftop"
@@ -902,6 +955,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.571221254104,
       "lng": -122.626248035403,
       "precision": "rooftop"
@@ -918,6 +972,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.438468112241,
       "lng": -122.245298279328,
       "precision": "rooftop"
@@ -934,6 +989,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Purchased 331 Silverado Trail Winery in 2025",
       "lat": 38.574378,
       "lng": -122.544311,
       "precision": "street",
@@ -951,6 +1007,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "# Made in Sonoma, Calistoga TR",
       "lat": 38.577402,
       "lng": -122.579295,
       "precision": "rooftop",
@@ -968,6 +1025,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -984,6 +1042,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.257726,
       "lng": -122.272779,
       "precision": "rooftop",
@@ -1001,6 +1060,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "V Madrone",
       "lat": 38.534102545091,
       "lng": -122.505026810287,
       "precision": "rooftop"
@@ -1017,6 +1077,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Tasting Room: 1014 Clinton Street, Napa",
       "lat": 38.307747,
       "lng": -122.246069,
       "precision": "rooftop",
@@ -1034,6 +1095,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.4319,
       "lng": -122.3887,
       "precision": "town",
@@ -1052,6 +1114,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Janzen label",
       "lat": 38.594612786027,
       "lng": -122.522107310201,
       "precision": "rooftop"
@@ -1068,6 +1131,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Wine Shop",
       "lat": 38.297183299483,
       "lng": -122.290396081375,
       "precision": "rooftop"
@@ -1084,6 +1148,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "TR in Larkspur + Oak Knoll, 4162 Big Ranch Road",
       "lat": 38.225462611964,
       "lng": -122.256934780338,
       "precision": "rooftop"
@@ -1100,6 +1165,7 @@
       "visiting": "Walk-ins welcome",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.41,
       "lng": -122.3173,
       "precision": "town",
@@ -1118,6 +1184,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.518292508581,
       "lng": -122.489077943765,
       "precision": "rooftop"
@@ -1134,6 +1201,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.465456,
       "lng": -122.41164,
       "precision": "town",
@@ -1152,6 +1220,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.576073154525,
       "lng": -122.540077130338,
       "precision": "rooftop"
@@ -1168,6 +1237,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.525053275786,
       "lng": -122.551779633498,
       "precision": "rooftop"
@@ -1184,6 +1254,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.571359,
       "lng": -122.569091,
       "precision": "rooftop",
@@ -1201,6 +1272,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Ron",
       "lat": 38.554689686532,
       "lng": -122.457777102645,
       "precision": "rooftop"
@@ -1217,6 +1289,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.507842,
       "lng": -122.458051,
       "precision": "town",
@@ -1235,6 +1308,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.415878,
       "lng": -122.209725,
       "precision": "town",
@@ -1253,6 +1327,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.326823893826,
       "lng": -122.272788848474,
       "precision": "rooftop"
@@ -1269,6 +1344,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.466971,
       "lng": -122.41322,
       "precision": "town",
@@ -1287,6 +1363,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.525091136937,
       "lng": -122.551913738777,
       "precision": "rooftop"
@@ -1303,6 +1380,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.3864664,
       "lng": -122.349365,
       "precision": "street"
@@ -1319,6 +1397,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.445278883915,
       "lng": -122.420962404228,
       "precision": "rooftop"
@@ -1335,6 +1414,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Old Provenance",
       "lat": 38.447894,
       "lng": -122.412442,
       "precision": "street",
@@ -1352,6 +1432,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Sparkling: alexandriecellars.com",
       "lat": 38.468215,
       "lng": -122.415144,
       "precision": "town",
@@ -1370,6 +1451,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.260832112191,
       "lng": -122.302486366371,
       "precision": "rooftop"
@@ -1386,6 +1468,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "For sale in 2024",
       "lat": 38.547938019343,
       "lng": -122.508479241573,
       "precision": "rooftop"
@@ -1402,6 +1485,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "TR Napa, mostly non Napa.",
       "lat": 38.296767036746,
       "lng": -122.288191903421,
       "precision": "rooftop"
@@ -1418,6 +1502,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "For sale in 2024",
       "lat": 38.597062975464,
       "lng": -122.617558224244,
       "precision": "rooftop"
@@ -1434,6 +1519,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5388828389,
       "lng": -122.508007419733,
       "precision": "rooftop"
@@ -1450,6 +1536,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.5101651,
       "lng": -122.4799084,
       "precision": "rooftop"
@@ -1466,6 +1553,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.527759,
       "lng": -122.499539,
       "precision": "rooftop",
@@ -1483,6 +1571,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.300707626999,
       "lng": -122.281173522393,
       "precision": "rooftop"
@@ -1499,6 +1588,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.282238705844,
       "lng": -122.247885759375,
       "precision": "rooftop"
@@ -1515,6 +1605,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "50/50 Napa/Sonoma + Sixteen x Twenty label",
       "lat": 38.351355139602,
       "lng": -122.360999976946,
       "precision": "rooftop"
@@ -1531,6 +1622,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.60609260155,
       "lng": -122.474710171918,
       "precision": "rooftop"
@@ -1547,6 +1639,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.361023549969,
       "lng": -122.290874292401,
       "precision": "rooftop"
@@ -1563,6 +1656,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "TR + Winery, 831 Latour Court Suite B1, Napa",
       "lat": 38.364328289378,
       "lng": -122.313785794614,
       "precision": "rooftop"
@@ -1579,6 +1673,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.3975199,
       "lng": -122.359234,
       "precision": "street"
@@ -1595,6 +1690,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.616433927822,
       "lng": -122.433001681885,
       "precision": "rooftop"
@@ -1611,6 +1707,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.536849955324,
       "lng": -122.489902396506,
       "precision": "rooftop"
@@ -1627,6 +1724,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.429082563259,
       "lng": -122.488123161426,
       "precision": "rooftop"
@@ -1643,6 +1741,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.4216366,
       "lng": -122.4150536,
       "precision": "street"
@@ -1659,6 +1758,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.299945709439,
       "lng": -122.288151468687,
       "precision": "rooftop"
@@ -1675,6 +1775,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.223159250105,
       "lng": -122.330938294495,
       "precision": "rooftop"
@@ -1691,6 +1792,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "TR: 1021 Atlas Peak Road",
       "lat": 38.505057,
       "lng": -122.436324,
       "precision": "rooftop",
@@ -1708,6 +1810,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.358967041187,
       "lng": -122.31057039061,
       "precision": "rooftop"
@@ -1724,6 +1827,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.581561862905,
       "lng": -122.595796297949,
       "precision": "rooftop"
@@ -1740,6 +1844,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.470744783466,
       "lng": -122.359820531223,
       "precision": "rooftop"
@@ -1756,6 +1861,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": "2nd winery: 1171 Tubbs Lane Calistoga",
       "lat": 38.527954,
       "lng": -122.499659,
       "precision": "rooftop",
@@ -1773,6 +1879,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.565446810153,
       "lng": -122.461346857891,
       "precision": "rooftop"
@@ -1789,6 +1896,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.509104,
       "lng": -122.458608,
       "precision": "town",
@@ -1807,6 +1915,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "When She Was King, Paso Robles",
       "lat": 38.58,
       "lng": -122.4173,
       "precision": "town",
@@ -1825,6 +1934,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.324924,
       "lng": -122.285304,
       "precision": "rooftop",
@@ -1842,6 +1952,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "B Wise + Amapola Creek Sonoma",
       "lat": 38.4669631,
       "lng": -122.3570869,
       "precision": "street"
@@ -1858,6 +1969,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.506777377697,
       "lng": -122.276865232077,
       "precision": "rooftop"
@@ -1874,6 +1986,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.487078461036,
       "lng": -122.353349483682,
       "precision": "rooftop"
@@ -1890,6 +2003,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.51155290873,
       "lng": -122.388688623861,
       "precision": "rooftop"
@@ -1906,6 +2020,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.298150830409,
       "lng": -122.253240393784,
       "precision": "rooftop"
@@ -1922,6 +2037,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Gemella, Taste at Vintner's Collective",
       "lat": 38.403448,
       "lng": -122.29381,
       "precision": "rooftop",
@@ -1939,6 +2055,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.510296,
       "lng": -122.459373,
       "precision": "town",
@@ -1957,6 +2074,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.344859322778,
       "lng": -122.282948278616,
       "precision": "rooftop"
@@ -1973,6 +2091,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.333306666405,
       "lng": -122.326277614439,
       "precision": "rooftop"
@@ -1989,6 +2108,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Former Sodaro Estate, mostly Sonoma",
       "lat": 38.315651790591,
       "lng": -122.235270749254,
       "precision": "rooftop"
@@ -2005,6 +2125,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Indigo Eyes",
       "lat": 38.255543780484,
       "lng": -122.274607510779,
       "precision": "rooftop"
@@ -2021,6 +2142,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Owned by Plumpjack",
       "lat": 38.5569085,
       "lng": -122.4532095,
       "precision": "street"
@@ -2037,6 +2159,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Taste at the Yount Room",
       "lat": 38.53,
       "lng": -122.525,
       "precision": "town",
@@ -2054,6 +2177,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.44811,
       "lng": -122.412919,
       "precision": "street",
@@ -2071,6 +2195,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.511326623622,
       "lng": -122.469937573756,
       "precision": "rooftop"
@@ -2087,6 +2212,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.283395,
       "lng": -122.230647,
       "precision": "rooftop",
@@ -2104,6 +2230,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.624330909415,
       "lng": -122.444071785128,
       "precision": "rooftop"
@@ -2120,6 +2247,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.577733983554,
       "lng": -122.579468416745,
       "precision": "rooftop"
@@ -2136,6 +2264,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Still producing?",
       "lat": 38.469139,
       "lng": -122.41734,
       "precision": "town",
@@ -2154,6 +2283,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.57500852866,
       "lng": -122.553468321746,
       "precision": "rooftop"
@@ -2170,6 +2300,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Ed Snider, for sale, possibly not producing",
       "lat": 38.419511,
       "lng": -122.216075,
       "precision": "town",
@@ -2188,6 +2319,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Caladan Wines",
       "lat": 38.4278304,
       "lng": -122.3945977,
       "precision": "street"
@@ -2204,6 +2336,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -2220,6 +2353,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.257724753031,
       "lng": -122.338074922792,
       "precision": "rooftop"
@@ -2236,6 +2370,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Napa & some non Napa wines",
       "lat": 38.290392504215,
       "lng": -122.287245953847,
       "precision": "rooftop"
@@ -2252,6 +2387,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "About 50/50 Napa & Sonoma wines",
       "lat": 38.246359,
       "lng": -122.35632,
       "precision": "street",
@@ -2269,6 +2405,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Made at Envy, Carter House, Eureka",
       "lat": 38.591425,
       "lng": -122.604623,
       "precision": "rooftop",
@@ -2286,6 +2423,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.505229,
       "lng": -122.469725,
       "precision": "street",
@@ -2303,6 +2441,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.558177554528,
       "lng": -122.534124891284,
       "precision": "rooftop"
@@ -2319,6 +2458,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.469708,
       "lng": -122.419722,
       "precision": "town",
@@ -2337,6 +2477,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.584647,
       "lng": -122.418755,
       "precision": "town",
@@ -2355,6 +2496,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.53,
       "lng": -122.3173,
       "precision": "town",
@@ -2373,6 +2515,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.475558,
       "lng": -122.451809,
       "precision": "rooftop",
@@ -2390,6 +2533,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.273114178932,
       "lng": -122.311374481739,
       "precision": "rooftop"
@@ -2406,6 +2550,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Emmolo, Conundrum, MS, RS, SS, Bon",
       "lat": 38.58823,
       "lng": -122.422786,
       "precision": "town",
@@ -2424,6 +2569,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Wines made in Sonoma",
       "lat": 38.235207314629,
       "lng": -122.314174849761,
       "precision": "rooftop"
@@ -2440,6 +2586,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.334707330422,
       "lng": -122.293319396288,
       "precision": "rooftop"
@@ -2456,6 +2603,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.592263730115,
       "lng": -122.358397320042,
       "precision": "rooftop"
@@ -2472,6 +2620,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4522075,
       "lng": -122.4174824,
       "precision": "street"
@@ -2488,6 +2637,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.410552,
       "lng": -122.355139,
       "precision": "town",
@@ -2506,6 +2656,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.487299074906,
       "lng": -122.353170559392,
       "precision": "rooftop"
@@ -2522,6 +2673,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.515553516867,
       "lng": -122.484510088324,
       "precision": "rooftop"
@@ -2538,6 +2690,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503166748649,
       "lng": -122.461158000955,
       "precision": "rooftop"
@@ -2554,6 +2707,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.486973349468,
       "lng": -122.469833533554,
       "precision": "rooftop"
@@ -2570,6 +2724,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Jacquelynn Label",
       "lat": 38.544826801168,
       "lng": -122.490226416386,
       "precision": "rooftop"
@@ -2586,6 +2741,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.585228,
       "lng": -122.569971,
       "precision": "town",
@@ -2604,6 +2760,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.601039169103,
       "lng": -122.598340437662,
       "precision": "rooftop"
@@ -2620,6 +2777,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.563454067513,
       "lng": -122.55211373894,
       "precision": "rooftop"
@@ -2636,6 +2794,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.382050930367,
       "lng": -122.311342530239,
       "precision": "rooftop"
@@ -2652,6 +2811,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Mostly non Napa wines, 1 napa wine",
       "lat": 38.259042,
       "lng": -122.275018,
       "precision": "rooftop",
@@ -2669,6 +2829,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.437087,
       "lng": -122.4016188,
       "precision": "rooftop"
@@ -2685,6 +2846,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.509657,
       "lng": -122.389492,
       "precision": "rooftop",
@@ -2702,6 +2864,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.589531726347,
       "lng": -122.470404791976,
       "precision": "rooftop"
@@ -2718,6 +2881,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Chris Jones",
       "lat": 38.499890416207,
       "lng": -122.456855041302,
       "precision": "rooftop"
@@ -2734,6 +2898,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Enoteca, St Helena",
       "lat": 38.511397,
       "lng": -122.460333,
       "precision": "town",
@@ -2752,6 +2917,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.42629918084,
       "lng": -122.342597727691,
       "precision": "rooftop"
@@ -2768,6 +2934,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.381108624158,
       "lng": -122.310539223443,
       "precision": "rooftop"
@@ -2784,6 +2951,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.572519313479,
       "lng": -122.554216997427,
       "precision": "rooftop"
@@ -2800,6 +2968,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.466111845909,
       "lng": -122.352354909665,
       "precision": "rooftop"
@@ -2816,6 +2985,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Gagnon-Kennedy",
       "lat": 38.283611,
       "lng": -122.231124,
       "precision": "rooftop",
@@ -2833,6 +3003,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Taste at the Yount Room",
       "lat": 38.401603,
       "lng": -122.360465,
       "precision": "rooftop",
@@ -2850,6 +3021,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Formerly, the smallest wine cave in NV",
       "lat": 38.487909,
       "lng": -122.350498,
       "precision": "rooftop",
@@ -2867,6 +3039,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Formerly, the smallest wine cave in NV",
       "lat": 38.487909,
       "lng": -122.351133,
       "precision": "rooftop",
@@ -2884,6 +3057,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.588648,
       "lng": -122.577495,
       "precision": "town",
@@ -2902,6 +3076,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.485480775058,
       "lng": -122.44610722608,
       "precision": "rooftop"
@@ -2918,6 +3093,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.40182,
       "lng": -122.360942,
       "precision": "rooftop",
@@ -2935,6 +3111,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503344156909,
       "lng": -122.468531263212,
       "precision": "rooftop"
@@ -2951,6 +3128,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4573105,
       "lng": -122.4211967,
       "precision": "street"
@@ -2967,6 +3145,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "2022 1st vintage, Stags Leap District",
       "lat": 38.500518999703,
       "lng": -122.4761672767,
       "precision": "rooftop"
@@ -2983,6 +3162,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Le Pich, Purlieu & Julian Fayard. Maison Fayard.",
       "lat": 38.307997,
       "lng": -122.246386,
       "precision": "rooftop",
@@ -3000,6 +3180,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Howell Mountain",
       "lat": 38.254706424623,
       "lng": -122.274669293304,
       "precision": "rooftop"
@@ -3016,6 +3197,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.314670571523,
       "lng": -122.348844554761,
       "precision": "rooftop"
@@ -3032,6 +3214,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.512388,
       "lng": -122.461471,
       "precision": "town",
@@ -3050,6 +3233,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.501833802755,
       "lng": -122.454058393125,
       "precision": "rooftop"
@@ -3066,6 +3250,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259159,
       "lng": -122.273164,
       "precision": "rooftop",
@@ -3083,6 +3268,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Caspar Estate, TR/Restaurant SF",
       "lat": 38.4699,
       "lng": -122.4222,
       "precision": "town",
@@ -3101,6 +3287,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.246359,
       "lng": -122.356955,
       "precision": "street",
@@ -3118,6 +3305,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.48232976536,
       "lng": -122.380755651301,
       "precision": "rooftop"
@@ -3134,6 +3322,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.528003,
       "lng": -122.499927,
       "precision": "rooftop",
@@ -3151,6 +3340,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.455658286071,
       "lng": -122.363221930509,
       "precision": "rooftop"
@@ -3167,6 +3357,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Vaso Cellars",
       "lat": 38.469708,
       "lng": -122.424678,
       "precision": "town",
@@ -3185,6 +3376,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Sage Vineyards, Duel Wine, Caravan Serai",
       "lat": 38.364108399395,
       "lng": -122.294191499523,
       "precision": "rooftop"
@@ -3201,6 +3393,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "old Crichton Hall Vineyard. Fortune 1621",
       "lat": 38.362877476519,
       "lng": -122.345817068555,
       "precision": "rooftop"
@@ -3217,6 +3410,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "210 Long Ranch Road",
       "lat": 38.485664091783,
       "lng": -122.353741057049,
       "precision": "rooftop"
@@ -3233,6 +3427,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.513251,
       "lng": -122.462767,
       "precision": "town",
@@ -3251,6 +3446,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.469139,
       "lng": -122.42706,
       "precision": "town",
@@ -3269,6 +3465,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.419511,
       "lng": -122.223925,
       "precision": "town",
@@ -3287,6 +3484,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Owns Harrison Vineyards",
       "lat": 38.4165179,
       "lng": -122.2497609,
       "precision": "street"
@@ -3303,6 +3501,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.326201313398,
       "lng": -122.244791833503,
       "precision": "rooftop"
@@ -3319,6 +3518,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.496775502784,
       "lng": -122.456237365074,
       "precision": "rooftop"
@@ -3335,6 +3535,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503031234168,
       "lng": -122.426233706188,
       "precision": "rooftop"
@@ -3351,6 +3552,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Sebastian Lane",
       "lat": 38.499372791861,
       "lng": -122.475722737857,
       "precision": "rooftop"
@@ -3367,6 +3569,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.428813528564,
       "lng": -122.416684143901,
       "precision": "rooftop"
@@ -3383,6 +3586,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.468215,
       "lng": -122.429256,
       "precision": "town",
@@ -3401,6 +3605,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Wine made at St. Helena Custom Crush",
       "lat": 38.498775738118,
       "lng": -122.456678019732,
       "precision": "rooftop"
@@ -3417,6 +3622,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.565601464545,
       "lng": -122.571929400347,
       "precision": "rooftop"
@@ -3433,6 +3639,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.551637,
       "lng": -122.576941,
       "precision": "rooftop",
@@ -3450,6 +3657,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.551637,
       "lng": -122.577576,
       "precision": "rooftop",
@@ -3467,6 +3675,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5165757,
       "lng": -122.4566628,
       "precision": "street"
@@ -3483,6 +3692,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.367911727003,
       "lng": -122.28561830421,
       "precision": "rooftop"
@@ -3499,6 +3709,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Made at Caldwell, 1st vintage 2008",
       "lat": 38.283178,
       "lng": -122.231124,
       "precision": "rooftop",
@@ -3516,6 +3727,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -3532,6 +3744,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.251159,
       "lng": -122.3566146,
       "precision": "street"
@@ -3548,6 +3761,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Napanook, Ulysses Vineyard",
       "lat": 38.407597233534,
       "lng": -122.379156748322,
       "precision": "rooftop"
@@ -3564,6 +3778,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.411557,
       "lng": -122.359628,
       "precision": "town",
@@ -3582,6 +3797,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.411218,
       "lng": -122.364276,
       "precision": "town",
@@ -3600,6 +3816,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.295997236741,
       "lng": -122.295461717555,
       "precision": "rooftop"
@@ -3616,6 +3833,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.590063178856,
       "lng": -122.447677151998,
       "precision": "rooftop"
@@ -3632,6 +3850,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.562863900857,
       "lng": -122.578927040952,
       "precision": "rooftop"
@@ -3648,6 +3867,7 @@
       "visiting": null,
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": 38.466971,
       "lng": -122.43118,
       "precision": "town",
@@ -3666,6 +3886,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.34212606805,
       "lng": -122.125245385113,
       "precision": "rooftop"
@@ -3682,6 +3903,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.465456,
       "lng": -122.43276,
       "precision": "town",
@@ -3700,6 +3922,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Owned by Joel Gott",
       "lat": 38.486416784473,
       "lng": -122.474184521544,
       "precision": "rooftop"
@@ -3716,6 +3939,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.530466013289,
       "lng": -122.501028877631,
       "precision": "rooftop"
@@ -3732,6 +3956,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Susan (read their book)",
       "lat": 38.36,
       "lng": -122.3173,
       "precision": "town",
@@ -3750,6 +3975,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.585313424913,
       "lng": -122.556010208573,
       "precision": "rooftop"
@@ -3766,6 +3992,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.50584,
       "lng": -122.43879,
       "precision": "street",
@@ -3783,6 +4010,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Still producing?",
       "lat": 38.441723566422,
       "lng": -122.246845828967,
       "precision": "rooftop"
@@ -3799,6 +4027,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.324924,
       "lng": -122.285939,
       "precision": "rooftop",
@@ -3816,6 +4045,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.459174,
       "lng": -122.42184,
       "precision": "street"
@@ -3832,6 +4062,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.23324326645,
       "lng": -122.217411912178,
       "precision": "rooftop"
@@ -3848,6 +4079,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Tasting room, Los Altos Hills",
       "lat": 38.259008,
       "lng": -122.274014,
       "precision": "rooftop",
@@ -3865,6 +4097,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Vineyard: 3286 Silverado Trail",
       "lat": 38.297306391773,
       "lng": -122.289051318699,
       "precision": "rooftop"
@@ -3881,6 +4114,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "At the Four Seasons in Calistoga",
       "lat": 38.513969,
       "lng": -122.464197,
       "precision": "town",
@@ -3899,6 +4133,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "www.2100hoffmanlane.com",
       "lat": 38.383305734608,
       "lng": -122.353718646341,
       "precision": "rooftop"
@@ -3915,6 +4150,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.334764656247,
       "lng": -122.307986830135,
       "precision": "rooftop"
@@ -3931,6 +4167,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.24419092574,
       "lng": -122.263130605544,
       "precision": "rooftop"
@@ -3947,6 +4184,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259259,
       "lng": -122.275494,
       "precision": "rooftop",
@@ -3964,6 +4202,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.591641,
       "lng": -122.605099,
       "precision": "rooftop",
@@ -3981,6 +4220,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.2440812626,
       "lng": -122.315945078517,
       "precision": "rooftop"
@@ -3997,6 +4237,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.328144597905,
       "lng": -122.335091945739,
       "precision": "rooftop"
@@ -4013,6 +4254,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.300884730528,
       "lng": -122.282214341049,
       "precision": "rooftop"
@@ -4029,6 +4271,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.548436377308,
       "lng": -122.491926928988,
       "precision": "rooftop"
@@ -4045,6 +4288,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.505708,
       "lng": -122.471295,
       "precision": "rooftop",
@@ -4062,6 +4306,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Debauchee",
       "lat": 38.5036326,
       "lng": -122.4675704,
       "precision": "street"
@@ -4078,6 +4323,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Many sports brands, Wayne Family, Valley Floor",
       "lat": 38.574720444207,
       "lng": -122.549301775448,
       "precision": "rooftop"
@@ -4094,6 +4340,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Teeter-Totter",
       "lat": 38.505182268236,
       "lng": -122.47231014109,
       "precision": "rooftop"
@@ -4110,6 +4357,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Hands on Harvest Event, Adopt a Grape",
       "lat": 38.51233149482,
       "lng": -122.501190754807,
       "precision": "rooftop"
@@ -4126,6 +4374,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Dolce",
       "lat": 38.4257147,
       "lng": -122.4031884,
       "precision": "street"
@@ -4142,6 +4391,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.294304308518,
       "lng": -122.241659615262,
       "precision": "rooftop"
@@ -4158,6 +4408,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.309868248051,
       "lng": -122.229399869023,
       "precision": "rooftop"
@@ -4174,6 +4425,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.519075659974,
       "lng": -122.490774147314,
       "precision": "rooftop"
@@ -4190,6 +4442,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.355941,
       "lng": -122.333388,
       "precision": "rooftop",
@@ -4207,6 +4460,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.295353887737,
       "lng": -122.251078241594,
       "precision": "rooftop"
@@ -4223,6 +4477,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Spring Mountain",
       "lat": 38.546352461869,
       "lng": -122.510262798372,
       "precision": "rooftop"
@@ -4239,6 +4494,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.41866,
       "lng": -122.32365,
       "precision": "town",
@@ -4257,6 +4513,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5944933,
       "lng": -122.6028152,
       "precision": "street"
@@ -4273,6 +4530,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.514532,
       "lng": -122.465736,
       "precision": "town",
@@ -4291,6 +4549,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.29684379726,
       "lng": -122.273290143843,
       "precision": "rooftop"
@@ -4307,6 +4566,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Julien Fayard, winemaker",
       "lat": 38.277023462201,
       "lng": -122.33382333861,
       "precision": "rooftop"
@@ -4323,6 +4583,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Calistoga winery + Santa Rosa",
       "lat": 38.580260447782,
       "lng": -122.558476607804,
       "precision": "rooftop"
@@ -4339,6 +4600,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.514928,
       "lng": -122.467356,
       "precision": "town",
@@ -4357,6 +4619,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.589927,
       "lng": -122.428469,
       "precision": "town",
@@ -4375,6 +4638,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Aaron",
       "lat": 38.594768,
       "lng": -122.602757,
       "precision": "rooftop",
@@ -4392,6 +4656,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.488251038812,
       "lng": -122.44937513573,
       "precision": "rooftop"
@@ -4408,6 +4673,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.51515,
       "lng": -122.469029,
       "precision": "town",
@@ -4426,6 +4692,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.58935,
       "lng": -122.434503,
       "precision": "town",
@@ -4444,6 +4711,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4488079,
       "lng": -122.413533,
       "precision": "street"
@@ -4460,6 +4728,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.515194,
       "lng": -122.470724,
       "precision": "town",
@@ -4478,6 +4747,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.315757463083,
       "lng": -122.376520832422,
       "precision": "rooftop"
@@ -4494,6 +4764,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.41866,
       "lng": -122.33635,
       "precision": "town",
@@ -4512,6 +4783,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.517100977008,
       "lng": -122.445473444982,
       "precision": "rooftop"
@@ -4528,6 +4800,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.224687709234,
       "lng": -122.260338380157,
       "precision": "rooftop"
@@ -4544,6 +4817,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.345978759682,
       "lng": -122.309224371954,
       "precision": "rooftop"
@@ -4560,6 +4834,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.29,
       "lng": -122.19,
       "precision": "town",
@@ -4577,6 +4852,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Winston Hill",
       "lat": 38.558554769879,
       "lng": -122.523020816367,
       "precision": "rooftop"
@@ -4593,6 +4869,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.28974510361,
       "lng": -122.276171566057,
       "precision": "rooftop"
@@ -4609,6 +4886,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.524635716733,
       "lng": -122.497170641097,
       "precision": "rooftop"
@@ -4625,6 +4903,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Tasting Room: 1886 El Centro Ave Napa",
       "lat": 38.529787,
       "lng": -122.502619,
       "precision": "rooftop",
@@ -4642,6 +4921,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.332975691209,
       "lng": -122.34193242459,
       "precision": "rooftop"
@@ -4658,6 +4938,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.40958,
       "lng": -122.368453,
       "precision": "town",
@@ -4676,6 +4957,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.463727,
       "lng": -122.433933,
       "precision": "town",
@@ -4694,6 +4976,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4219905,
       "lng": -122.4162569,
       "precision": "street"
@@ -4710,6 +4993,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.515061,
       "lng": -122.472412,
       "precision": "town",
@@ -4728,6 +5012,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.461851,
       "lng": -122.434656,
       "precision": "town",
@@ -4746,6 +5031,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.489515550266,
       "lng": -122.472108113402,
       "precision": "rooftop"
@@ -4762,6 +5048,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.426214,
       "lng": -122.3932313,
       "precision": "street"
@@ -4778,6 +5065,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.296854029433,
       "lng": -122.288291851252,
       "precision": "rooftop"
@@ -4794,6 +5082,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.486482569396,
       "lng": -122.353557516132,
       "precision": "rooftop"
@@ -4810,6 +5099,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.454843854822,
       "lng": -122.366308677322,
       "precision": "rooftop"
@@ -4826,6 +5116,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Made at V. 29",
       "lat": 38.432916896377,
       "lng": -122.346883931883,
       "precision": "rooftop"
@@ -4842,6 +5133,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Need to verify if wines are made in Napa Valley",
       "lat": 38.2476425,
       "lng": -122.2731607,
       "precision": "street"
@@ -4858,6 +5150,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "TR Napa",
       "lat": 38.297200420205,
       "lng": -122.290596393634,
       "precision": "rooftop"
@@ -4874,6 +5167,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Owners of Napa Wine Co",
       "lat": 38.406864,
       "lng": -122.371598,
       "precision": "town",
@@ -4892,6 +5186,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Terroir Napa Valley, Sentall labels",
       "lat": 38.547072261755,
       "lng": -122.480025820661,
       "precision": "rooftop"
@@ -4908,6 +5203,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.406727,
       "lng": -122.366844,
       "precision": "rooftop",
@@ -4925,6 +5221,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "c. elizabeth",
       "lat": 38.427422708343,
       "lng": -122.352017664682,
       "precision": "rooftop"
@@ -4941,6 +5238,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "500th visit",
       "lat": 38.522133927526,
       "lng": -122.495766654473,
       "precision": "rooftop"
@@ -4957,6 +5255,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Former Slaughterhouse Cellars site",
       "lat": 38.4536777,
       "lng": -122.417974,
       "precision": "street"
@@ -4973,6 +5272,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Nottingham Cellars",
       "lat": 38.252208707658,
       "lng": -122.274793778077,
       "precision": "rooftop"
@@ -4989,6 +5289,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.300001572549,
       "lng": -122.288197700213,
       "precision": "rooftop"
@@ -5005,6 +5306,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.636711318364,
       "lng": -122.420767373892,
       "precision": "rooftop"
@@ -5021,6 +5323,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5040221,
       "lng": -122.4839029,
       "precision": "street"
@@ -5037,6 +5340,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.5714405,
       "lng": -122.3948371,
       "precision": "street"
@@ -5053,6 +5357,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4476871,
       "lng": -122.4234668,
       "precision": "street"
@@ -5069,6 +5374,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.29,
       "lng": -122.2223,
       "precision": "town",
@@ -5087,6 +5393,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4631859,
       "lng": -122.4262056,
       "precision": "street"
@@ -5103,6 +5410,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Lovall Valley",
       "lat": 38.292657027939,
       "lng": -122.458919245327,
       "precision": "rooftop"
@@ -5119,6 +5427,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4599,
       "lng": -122.4349,
       "precision": "town",
@@ -5137,6 +5446,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.437306,
       "lng": -122.390716,
       "precision": "town",
@@ -5155,6 +5465,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.431795068008,
       "lng": -122.300347008153,
       "precision": "rooftop"
@@ -5171,6 +5482,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.592153719009,
       "lng": -122.584962909654,
       "precision": "rooftop"
@@ -5187,6 +5499,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.301152636365,
       "lng": -122.282156544425,
       "precision": "rooftop"
@@ -5203,6 +5516,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.560469588346,
       "lng": -122.456752832834,
       "precision": "rooftop"
@@ -5219,6 +5533,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Don Ernesto Wines",
       "lat": 38.363003545397,
       "lng": -122.292926224301,
       "precision": "rooftop"
@@ -5235,6 +5550,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Taste at Vintner's Collective",
       "lat": 38.30087,
       "lng": -122.286591,
       "precision": "rooftop",
@@ -5252,6 +5568,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495865453315,
       "lng": -122.408388888796,
       "precision": "rooftop"
@@ -5268,6 +5585,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.49053845164,
       "lng": -122.452076132798,
       "precision": "rooftop"
@@ -5284,6 +5602,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.400197604567,
       "lng": -122.359419754232,
       "precision": "rooftop"
@@ -5300,6 +5619,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Makes 6 barrels at Miner Family",
       "lat": 38.450660890367,
       "lng": -122.36085687678,
       "precision": "rooftop"
@@ -5316,6 +5636,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.402022494716,
       "lng": -122.242201822479,
       "precision": "rooftop"
@@ -5332,6 +5653,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "600th visit",
       "lat": 38.4218431,
       "lng": -122.4158602,
       "precision": "street"
@@ -5348,6 +5670,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Tasting room: 1282 Vidovich Lane Unit B",
       "lat": 38.487034456517,
       "lng": -122.460793472842,
       "precision": "rooftop"
@@ -5364,6 +5687,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.298654188279,
       "lng": -122.236807262397,
       "precision": "rooftop"
@@ -5380,6 +5704,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "De La Guerra Label",
       "lat": 38.32499332837,
       "lng": -122.283205208732,
       "precision": "rooftop"
@@ -5396,6 +5721,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Ranch tour & tasting",
       "lat": 38.504697,
       "lng": -122.470446,
       "precision": "rooftop",
@@ -5413,6 +5739,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.595049552112,
       "lng": -122.522907279993,
       "precision": "rooftop"
@@ -5429,6 +5756,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Estate: 500 Taplin Road, St. Helena",
       "lat": 38.49025,
       "lng": -122.4517768,
       "precision": "street"
@@ -5445,6 +5773,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.60055028447,
       "lng": -122.62634675927,
       "precision": "rooftop"
@@ -5461,6 +5790,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -5477,6 +5807,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -5493,6 +5824,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.343777565601,
       "lng": -122.264797972754,
       "precision": "rooftop"
@@ -5509,6 +5841,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.514751,
       "lng": -122.474063,
       "precision": "town",
@@ -5527,6 +5860,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Vineyard: 1400 Staples Ridge Road, Angwin",
       "lat": 38.403685,
       "lng": -122.29403,
       "precision": "rooftop",
@@ -5544,26 +5878,10 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.393596288873,
       "lng": -122.241805578504,
       "precision": "rooftop"
-    },
-    {
-      "slug": "hess-collection",
-      "name": "Hess Persson Estates",
-      "url": "https://www.napawineproject.com/hess-collection/",
-      "address": "4411 Redwood Road, Napa, CA",
-      "city": "Napa",
-      "appellation": "Howell Mountain",
-      "phone": "(707) 255-1144",
-      "website": "https://www.hessperssonestates.com",
-      "visiting": "By appointment",
-      "cave": false,
-      "archived": false,
-      "lat": 38.338595,
-      "lng": -122.388701,
-      "precision": "rooftop",
-      "offset": true
     },
     {
       "slug": "hess-persson-estates",
@@ -5577,6 +5895,25 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "2nd Winery in AC, also: www.stalworthwine.com",
+      "lat": 38.338595,
+      "lng": -122.388701,
+      "precision": "rooftop",
+      "offset": true
+    },
+    {
+      "slug": "hess-collection",
+      "name": "Hess Persson Estates",
+      "url": "https://www.napawineproject.com/hess-collection/",
+      "address": "4411 Redwood Road, Napa, CA",
+      "city": "Napa",
+      "appellation": "Howell Mountain",
+      "phone": "(707) 255-1144",
+      "website": "https://www.hessperssonestates.com",
+      "visiting": "By appointment",
+      "cave": false,
+      "archived": false,
+      "aka": "2nd Winery in AC, also: www.stalworthwine.com",
       "lat": 38.338595,
       "lng": -122.389336,
       "precision": "rooftop",
@@ -5594,6 +5931,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "TR Yountville, Meyer & Stephanie",
       "lat": 38.402151975812,
       "lng": -122.361508563773,
       "precision": "rooftop"
@@ -5610,6 +5948,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "New owners 2024",
       "lat": 38.401387,
       "lng": -122.360942,
       "precision": "rooftop",
@@ -5627,6 +5966,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Winery: 6155 Solano Avenue, Yountville",
       "lat": 38.401109324424,
       "lng": -122.360057957942,
       "precision": "rooftop"
@@ -5643,6 +5983,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Mt. Veeder, Kevin Morrison",
       "lat": 38.359518099799,
       "lng": -122.398273253147,
       "precision": "rooftop"
@@ -5659,6 +6000,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "800th visit NWP",
       "lat": 38.595448985181,
       "lng": -122.582233262406,
       "precision": "rooftop"
@@ -5675,6 +6017,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.2108276,
       "lng": -122.2646853,
       "precision": "street"
@@ -5691,6 +6034,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.296428,
       "lng": -122.225271,
       "precision": "town",
@@ -5709,6 +6053,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4641943,
       "lng": -122.4133628,
       "precision": "street"
@@ -5725,6 +6070,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "TR in Sonoma",
       "lat": 38.232762093931,
       "lng": -122.258375911714,
       "precision": "rooftop"
@@ -5741,6 +6087,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Also Hoopla, Liparita Cellars. Also estate YV",
       "lat": 38.3867304,
       "lng": -122.3495428,
       "precision": "street"
@@ -5757,6 +6104,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Hendricks wine",
       "lat": 38.406727,
       "lng": -122.367479,
       "precision": "rooftop",
@@ -5774,6 +6122,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.382985854229,
       "lng": -122.292216539125,
       "precision": "rooftop"
@@ -5790,6 +6139,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.577178389808,
       "lng": -122.520432610742,
       "precision": "rooftop"
@@ -5806,6 +6156,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.41,
       "lng": -122.3427,
       "precision": "town",
@@ -5824,6 +6175,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.586631,
       "lng": -122.439506,
       "precision": "town",
@@ -5842,6 +6194,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "1,100th review on NWP",
       "lat": 38.576195823063,
       "lng": -122.459911587704,
       "precision": "rooftop"
@@ -5858,6 +6211,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.2559494,
       "lng": -122.3470361,
       "precision": "street"
@@ -5874,6 +6228,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Collateral",
       "lat": 38.542230781814,
       "lng": -122.490083252759,
       "precision": "rooftop"
@@ -5890,6 +6245,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "8687 Wines",
       "lat": 38.403437,
       "lng": -122.373284,
       "precision": "town",
@@ -5908,6 +6264,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.39779551002,
       "lng": -122.305259667731,
       "precision": "rooftop"
@@ -5924,6 +6281,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.253947366319,
       "lng": -122.331671850919,
       "precision": "rooftop"
@@ -5940,6 +6298,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -5956,6 +6315,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259076,
       "lng": -122.274397,
       "precision": "rooftop",
@@ -5973,6 +6333,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4264098,
       "lng": -122.3400468,
       "precision": "street"
@@ -5989,6 +6350,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Made at Wheeler Farms",
       "lat": 38.582393,
       "lng": -122.442331,
       "precision": "town",
@@ -6007,6 +6369,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.514271,
       "lng": -122.475646,
       "precision": "town",
@@ -6025,6 +6388,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Stackhouse, Illaria, Sergio",
       "lat": 38.313894115021,
       "lng": -122.271649561832,
       "precision": "rooftop"
@@ -6041,6 +6405,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.509459507108,
       "lng": -122.477724021651,
       "precision": "rooftop"
@@ -6057,6 +6422,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.488046954181,
       "lng": -122.44912668494,
       "precision": "rooftop"
@@ -6073,6 +6439,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.403595,
       "lng": -122.294385,
       "precision": "rooftop",
@@ -6090,6 +6457,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.33479113266,
       "lng": -122.319996625979,
       "precision": "rooftop"
@@ -6106,6 +6474,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.257942,
       "lng": -122.273255,
       "precision": "rooftop",
@@ -6123,6 +6492,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.391542,
       "lng": -122.363866,
       "precision": "rooftop",
@@ -6140,6 +6510,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.564151537377,
       "lng": -122.462071188202,
       "precision": "rooftop"
@@ -6156,6 +6527,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -6172,6 +6544,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Farm Collective, Napa Valley",
       "lat": 38.369815850937,
       "lng": -122.300558775134,
       "precision": "rooftop"
@@ -6188,6 +6561,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.338228,
       "lng": -122.26011,
       "precision": "street",
@@ -6205,6 +6579,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.338444,
       "lng": -122.260586,
       "precision": "street",
@@ -6222,6 +6597,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Wines made in Sonoma",
       "lat": 38.551579864586,
       "lng": -122.576230416926,
       "precision": "rooftop"
@@ -6238,6 +6614,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.599375539291,
       "lng": -122.623804645862,
       "precision": "rooftop"
@@ -6254,6 +6631,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.513629,
       "lng": -122.477134,
       "precision": "town",
@@ -6272,6 +6650,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Wines on First",
       "lat": 38.338647,
       "lng": -122.261557,
       "precision": "rooftop",
@@ -6289,6 +6668,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.597146,
       "lng": -122.451451,
       "precision": "rooftop",
@@ -6306,6 +6686,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.615487954152,
       "lng": -122.593812532994,
       "precision": "rooftop"
@@ -6322,6 +6703,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.406024297339,
       "lng": -122.366488887902,
       "precision": "rooftop"
@@ -6338,6 +6720,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Old Havens Winery",
       "lat": 38.384176390582,
       "lng": -122.351944333448,
       "precision": "rooftop"
@@ -6354,6 +6737,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "JAM Cellars, BUTTER Wines, FARM NV",
       "lat": 38.286022075178,
       "lng": -122.319935962781,
       "precision": "rooftop"
@@ -6370,6 +6754,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Separate from Fsprings, Komes Fam.",
       "lat": 38.475558,
       "lng": -122.452444,
       "precision": "rooftop",
@@ -6387,6 +6772,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.565700440464,
       "lng": -122.561269855106,
       "precision": "rooftop"
@@ -6403,6 +6789,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Wine shop San Jose",
       "lat": 38.399763,
       "lng": -122.373284,
       "precision": "town",
@@ -6421,6 +6808,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50208,
       "lng": -122.429184,
       "precision": "rooftop",
@@ -6438,6 +6826,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50208,
       "lng": -122.429819,
       "precision": "rooftop",
@@ -6455,6 +6844,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Victoria Coleman",
       "lat": 38.403301,
       "lng": -122.294385,
       "precision": "rooftop",
@@ -6472,6 +6862,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.3326743,
       "lng": -122.2797196,
       "precision": "street"
@@ -6488,6 +6879,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.299848,
       "lng": -122.232795,
       "precision": "town",
@@ -6506,6 +6898,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.512837,
       "lng": -122.478499,
       "precision": "town",
@@ -6524,6 +6917,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.300956,
       "lng": -122.282386,
       "precision": "rooftop",
@@ -6541,6 +6935,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Taste at Vintner's Collective",
       "lat": 38.344069526377,
       "lng": -122.352212388005,
       "precision": "rooftop"
@@ -6557,6 +6952,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.423014091993,
       "lng": -122.347866486905,
       "precision": "rooftop"
@@ -6573,6 +6969,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.504397083375,
       "lng": -122.462763202833,
       "precision": "rooftop"
@@ -6589,6 +6986,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.351408764294,
       "lng": -122.305162250992,
       "precision": "rooftop"
@@ -6605,6 +7003,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259207,
       "lng": -122.273433,
       "precision": "rooftop",
@@ -6622,6 +7021,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.577607,
       "lng": -122.442331,
       "precision": "town",
@@ -6640,6 +7040,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.3872179,
       "lng": -122.3636844,
       "precision": "street"
@@ -6656,6 +7057,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.3075,
       "lng": -122.2869,
       "precision": "town",
@@ -6674,6 +7076,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Brix Restaurant owners",
       "lat": 38.414286243068,
       "lng": -122.384207955255,
       "precision": "rooftop"
@@ -6690,6 +7093,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.369511,
       "lng": -122.326075,
       "precision": "town",
@@ -6708,6 +7112,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.58746,
       "lng": -122.58605,
       "precision": "town",
@@ -6726,6 +7131,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.587326420532,
       "lng": -122.555058735589,
       "precision": "rooftop"
@@ -6742,6 +7148,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.342119173584,
       "lng": -122.19976658489,
       "precision": "rooftop"
@@ -6758,6 +7165,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.36344,
       "lng": -122.337973,
       "precision": "rooftop",
@@ -6775,6 +7183,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Curvature Wines",
       "lat": 38.29730026326,
       "lng": -122.289064111972,
       "precision": "rooftop"
@@ -6791,6 +7200,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Sold to restaurants, French Laundry",
       "lat": 38.489868,
       "lng": -122.321524,
       "precision": "street",
@@ -6808,6 +7218,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5783555,
       "lng": -122.4486515,
       "precision": "street"
@@ -6824,6 +7235,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Kosher wines, Whitney Skiebel",
       "lat": 38.32043350039,
       "lng": -122.310125276178,
       "precision": "rooftop"
@@ -6840,6 +7252,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.511908,
       "lng": -122.479719,
       "precision": "town",
@@ -6858,6 +7271,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.313514662612,
       "lng": -122.336830670842,
       "precision": "rooftop"
@@ -6874,6 +7288,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.634008004213,
       "lng": -122.590173977081,
       "precision": "rooftop"
@@ -6890,6 +7305,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.441779796643,
       "lng": -122.247268018532,
       "precision": "rooftop"
@@ -6906,6 +7322,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.573369,
       "lng": -122.439506,
       "precision": "town",
@@ -6924,6 +7341,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Veraison, Black Bart -  TR in Napa",
       "lat": 38.345012101225,
       "lng": -122.280644425794,
       "precision": "rooftop"
@@ -6940,6 +7358,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.258826,
       "lng": -122.275494,
       "precision": "rooftop",
@@ -6957,6 +7376,7 @@
       "visiting": null,
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -6973,6 +7393,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.296752,
       "lng": -122.288493,
       "precision": "rooftop",
@@ -6990,6 +7411,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Taste at Cardinale",
       "lat": 38.554272676588,
       "lng": -122.416754628152,
       "precision": "rooftop"
@@ -7006,6 +7428,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.505708,
       "lng": -122.47193,
       "precision": "rooftop",
@@ -7023,6 +7446,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.571359,
       "lng": -122.569726,
       "precision": "rooftop",
@@ -7040,6 +7464,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4484386,
       "lng": -122.4170342,
       "precision": "street"
@@ -7056,6 +7481,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.562976359385,
       "lng": -122.511726013564,
       "precision": "rooftop"
@@ -7072,6 +7498,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50370521071,
       "lng": -122.466205246755,
       "precision": "rooftop"
@@ -7088,6 +7515,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.355941,
       "lng": -122.334023,
       "precision": "rooftop",
@@ -7105,6 +7533,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.600951,
       "lng": -122.46747,
       "precision": "rooftop",
@@ -7122,6 +7551,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503331,
       "lng": -122.468228,
       "precision": "rooftop",
@@ -7139,6 +7569,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.343516597361,
       "lng": -122.315644963992,
       "precision": "rooftop"
@@ -7155,6 +7586,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.396336,
       "lng": -122.371598,
       "precision": "town",
@@ -7173,6 +7605,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.560659819543,
       "lng": -122.522125712696,
       "precision": "rooftop"
@@ -7189,6 +7622,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.594706909744,
       "lng": -122.581148935226,
       "precision": "rooftop"
@@ -7205,6 +7639,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.578233101994,
       "lng": -122.579097132962,
       "precision": "rooftop"
@@ -7221,6 +7656,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Taste at Rebel Vintners in downtown Napa",
       "lat": 38.228045294638,
       "lng": -122.255336250731,
       "precision": "rooftop"
@@ -7237,6 +7673,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "VintEdge Winery, Napa",
       "lat": 38.56073553195,
       "lng": -122.600883915748,
       "precision": "rooftop"
@@ -7253,6 +7690,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.225179108256,
       "lng": -122.266983907818,
       "precision": "rooftop"
@@ -7269,6 +7707,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.297294134747,
       "lng": -122.289076905245,
       "precision": "rooftop"
@@ -7285,6 +7724,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.505229,
       "lng": -122.47036,
       "precision": "street",
@@ -7302,6 +7742,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.496158181431,
       "lng": -122.470792617823,
       "precision": "rooftop"
@@ -7318,6 +7759,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.423122324712,
       "lng": -122.337107721788,
       "precision": "rooftop"
@@ -7334,6 +7776,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.40134,
       "lng": -122.33635,
       "precision": "town",
@@ -7352,6 +7795,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.39362,
       "lng": -122.368453,
       "precision": "town",
@@ -7370,6 +7814,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.51623222555,
       "lng": -122.456017218061,
       "precision": "rooftop"
@@ -7386,6 +7831,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "La Jolla Tasting Room",
       "lat": null,
       "lng": null,
       "precision": null
@@ -7402,6 +7848,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.298376,
       "lng": -122.286613,
       "precision": "rooftop",
@@ -7419,6 +7866,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -7435,6 +7883,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.519666172648,
       "lng": -122.536723886727,
       "precision": "rooftop"
@@ -7451,6 +7900,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Calistoga",
       "lat": 38.573814816564,
       "lng": -122.574349438547,
       "precision": "rooftop"
@@ -7467,6 +7917,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.510859,
       "lng": -122.48077,
       "precision": "town",
@@ -7485,6 +7936,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Farmstead, St. Helena, TR Anderson Valley",
       "lat": 38.462548607544,
       "lng": -122.45961619769,
       "precision": "rooftop"
@@ -7501,6 +7953,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "VC, Sonoma & Napa fruit",
       "lat": 38.259059,
       "lng": -122.274707,
       "precision": "rooftop",
@@ -7518,6 +7971,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.374383701695,
       "lng": -122.181937689455,
       "precision": "rooftop"
@@ -7534,6 +7988,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50971,
       "lng": -122.481635,
       "precision": "town",
@@ -7552,6 +8007,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "One NV & one Sierra foothills, made at BA?",
       "lat": 38.527867,
       "lng": -122.500143,
       "precision": "rooftop",
@@ -7569,6 +8025,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.415878,
       "lng": -122.230275,
       "precision": "town",
@@ -7587,6 +8044,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -7603,6 +8061,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.457949,
       "lng": -122.434656,
       "precision": "town",
@@ -7621,6 +8080,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4321139,
       "lng": -122.4150198,
       "precision": "street"
@@ -7637,6 +8097,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Tasting room: 1000 Main Street, Suite 190, Napa",
       "lat": 38.347971237889,
       "lng": -122.283479160887,
       "precision": "rooftop"
@@ -7653,6 +8114,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.254664240473,
       "lng": -122.335879657883,
       "precision": "rooftop"
@@ -7669,6 +8131,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.3328267,
       "lng": -122.2798047,
       "precision": "street"
@@ -7685,6 +8148,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.298592,
       "lng": -122.287089,
       "precision": "rooftop",
@@ -7702,6 +8166,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "TR 901 Ste. D, Enterprise Way",
       "lat": 38.607169730847,
       "lng": -122.591302242636,
       "precision": "rooftop"
@@ -7718,6 +8183,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.40462476593,
       "lng": -122.329007753746,
       "precision": "rooftop"
@@ -7734,6 +8200,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Owners of Guess & Wallys Wine LA",
       "lat": 38.486435958602,
       "lng": -122.471165416365,
       "precision": "rooftop"
@@ -7750,6 +8217,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.578167822993,
       "lng": -122.579280228067,
       "precision": "rooftop"
@@ -7766,6 +8234,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50848,
       "lng": -122.482297,
       "precision": "town",
@@ -7784,6 +8253,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.565590564452,
       "lng": -122.514046472807,
       "precision": "rooftop"
@@ -7800,6 +8270,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.299286568917,
       "lng": -122.28542871424,
       "precision": "rooftop"
@@ -7816,6 +8287,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Napa winery but mostly non Napa fruit",
       "lat": 38.3919749,
       "lng": -122.3536681,
       "precision": "street"
@@ -7832,6 +8304,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.507192,
       "lng": -122.482746,
       "precision": "town",
@@ -7850,6 +8323,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Glass Mountain, Greystone Cellars",
       "lat": 38.518121,
       "lng": -122.488435,
       "precision": "rooftop",
@@ -7867,6 +8341,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.322808837813,
       "lng": -122.241985990547,
       "precision": "rooftop"
@@ -7883,6 +8358,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.600951,
       "lng": -122.468105,
       "precision": "rooftop",
@@ -7900,6 +8376,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.54,
       "lng": -122.33,
       "precision": "town",
@@ -7918,6 +8395,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.365878,
       "lng": -122.340275,
       "precision": "town",
@@ -7936,6 +8414,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4592361,
       "lng": -122.4214089,
       "precision": "street"
@@ -7952,6 +8431,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Charbono",
       "lat": 38.58222,
       "lng": -122.591634,
       "precision": "town",
@@ -7970,6 +8450,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.501839,
       "lng": -122.464725,
       "precision": "rooftop",
@@ -7987,6 +8468,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.339546007614,
       "lng": -122.348756907955,
       "precision": "rooftop"
@@ -8003,6 +8485,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.53,
       "lng": -122.3427,
       "precision": "town",
@@ -8021,6 +8504,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "TR 1256 1st Street, Napa",
       "lat": 38.41,
       "lng": -122.2327,
       "precision": "town",
@@ -8039,6 +8523,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.501839,
       "lng": -122.46536,
       "precision": "rooftop",
@@ -8056,6 +8541,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Taste at Mia Carta",
       "lat": 38.298159,
       "lng": -122.287089,
       "precision": "rooftop",
@@ -8073,6 +8559,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.230322580674,
       "lng": -122.338053513518,
       "precision": "rooftop"
@@ -8089,6 +8576,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.524920996989,
       "lng": -122.4814065188,
       "precision": "rooftop"
@@ -8105,6 +8593,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "South of Calistoga, visits",
       "lat": 38.563925991763,
       "lng": -122.551152497984,
       "precision": "rooftop"
@@ -8121,6 +8610,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.512066,
       "lng": -122.455988,
       "precision": "street",
@@ -8138,6 +8628,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.505868,
       "lng": -122.482972,
       "precision": "town",
@@ -8156,6 +8647,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.504532,
       "lng": -122.482972,
       "precision": "town",
@@ -8174,6 +8666,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Altus, 2nd label - Crystal Springs Road",
       "lat": 38.550337842993,
       "lng": -122.482880646321,
       "precision": "rooftop"
@@ -8190,6 +8683,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.309448663611,
       "lng": -122.229996510192,
       "precision": "rooftop"
@@ -8206,6 +8700,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Herrera Label",
       "lat": 38.259059,
       "lng": -122.275342,
       "precision": "rooftop",
@@ -8223,6 +8718,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "NAPA WINE CO, many labels",
       "lat": 38.299480835432,
       "lng": -122.289055809175,
       "precision": "rooftop"
@@ -8239,6 +8735,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Michael Soctt, Centerpiece wines",
       "lat": 38.314146319845,
       "lng": -122.324756366025,
       "precision": "rooftop"
@@ -8255,6 +8752,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.295188008567,
       "lng": -122.288164384441,
       "precision": "rooftop"
@@ -8271,6 +8769,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.324132618416,
       "lng": -122.35025452612,
       "precision": "rooftop"
@@ -8287,6 +8786,7 @@
       "visiting": "Walk-ins welcome",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.456073,
       "lng": -122.433933,
       "precision": "town",
@@ -8305,6 +8805,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.512066,
       "lng": -122.456623,
       "precision": "street",
@@ -8322,6 +8823,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503208,
       "lng": -122.482746,
       "precision": "town",
@@ -8340,6 +8842,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.391292,
       "lng": -122.364184,
       "precision": "rooftop",
@@ -8357,6 +8860,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.527651,
       "lng": -122.500143,
       "precision": "rooftop",
@@ -8374,6 +8878,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.57065,
       "lng": -122.434503,
       "precision": "town",
@@ -8392,6 +8897,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Silver Ghost Cellars",
       "lat": 38.527515,
       "lng": -122.499927,
       "precision": "rooftop",
@@ -8409,6 +8915,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -8425,6 +8932,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.360855432585,
       "lng": -122.311669903855,
       "precision": "rooftop"
@@ -8441,6 +8949,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.447677,
       "lng": -122.412919,
       "precision": "street",
@@ -8458,6 +8967,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.454080864588,
       "lng": -122.426533242991,
       "precision": "rooftop"
@@ -8474,6 +8984,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.519573659938,
       "lng": -122.491592332794,
       "precision": "rooftop"
@@ -8490,6 +9001,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.376779351733,
       "lng": -122.202498308225,
       "precision": "rooftop"
@@ -8506,6 +9018,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.3720977,
       "lng": -122.4158076,
       "precision": "street"
@@ -8522,6 +9035,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4,
       "lng": -122.46,
       "precision": "town",
@@ -8539,6 +9053,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Formerly Parry Cellars property, Dustin",
       "lat": 38.541777603129,
       "lng": -122.49005855481,
       "precision": "rooftop"
@@ -8555,6 +9070,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.516071,
       "lng": -122.412098,
       "precision": "rooftop",
@@ -8572,6 +9088,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.478349246692,
       "lng": -122.39145557556,
       "precision": "rooftop"
@@ -8588,6 +9105,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Old Calistoga Bottling Works + Ezeta Wines",
       "lat": 38.574378,
       "lng": -122.544946,
       "precision": "street",
@@ -8605,6 +9123,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.591208,
       "lng": -122.605099,
       "precision": "rooftop",
@@ -8622,6 +9141,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.518121,
       "lng": -122.48907,
       "precision": "rooftop",
@@ -8639,6 +9159,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.547169381146,
       "lng": -122.509942392752,
       "precision": "rooftop"
@@ -8655,6 +9176,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -8671,6 +9193,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Tour guide",
       "lat": 38.339642788667,
       "lng": -122.348658895311,
       "precision": "rooftop"
@@ -8687,6 +9210,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.404122,
       "lng": -122.230275,
       "precision": "town",
@@ -8705,6 +9229,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.271945288516,
       "lng": -122.272421800685,
       "precision": "rooftop"
@@ -8721,6 +9246,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "store, downtown Napa",
       "lat": 38.298341208255,
       "lng": -122.287256218407,
       "precision": "rooftop"
@@ -8737,6 +9263,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.440996,
       "lng": -122.396124,
       "precision": "town",
@@ -8755,6 +9282,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.510171226329,
       "lng": -122.470766357104,
       "precision": "rooftop"
@@ -8771,6 +9299,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.573078621613,
       "lng": -122.461031883703,
       "precision": "rooftop"
@@ -8787,6 +9316,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.31840970568,
       "lng": -122.284904235188,
       "precision": "rooftop"
@@ -8803,6 +9333,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.50192,
       "lng": -122.482297,
       "precision": "town",
@@ -8821,6 +9352,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.400489,
       "lng": -122.223925,
       "precision": "town",
@@ -8839,6 +9371,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50069,
       "lng": -122.481635,
       "precision": "town",
@@ -8857,6 +9390,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "New ownership as of 2025",
       "lat": 38.496481796999,
       "lng": -122.480814918603,
       "precision": "rooftop"
@@ -8873,6 +9407,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.421097234858,
       "lng": -122.389296459623,
       "precision": "rooftop"
@@ -8889,6 +9424,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.498517045685,
       "lng": -122.293706200203,
       "precision": "rooftop"
@@ -8905,6 +9441,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.307747,
       "lng": -122.246704,
       "precision": "rooftop",
@@ -8922,6 +9459,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4434798,
       "lng": -122.4087703,
       "precision": "street"
@@ -8938,6 +9476,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Napa + Sonoma Chardonnay",
       "lat": 38.2975,
       "lng": -122.2996,
       "precision": "town",
@@ -8956,6 +9495,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.504858717354,
       "lng": -122.469768315506,
       "precision": "rooftop"
@@ -8972,6 +9512,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.391982,
       "lng": -122.364276,
       "precision": "town",
@@ -8990,6 +9531,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.454344,
       "lng": -122.43276,
       "precision": "town",
@@ -9008,6 +9550,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Seduction Wine",
       "lat": 38.343550392682,
       "lng": -122.340220475416,
       "precision": "rooftop"
@@ -9024,6 +9567,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.570073,
       "lng": -122.428469,
       "precision": "town",
@@ -9042,6 +9586,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.452829,
       "lng": -122.43118,
       "precision": "town",
@@ -9060,6 +9605,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.354122,
       "lng": -122.340275,
       "precision": "town",
@@ -9078,6 +9624,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.410876913793,
       "lng": -122.33370673231,
       "precision": "rooftop"
@@ -9094,6 +9641,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.35159027574,
       "lng": -122.305297057699,
       "precision": "rooftop"
@@ -9110,6 +9658,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.578753912308,
       "lng": -122.579281308666,
       "precision": "rooftop"
@@ -9126,6 +9675,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.36569495598,
       "lng": -122.268681367329,
       "precision": "rooftop"
@@ -9142,6 +9692,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Napa + non Napa wines, made at TWF",
       "lat": 38.30332443636,
       "lng": -122.294175617602,
       "precision": "rooftop"
@@ -9158,6 +9709,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.331541692391,
       "lng": -122.340546705826,
       "precision": "rooftop"
@@ -9174,6 +9726,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -9190,6 +9743,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.2429713,
       "lng": -122.2772724,
       "precision": "street"
@@ -9206,6 +9760,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.436868,
       "lng": -122.402742,
       "precision": "street"
@@ -9222,6 +9777,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Mercury Head, Prisoner, Veladora",
       "lat": 38.504656935041,
       "lng": -122.469438737816,
       "precision": "rooftop"
@@ -9238,6 +9794,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.257509,
       "lng": -122.273255,
       "precision": "rooftop",
@@ -9255,6 +9812,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.598504554449,
       "lng": -122.45969299758,
       "precision": "rooftop"
@@ -9271,6 +9829,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.467367659994,
       "lng": -122.348340618102,
       "precision": "rooftop"
@@ -9287,6 +9846,7 @@
       "visiting": "Walk-ins welcome",
       "cave": true,
       "archived": false,
+      "aka": "Tasting room: 1400 1st Street, Napa",
       "lat": 38.338489965355,
       "lng": -122.348180570053,
       "precision": "rooftop"
@@ -9303,6 +9863,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.305299417043,
       "lng": -122.286709153837,
       "precision": "rooftop"
@@ -9319,6 +9880,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Label is owned by Gallo Family",
       "lat": 38.356756,
       "lng": -122.266919,
       "precision": "rooftop",
@@ -9336,6 +9898,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.499541,
       "lng": -122.48077,
       "precision": "town",
@@ -9354,6 +9917,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.609351,
       "lng": -122.591665,
       "precision": "rooftop",
@@ -9371,6 +9935,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Cedar Knoll Vineyards",
       "lat": 38.322840882008,
       "lng": -122.228907803863,
       "precision": "rooftop"
@@ -9387,6 +9952,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.523504345295,
       "lng": -122.548126196073,
       "precision": "rooftop"
@@ -9403,6 +9969,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.542757048003,
       "lng": -122.508821764133,
       "precision": "rooftop"
@@ -9419,6 +9986,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.574070760753,
       "lng": -122.543927897994,
       "precision": "rooftop"
@@ -9435,6 +10003,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Former Dutch Henry Winery (Epprights)",
       "lat": 38.576485333755,
       "lng": -122.525684451978,
       "precision": "rooftop"
@@ -9451,6 +10020,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.420847352852,
       "lng": -122.39444615257,
       "precision": "rooftop"
@@ -9467,6 +10037,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.529787,
       "lng": -122.503254,
       "precision": "rooftop",
@@ -9484,6 +10055,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.597556581399,
       "lng": -122.457225977587,
       "precision": "rooftop"
@@ -9500,6 +10072,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.29866,
       "lng": -122.24135,
       "precision": "town",
@@ -9518,6 +10091,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.504697,
       "lng": -122.471081,
       "precision": "rooftop",
@@ -9535,6 +10109,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Also @ Caves at Soda Canyon",
       "lat": 38.414893139936,
       "lng": -122.295082424412,
       "precision": "rooftop"
@@ -9551,6 +10126,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.498492,
       "lng": -122.479719,
       "precision": "town",
@@ -9569,6 +10145,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.497563,
       "lng": -122.478499,
       "precision": "town",
@@ -9587,6 +10164,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "3 TR in Indiana, mostly NV wines. SL",
       "lat": 38.601043,
       "lng": -122.467883,
       "precision": "rooftop",
@@ -9604,6 +10182,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.515250637313,
       "lng": -122.505251742532,
       "precision": "rooftop"
@@ -9620,6 +10199,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.502796,
       "lng": -122.465886,
       "precision": "street",
@@ -9637,6 +10217,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4897236,
       "lng": -122.4717133,
       "precision": "street"
@@ -9653,6 +10234,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Chicago",
       "lat": 38.451585,
       "lng": -122.429256,
       "precision": "town",
@@ -9671,6 +10253,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.599267523445,
       "lng": -122.623510057286,
       "precision": "rooftop"
@@ -9687,6 +10270,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.391042,
       "lng": -122.363866,
       "precision": "rooftop",
@@ -9704,6 +10288,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.507220646139,
       "lng": -122.473665019718,
       "precision": "rooftop"
@@ -9720,6 +10305,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.2875,
       "lng": -122.2869,
       "precision": "town",
@@ -9738,6 +10324,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.577496888658,
       "lng": -122.553646720248,
       "precision": "rooftop"
@@ -9754,6 +10341,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Mailing List customers, taste only",
       "lat": 38.520986816922,
       "lng": -122.539131543009,
       "precision": "rooftop"
@@ -9770,6 +10358,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Also Villa del Lago is a winery",
       "lat": 38.420245426643,
       "lng": -122.388503710858,
       "precision": "rooftop"
@@ -9786,6 +10375,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.579259479616,
       "lng": -122.578624525044,
       "precision": "rooftop"
@@ -9802,6 +10392,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.331213626385,
       "lng": -122.331196288486,
       "precision": "rooftop"
@@ -9818,6 +10409,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.466981746991,
       "lng": -122.377852613536,
       "precision": "rooftop"
@@ -9834,6 +10426,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.407651278178,
       "lng": -122.331253784512,
       "precision": "rooftop"
@@ -9850,6 +10443,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Doesn't produce every year",
       "lat": 38.490084,
       "lng": -122.322,
       "precision": "street",
@@ -9867,6 +10461,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Former Nine Suns, Flora + Jason",
       "lat": 38.441798,
       "lng": -122.403207,
       "precision": "town",
@@ -9885,6 +10480,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.57177,
       "lng": -122.422786,
       "precision": "town",
@@ -9903,6 +10499,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.584274691358,
       "lng": -122.557614848682,
       "precision": "rooftop"
@@ -9919,6 +10516,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Small boat cruise on Napa River, NVYclub",
       "lat": 38.277208099454,
       "lng": -122.292017281809,
       "precision": "rooftop"
@@ -9935,6 +10533,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.633137772487,
       "lng": -122.450149401011,
       "precision": "rooftop"
@@ -9951,6 +10550,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.284109465354,
       "lng": -122.222009818366,
       "precision": "rooftop"
@@ -9967,6 +10567,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Stretch Drive label",
       "lat": 38.496771,
       "lng": -122.477134,
       "precision": "town",
@@ -9985,6 +10586,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "3/Thirds Wine Brand",
       "lat": 38.368009538206,
       "lng": -122.410785986737,
       "precision": "rooftop"
@@ -10001,6 +10603,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.496129,
       "lng": -122.475646,
       "precision": "town",
@@ -10019,6 +10622,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.524518240137,
       "lng": -122.551358153194,
       "precision": "rooftop"
@@ -10035,6 +10639,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.52,
       "lng": -122.33,
       "precision": "town",
@@ -10053,6 +10658,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.338647,
       "lng": -122.262192,
       "precision": "rooftop",
@@ -10070,6 +10676,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.33714081417,
       "lng": -122.374324179764,
       "precision": "rooftop"
@@ -10086,6 +10693,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495649,
       "lng": -122.474063,
       "precision": "town",
@@ -10104,6 +10712,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.421444,
       "lng": -122.417109,
       "precision": "street",
@@ -10121,6 +10730,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259072,
       "lng": -122.273648,
       "precision": "rooftop",
@@ -10138,6 +10748,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.42988762565,
       "lng": -122.354343354851,
       "precision": "rooftop"
@@ -10154,6 +10765,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.254944,
       "lng": -122.274313,
       "precision": "rooftop",
@@ -10171,6 +10783,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -10187,6 +10800,7 @@
       "visiting": null,
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -10203,6 +10817,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Glenn Rice",
       "lat": 38.329812252671,
       "lng": -122.131881036177,
       "precision": "rooftop"
@@ -10219,6 +10834,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Copper Cane, Carne Humana, Quilt +",
       "lat": 38.297821278053,
       "lng": -122.284447599435,
       "precision": "rooftop"
@@ -10235,6 +10851,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.450661,
       "lng": -122.42706,
       "precision": "town",
@@ -10253,6 +10870,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495339,
       "lng": -122.472412,
       "precision": "town",
@@ -10271,6 +10889,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Panza",
       "lat": 38.416661326955,
       "lng": -122.336668923212,
       "precision": "rooftop"
@@ -10287,6 +10906,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.391643,
       "lng": -122.359628,
       "precision": "town",
@@ -10305,6 +10925,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.552939834055,
       "lng": -122.457671678319,
       "precision": "rooftop"
@@ -10321,6 +10942,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "# Wine made in Sonoma C., Mt. V.",
       "lat": 38.3686005203,
       "lng": -122.461830902221,
       "precision": "rooftop"
@@ -10337,6 +10959,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.450092,
       "lng": -122.424678,
       "precision": "town",
@@ -10355,6 +10978,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Boisset Family Estates",
       "lat": 38.486188357496,
       "lng": -122.43758877101,
       "precision": "rooftop"
@@ -10371,6 +10995,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.346304609734,
       "lng": -122.283040669921,
       "precision": "rooftop"
@@ -10387,6 +11012,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.225349,
       "lng": -122.256471,
       "precision": "rooftop",
@@ -10404,6 +11030,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Nine Suns Winery",
       "lat": 38.403885007519,
       "lng": -122.328876727463,
       "precision": "rooftop"
@@ -10420,6 +11047,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.589485518181,
       "lng": -122.44013306927,
       "precision": "rooftop"
@@ -10436,6 +11064,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.601259,
       "lng": -122.46836,
       "precision": "rooftop",
@@ -10453,6 +11082,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.499628564479,
       "lng": -122.457011449061,
       "precision": "rooftop"
@@ -10469,6 +11099,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.393074536971,
       "lng": -122.320733453485,
       "precision": "rooftop"
@@ -10485,6 +11116,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "J Kirkwood",
       "lat": 38.312755784042,
       "lng": -122.348582210044,
       "precision": "rooftop"
@@ -10501,6 +11133,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.410359373182,
       "lng": -122.295409400086,
       "precision": "rooftop"
@@ -10517,6 +11150,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.597634270923,
       "lng": -122.454542673225,
       "precision": "rooftop"
@@ -10533,6 +11167,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.520711972643,
       "lng": -122.492902321602,
       "precision": "rooftop"
@@ -10549,6 +11184,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4499,
       "lng": -122.4222,
       "precision": "town",
@@ -10567,6 +11203,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495206,
       "lng": -122.470724,
       "precision": "town",
@@ -10585,6 +11222,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.310018080767,
       "lng": -122.229437000945,
       "precision": "rooftop"
@@ -10601,6 +11239,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.348262192399,
       "lng": -122.283425983673,
       "precision": "rooftop"
@@ -10617,6 +11256,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Restaurant, shopping also",
       "lat": 38.405590210402,
       "lng": -122.366342157721,
       "precision": "rooftop"
@@ -10633,6 +11273,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.575353,
       "lng": -122.418755,
       "precision": "town",
@@ -10651,6 +11292,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.554282665751,
       "lng": -122.500447014152,
       "precision": "rooftop"
@@ -10667,6 +11309,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Napa Cabs, Other wines Sonoma",
       "lat": 38.573607045342,
       "lng": -122.57349308896,
       "precision": "rooftop"
@@ -10683,6 +11326,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.286678435849,
       "lng": -122.306212528235,
       "precision": "rooftop"
@@ -10699,6 +11343,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "The Vault, Rutherford - The Valut, Calistoga",
       "lat": 38.5094179,
       "lng": -122.4777087,
       "precision": "street"
@@ -10715,6 +11360,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.358929670639,
       "lng": -122.31054717558,
       "precision": "rooftop"
@@ -10731,6 +11377,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Winery, 2475 Summit Lake Drive Angwin",
       "lat": 38.296227287578,
       "lng": -122.289298831603,
       "precision": "rooftop"
@@ -10747,6 +11394,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.597146,
       "lng": -122.452086,
       "precision": "rooftop",
@@ -10764,6 +11412,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4414863,
       "lng": -122.4093929,
       "precision": "street"
@@ -10780,6 +11429,7 @@
       "visiting": "Walk-ins welcome",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.28178845495,
       "lng": -122.325129451918,
       "precision": "rooftop"
@@ -10796,6 +11446,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.538477156615,
       "lng": -122.500912215803,
       "precision": "rooftop"
@@ -10812,6 +11463,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.40597259006,
       "lng": -122.329797015378,
       "precision": "rooftop"
@@ -10828,6 +11480,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Father/daughter",
       "lat": 38.361937768763,
       "lng": -122.291712895209,
       "precision": "rooftop"
@@ -10844,6 +11497,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": "Several wineries in Napa & Sierra foothills",
       "lat": 38.50584,
       "lng": -122.439425,
       "precision": "street",
@@ -10861,6 +11515,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Tasting Room: 1224 Lincoln Ave, Calistoga",
       "lat": 38.575370300846,
       "lng": -122.539897247612,
       "precision": "rooftop"
@@ -10877,6 +11532,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Educated Guess",
       "lat": 38.297140994497,
       "lng": -122.291193539464,
       "precision": "rooftop"
@@ -10893,6 +11549,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4612059,
       "lng": -122.4186102,
       "precision": "street"
@@ -10909,6 +11566,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.36853353819,
       "lng": -122.285609901231,
       "precision": "rooftop"
@@ -10925,6 +11583,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.50198943481,
       "lng": -122.471399020246,
       "precision": "rooftop"
@@ -10941,6 +11600,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -10957,6 +11617,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.439457,
       "lng": -122.409717,
       "precision": "town",
@@ -10975,6 +11636,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.49525,
       "lng": -122.469029,
       "precision": "town",
@@ -10993,6 +11655,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.493422205881,
       "lng": -122.408010074253,
       "precision": "rooftop"
@@ -11009,6 +11672,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Round Hill Label",
       "lat": 38.488058383051,
       "lng": -122.407421027377,
       "precision": "rooftop"
@@ -11025,6 +11689,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.458907606501,
       "lng": -122.422606505991,
       "precision": "rooftop"
@@ -11041,6 +11706,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.539247087364,
       "lng": -122.508142424034,
       "precision": "rooftop"
@@ -11057,6 +11723,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.434717,
       "lng": -122.413586,
       "precision": "town",
@@ -11075,6 +11742,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495472,
       "lng": -122.467356,
       "precision": "town",
@@ -11093,6 +11761,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.250022,
       "lng": -122.328008,
       "precision": "rooftop",
@@ -11110,6 +11779,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.289653443358,
       "lng": -122.300308240106,
       "precision": "rooftop"
@@ -11126,6 +11796,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.497571057304,
       "lng": -122.460165095719,
       "precision": "rooftop"
@@ -11142,6 +11813,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.287113086443,
       "lng": -122.287071159054,
       "precision": "rooftop"
@@ -11158,6 +11830,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.451419679787,
       "lng": -122.431821788121,
       "precision": "rooftop"
@@ -11174,6 +11847,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Formerly McGah Cellars",
       "lat": 38.450092,
       "lng": -122.419722,
       "precision": "town",
@@ -11192,6 +11866,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.516213162987,
       "lng": -122.530503612459,
       "precision": "rooftop"
@@ -11208,6 +11883,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": "sister winery, J Davies - tasted also",
       "lat": 38.553316518126,
       "lng": -122.53457463087,
       "precision": "rooftop"
@@ -11224,6 +11900,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.524367149675,
       "lng": -122.551210176333,
       "precision": "rooftop"
@@ -11240,6 +11917,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.284572761833,
       "lng": -122.239105305351,
       "precision": "rooftop"
@@ -11256,6 +11934,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.392648,
       "lng": -122.355139,
       "precision": "town",
@@ -11274,6 +11953,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Caravina",
       "lat": 38.504582970485,
       "lng": -122.393525587444,
       "precision": "rooftop"
@@ -11290,6 +11970,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.325522923369,
       "lng": -122.318151262399,
       "precision": "rooftop"
@@ -11306,6 +11987,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Blanton Family Vineyards",
       "lat": 38.562617910212,
       "lng": -122.536596302295,
       "precision": "rooftop"
@@ -11322,6 +12004,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Allen Family",
       "lat": 38.4484948,
       "lng": -122.4132635,
       "precision": "street"
@@ -11338,6 +12021,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.499567838403,
       "lng": -122.458048464467,
       "precision": "rooftop"
@@ -11354,6 +12038,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.360029114778,
       "lng": -122.289759382752,
       "precision": "rooftop"
@@ -11370,6 +12055,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.518586296915,
       "lng": -122.460540160796,
       "precision": "rooftop"
@@ -11386,6 +12072,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Secret Rows, Rapp wines, Ch. lane",
       "lat": 38.309920632967,
       "lng": -122.248187900797,
       "precision": "rooftop"
@@ -11402,6 +12089,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Eighty Four wines",
       "lat": 38.417360229555,
       "lng": -122.336784177926,
       "precision": "rooftop"
@@ -11418,6 +12106,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Most wines non NV - Industrial Park",
       "lat": 38.258855,
       "lng": -122.273648,
       "precision": "rooftop",
@@ -11435,6 +12124,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -11451,6 +12141,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.524935938584,
       "lng": -122.551623959796,
       "precision": "rooftop"
@@ -11467,6 +12158,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.543502147749,
       "lng": -122.508990264364,
       "precision": "rooftop"
@@ -11483,6 +12175,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.450661,
       "lng": -122.41734,
       "precision": "town",
@@ -11501,6 +12194,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.583775392973,
       "lng": -122.600347319153,
       "precision": "rooftop"
@@ -11517,6 +12211,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "S by Ray Signorello, Edge & Trim",
       "lat": 38.366012178534,
       "lng": -122.296350074076,
       "precision": "rooftop"
@@ -11533,6 +12228,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Also winery/TRoom in Sonoma County",
       "lat": 38.429083,
       "lng": -122.413586,
       "precision": "town",
@@ -11551,6 +12247,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Sparrow Hawk Wines",
       "lat": 38.302596650782,
       "lng": -122.227041715194,
       "precision": "rooftop"
@@ -11567,6 +12264,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.399691,
       "lng": -122.358748,
       "precision": "rooftop",
@@ -11584,6 +12282,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.415411185994,
       "lng": -122.336524389637,
       "precision": "rooftop"
@@ -11600,6 +12299,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.299594053838,
       "lng": -122.285693962148,
       "precision": "rooftop"
@@ -11616,6 +12316,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.48152110542,
       "lng": -122.457864854256,
       "precision": "rooftop"
@@ -11632,6 +12333,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.307497,
       "lng": -122.246386,
       "precision": "rooftop",
@@ -11649,6 +12351,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.373793840296,
       "lng": -122.428499120549,
       "precision": "rooftop"
@@ -11665,6 +12368,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -11681,6 +12385,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.496581570705,
       "lng": -122.407090241862,
       "precision": "rooftop"
@@ -11697,6 +12402,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Taste at JAM Cellars",
       "lat": 38.297241860218,
       "lng": -122.289495911153,
       "precision": "rooftop"
@@ -11713,6 +12419,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.524506101833,
       "lng": -122.551350085299,
       "precision": "rooftop"
@@ -11729,6 +12436,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.506968890358,
       "lng": -122.470857244334,
       "precision": "rooftop"
@@ -11745,6 +12453,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.538762581529,
       "lng": -122.507960146165,
       "precision": "rooftop"
@@ -11761,6 +12470,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Production in Calistoga & Santa Rosa",
       "lat": 38.59535864603,
       "lng": -122.587556421869,
       "precision": "rooftop"
@@ -11777,6 +12487,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "PRanch, HFlyer, TR-Yountville",
       "lat": 38.500313987533,
       "lng": -122.256661583831,
       "precision": "rooftop"
@@ -11793,6 +12504,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Geetesh Goyal, founder",
       "lat": 38.429571526083,
       "lng": -122.246452517587,
       "precision": "rooftop"
@@ -11809,6 +12521,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.577402,
       "lng": -122.57993,
       "precision": "rooftop",
@@ -11826,6 +12539,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.246202007071,
       "lng": -122.323974546614,
       "precision": "rooftop"
@@ -11842,6 +12556,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Originally from Cape Verde, Africa",
       "lat": 38.485350198665,
       "lng": -122.443691108491,
       "precision": "rooftop"
@@ -11858,6 +12573,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Coombsville, Frank",
       "lat": 38.29342,
       "lng": -122.246934,
       "precision": "town",
@@ -11876,6 +12592,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.338011,
       "lng": -122.260586,
       "precision": "street",
@@ -11893,6 +12610,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.254944,
       "lng": -122.274948,
       "precision": "rooftop",
@@ -11910,6 +12628,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.593044,
       "lng": -122.446136,
       "precision": "rooftop",
@@ -11927,6 +12646,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Jackson Family Wines",
       "lat": 38.59936522329,
       "lng": -122.601352942614,
       "precision": "rooftop"
@@ -11943,6 +12663,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.424343,
       "lng": -122.409717,
       "precision": "town",
@@ -11961,6 +12682,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5037054,
       "lng": -122.4756571,
       "precision": "street"
@@ -11977,6 +12699,7 @@
       "visiting": "By appointment only",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.507029383173,
       "lng": -122.491770464373,
       "precision": "rooftop"
@@ -11993,6 +12716,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.304689485546,
       "lng": -122.286385583552,
       "precision": "rooftop"
@@ -12009,6 +12733,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Dollarhide Ranch Label",
       "lat": 38.4529157,
       "lng": -122.4172532,
       "precision": "street"
@@ -12025,6 +12750,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.400736152689,
       "lng": -122.327297578225,
       "precision": "rooftop"
@@ -12041,6 +12767,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.4420579,
       "lng": -122.4250966,
       "precision": "street"
@@ -12057,6 +12784,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.413099667803,
       "lng": -122.335105090628,
       "precision": "rooftop"
@@ -12073,6 +12801,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.501030793343,
       "lng": -122.458664969811,
       "precision": "rooftop"
@@ -12089,6 +12818,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Sally Johnson",
       "lat": 38.594518,
       "lng": -122.603075,
       "precision": "rooftop",
@@ -12106,6 +12836,7 @@
       "visiting": "Walk-ins welcome",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.570340266729,
       "lng": -122.554677362803,
       "precision": "rooftop"
@@ -12122,6 +12853,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "slingshotwines.com, Labels made Napa & Sonoma",
       "lat": 38.406191169923,
       "lng": -122.366610606693,
       "precision": "rooftop"
@@ -12138,6 +12870,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.542752348116,
       "lng": -122.469506262383,
       "precision": "rooftop"
@@ -12154,6 +12887,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.509996265091,
       "lng": -122.389276783194,
       "precision": "rooftop"
@@ -12170,6 +12904,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5050696,
       "lng": -122.4699847,
       "precision": "street"
@@ -12186,6 +12921,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Also partner in Wolfs Head Wines",
       "lat": 38.504803,
       "lng": -122.471784,
       "precision": "rooftop",
@@ -12203,6 +12939,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Seps Estate",
       "lat": 38.603058906859,
       "lng": -122.641044821993,
       "precision": "rooftop"
@@ -12219,6 +12956,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.225349,
       "lng": -122.257106,
       "precision": "rooftop",
@@ -12236,6 +12974,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.527564,
       "lng": -122.499659,
       "precision": "rooftop",
@@ -12253,6 +12992,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Monica Stephens",
       "lat": 38.504307179031,
       "lng": -122.468867469821,
       "precision": "rooftop"
@@ -12269,6 +13009,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.350489,
       "lng": -122.326075,
       "precision": "town",
@@ -12287,6 +13028,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.600826,
       "lng": -122.46836,
       "precision": "rooftop",
@@ -12304,6 +13046,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.57538,
       "lng": -122.591634,
       "precision": "town",
@@ -12322,6 +13065,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.259076,
       "lng": -122.275032,
       "precision": "rooftop",
@@ -12339,6 +13083,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.28658,
       "lng": -122.246934,
       "precision": "town",
@@ -12357,6 +13102,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.491518863505,
       "lng": -122.453211522372,
       "precision": "rooftop"
@@ -12373,6 +13119,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.576593230319,
       "lng": -122.525240754761,
       "precision": "rooftop"
@@ -12389,6 +13136,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Our 1,200th visit",
       "lat": 38.601181683561,
       "lng": -122.440400956149,
       "precision": "rooftop"
@@ -12405,6 +13153,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.422002,
       "lng": -122.403207,
       "precision": "town",
@@ -12423,6 +13172,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.594268,
       "lng": -122.602757,
       "precision": "rooftop",
@@ -12440,6 +13190,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.574806047749,
       "lng": -122.579077566751,
       "precision": "rooftop"
@@ -12456,6 +13207,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.488928565506,
       "lng": -122.458213769129,
       "precision": "rooftop"
@@ -12472,6 +13224,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.40321,
       "lng": -122.29403,
       "precision": "rooftop",
@@ -12489,6 +13242,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Sign of the Dove, Michael Cooperman",
       "lat": 38.451585,
       "lng": -122.415144,
       "precision": "town",
@@ -12507,6 +13261,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.410678288303,
       "lng": -122.333746439637,
       "precision": "rooftop"
@@ -12523,6 +13278,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.565645899532,
       "lng": -122.56109798781,
       "precision": "rooftop"
@@ -12539,6 +13295,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.237161892663,
       "lng": -122.264932568758,
       "precision": "rooftop"
@@ -12555,6 +13312,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.590914388744,
       "lng": -122.594099859945,
       "precision": "rooftop"
@@ -12571,6 +13329,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Current vintages tend to be a bit older",
       "lat": 38.301087,
       "lng": -122.287068,
       "precision": "rooftop",
@@ -12588,6 +13347,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.452829,
       "lng": -122.41322,
       "precision": "town",
@@ -12606,6 +13366,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.452393052598,
       "lng": -122.361593818228,
       "precision": "rooftop"
@@ -12622,6 +13383,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.28134,
       "lng": -122.24135,
       "precision": "town",
@@ -12640,6 +13402,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.422804,
       "lng": -122.396124,
       "precision": "town",
@@ -12658,6 +13421,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Foretell Wines",
       "lat": 38.523323433575,
       "lng": -122.547784286215,
       "precision": "rooftop"
@@ -12674,6 +13438,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.228477852121,
       "lng": -122.256707926392,
       "precision": "rooftop"
@@ -12690,6 +13455,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.495868,
       "lng": -122.465736,
       "precision": "town",
@@ -12708,6 +13474,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.497135368701,
       "lng": -122.459650961686,
       "precision": "rooftop"
@@ -12724,6 +13491,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503331,
       "lng": -122.468863,
       "precision": "rooftop",
@@ -12741,6 +13509,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.394863,
       "lng": -122.351415,
       "precision": "town",
@@ -12759,6 +13528,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Other labels",
       "lat": 38.612122213133,
       "lng": -122.592598262779,
       "precision": "rooftop"
@@ -12775,6 +13545,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.421444,
       "lng": -122.417744,
       "precision": "street",
@@ -12792,6 +13563,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Members only, non commercial",
       "lat": 38.519495751428,
       "lng": -122.468332773295,
       "precision": "rooftop"
@@ -12808,6 +13580,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.473311551865,
       "lng": -122.432205896713,
       "precision": "rooftop"
@@ -12824,6 +13597,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.454344,
       "lng": -122.41164,
       "precision": "town",
@@ -12842,6 +13616,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.456073,
       "lng": -122.410467,
       "precision": "town",
@@ -12860,6 +13635,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Malek Amrani",
       "lat": 38.368183088942,
       "lng": -122.267253447124,
       "precision": "rooftop"
@@ -12876,6 +13652,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.422026,
       "lng": -122.4165707,
       "precision": "street"
@@ -12892,6 +13669,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.578280964296,
       "lng": -122.61741980325,
       "precision": "rooftop"
@@ -12908,6 +13686,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.598932611168,
       "lng": -122.622969444833,
       "precision": "rooftop"
@@ -12924,6 +13703,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.25872,
       "lng": -122.273433,
       "precision": "rooftop",
@@ -12941,6 +13721,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -12957,6 +13738,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.578261467256,
       "lng": -122.617749860698,
       "precision": "rooftop"
@@ -12973,6 +13755,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.400489,
       "lng": -122.216075,
       "precision": "town",
@@ -12991,6 +13774,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.426494,
       "lng": -122.390716,
       "precision": "town",
@@ -13009,6 +13793,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.526114885831,
       "lng": -122.483082789019,
       "precision": "rooftop"
@@ -13025,6 +13810,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.581079795345,
       "lng": -122.466431580847,
       "precision": "rooftop"
@@ -13041,6 +13827,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -13057,6 +13844,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Elodian, TENZ",
       "lat": 38.602908635523,
       "lng": -122.639636098805,
       "precision": "rooftop"
@@ -13073,6 +13861,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.496431,
       "lng": -122.464197,
       "precision": "town",
@@ -13091,6 +13880,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.296708075756,
       "lng": -122.225023268603,
       "precision": "rooftop"
@@ -13107,6 +13897,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.505057,
       "lng": -122.436959,
       "precision": "rooftop",
@@ -13124,6 +13915,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Eschol Ranch Label",
       "lat": 38.355532832701,
       "lng": -122.324004398969,
       "precision": "rooftop"
@@ -13140,6 +13932,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Also Oakville property",
       "lat": 38.255359838498,
       "lng": -122.331808035316,
       "precision": "rooftop"
@@ -13156,6 +13949,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.457949,
       "lng": -122.409744,
       "precision": "town",
@@ -13174,6 +13968,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Encroachment Wine Pinot Noir RRV",
       "lat": 38.502431764965,
       "lng": -122.47866368928,
       "precision": "rooftop"
@@ -13190,6 +13985,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "VinFormant",
       "lat": 38.301242716522,
       "lng": -122.282230384651,
       "precision": "rooftop"
@@ -13206,6 +14002,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Also estate in Hungary + hotel + charity",
       "lat": 38.518283,
       "lng": -122.489005,
       "precision": "rooftop",
@@ -13223,6 +14020,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "www.tfewines.com, Many labels, Quattro Theory, Mason",
       "lat": 38.503012,
       "lng": -122.466363,
       "precision": "street",
@@ -13240,6 +14038,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Meritage & The Wine Library",
       "lat": 38.2461149,
       "lng": -122.2746773,
       "precision": "street"
@@ -13256,6 +14055,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.5781126,
       "lng": -122.5778438,
       "precision": "rooftop"
@@ -13272,6 +14072,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.285936317977,
       "lng": -122.320145390926,
       "precision": "rooftop"
@@ -13288,6 +14089,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.497149,
       "lng": -122.462767,
       "precision": "town",
@@ -13306,6 +14108,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.295970838487,
       "lng": -122.259254514025,
       "precision": "rooftop"
@@ -13322,6 +14125,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "2 non Napa Trooms. St.Helena Winery",
       "lat": 38.538677217878,
       "lng": -122.507773321207,
       "precision": "rooftop"
@@ -13338,6 +14142,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Tours require appointment",
       "lat": 38.502579,
       "lng": -122.466363,
       "precision": "street",
@@ -13355,6 +14160,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Visited 2x",
       "lat": 38.498012,
       "lng": -122.461471,
       "precision": "town",
@@ -13373,6 +14179,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "3 wineries outside of NV",
       "lat": 38.567204430921,
       "lng": -122.556198648304,
       "precision": "rooftop"
@@ -13389,6 +14196,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.57014,
       "lng": -122.58605,
       "precision": "town",
@@ -13407,6 +14215,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": 38.499003,
       "lng": -122.460333,
       "precision": "town",
@@ -13425,6 +14234,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.489345295261,
       "lng": -122.448746293739,
       "precision": "rooftop"
@@ -13441,6 +14251,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Wine Shop, own label is Pneu",
       "lat": 38.402445172572,
       "lng": -122.362175198997,
       "precision": "rooftop"
@@ -13457,6 +14268,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.397042564711,
       "lng": -122.291307026079,
       "precision": "rooftop"
@@ -13473,6 +14285,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Hiatus Cellars, Vineyard on Soda Canyon Road",
       "lat": 38.441367070112,
       "lng": -122.288365707226,
       "precision": "rooftop"
@@ -13489,6 +14302,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.516504428924,
       "lng": -122.472934058572,
       "precision": "rooftop"
@@ -13505,6 +14319,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.333816542306,
       "lng": -122.371296115732,
       "precision": "rooftop"
@@ -13521,6 +14336,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.578648026649,
       "lng": -122.554927005106,
       "precision": "rooftop"
@@ -13537,6 +14353,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.500104,
       "lng": -122.459373,
       "precision": "town",
@@ -13555,6 +14372,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.498037883322,
       "lng": -122.459530660222,
       "precision": "rooftop"
@@ -13571,6 +14389,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Dare Label",
       "lat": 38.558523109126,
       "lng": -122.473230276659,
       "precision": "rooftop"
@@ -13587,6 +14406,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.599320715874,
       "lng": -122.623999778513,
       "precision": "rooftop"
@@ -13603,6 +14423,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.501296,
       "lng": -122.458608,
       "precision": "town",
@@ -13621,6 +14442,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.450138592453,
       "lng": -122.390314742059,
       "precision": "rooftop"
@@ -13637,6 +14459,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.397988,
       "lng": -122.348958,
       "precision": "town",
@@ -13655,6 +14478,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.595646510761,
       "lng": -122.587333878531,
       "precision": "rooftop"
@@ -13671,6 +14495,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "TR 699 St. Helena Hwy, St. Helena",
       "lat": 38.44314395744,
       "lng": -122.352482162969,
       "precision": "rooftop"
@@ -13687,6 +14512,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.4238423,
       "lng": -122.3914693,
       "precision": "street"
@@ -13703,6 +14529,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Tasting room: 1300 1st Street St. 305, Napa | Aida",
       "lat": 38.521574254761,
       "lng": -122.494288574001,
       "precision": "rooftop"
@@ -13719,6 +14546,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.522200721842,
       "lng": -122.475378118376,
       "precision": "rooftop"
@@ -13735,6 +14563,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": "Correlation Wine Co",
       "lat": 38.52454323247,
       "lng": -122.551370649356,
       "precision": "rooftop"
@@ -13751,6 +14580,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.404122,
       "lng": -122.209725,
       "precision": "town",
@@ -13769,6 +14599,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Collective, own label is Las Bonitas",
       "lat": 38.300654,
       "lng": -122.287068,
       "precision": "rooftop",
@@ -13786,6 +14617,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "NAPA WINE CO",
       "lat": 38.229611928774,
       "lng": -122.256502401176,
       "precision": "rooftop"
@@ -13802,6 +14634,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.53059991173,
       "lng": -122.326125052801,
       "precision": "rooftop"
@@ -13818,6 +14651,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.562313112365,
       "lng": -122.579489516529,
       "precision": "rooftop"
@@ -13834,6 +14668,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.600928787594,
       "lng": -122.467580487494,
       "precision": "rooftop"
@@ -13850,6 +14685,7 @@
       "visiting": "Not open to the public",
       "cave": true,
       "archived": false,
+      "aka": "Six Degrees, Relief - moved to Texas",
       "lat": 38.40134,
       "lng": -122.32365,
       "precision": "town",
@@ -13868,6 +14704,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.35174585698,
       "lng": -122.305412606306,
       "precision": "rooftop"
@@ -13884,6 +14721,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.502558,
       "lng": -122.458051,
       "precision": "town",
@@ -13902,6 +14740,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.340577869759,
       "lng": -122.263642460903,
       "precision": "rooftop"
@@ -13918,6 +14757,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.237536037883,
       "lng": -122.265440448931,
       "precision": "rooftop"
@@ -13934,6 +14774,7 @@
       "visiting": "By appointment",
       "cave": true,
       "archived": false,
+      "aka": null,
       "lat": 38.380312925834,
       "lng": -122.290598864156,
       "precision": "rooftop"
@@ -13950,6 +14791,7 @@
       "visiting": "By appointment only",
       "cave": false,
       "archived": false,
+      "aka": "Leonardini Family Winery",
       "lat": 38.506686300014,
       "lng": -122.47278526377,
       "precision": "rooftop"
@@ -13966,6 +14808,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Smoking Gun",
       "lat": 38.518283,
       "lng": -122.48964,
       "precision": "rooftop",
@@ -13983,6 +14826,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.356756,
       "lng": -122.267554,
       "precision": "rooftop",
@@ -14000,6 +14844,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.518746874115,
       "lng": -122.466442912978,
       "precision": "rooftop"
@@ -14016,6 +14861,7 @@
       "visiting": "Walk-ins welcome",
       "cave": false,
       "archived": false,
+      "aka": "Wine Shop: 4 Napa labels Steps, Recolant, etc",
       "lat": 38.399691,
       "lng": -122.359383,
       "precision": "rooftop",
@@ -14033,6 +14879,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Currently only producing Chardonnay",
       "lat": 38.372302045808,
       "lng": -122.416536254709,
       "precision": "rooftop"
@@ -14049,6 +14896,7 @@
       "visiting": null,
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.568952,
       "lng": -122.577495,
       "precision": "town",
@@ -14067,6 +14915,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "1000th visit & tasting",
       "lat": 38.572372,
       "lng": -122.569971,
       "precision": "town",
@@ -14085,6 +14934,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Bordeaux wineries also",
       "lat": 38.280152,
       "lng": -122.232795,
       "precision": "town",
@@ -14103,6 +14953,7 @@
       "visiting": null,
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -14119,6 +14970,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.258768,
       "lng": -122.273164,
       "precision": "rooftop",
@@ -14136,6 +14988,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.489651,
       "lng": -122.322,
       "precision": "street",
@@ -14153,6 +15006,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.343680981136,
       "lng": -122.403730744619,
       "precision": "rooftop"
@@ -14169,6 +15023,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.483228602665,
       "lng": -122.455502375096,
       "precision": "rooftop"
@@ -14185,6 +15040,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.503867,
       "lng": -122.457713,
       "precision": "town",
@@ -14203,6 +15059,7 @@
       "visiting": null,
       "cave": false,
       "archived": true,
+      "aka": null,
       "lat": null,
       "lng": null,
       "precision": null
@@ -14219,6 +15076,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.555290635644,
       "lng": -122.496083030047,
       "precision": "rooftop"
@@ -14235,6 +15093,7 @@
       "visiting": "By appointment",
       "cave": false,
       "archived": false,
+      "aka": "Abacus",
       "lat": 38.476849231543,
       "lng": -122.389173592412,
       "precision": "rooftop"
@@ -14251,6 +15110,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.283572,
       "lng": -122.225271,
       "precision": "town",
@@ -14269,6 +15129,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": "Trinchero affiliation",
       "lat": 38.589199181334,
       "lng": -122.597324962108,
       "precision": "rooftop"
@@ -14285,6 +15146,7 @@
       "visiting": "Not open to the public",
       "cave": false,
       "archived": false,
+      "aka": null,
       "lat": 38.296752,
       "lng": -122.289128,
       "precision": "rooftop",
