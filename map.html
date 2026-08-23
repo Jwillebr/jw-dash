@@ -127,6 +127,7 @@ button, input, select { font: inherit; color: inherit; }
   border-radius: 8px; -webkit-appearance: none;
 }
 #q::placeholder { color: var(--text-muted); }
+#q::-webkit-search-cancel-button { -webkit-appearance: none; }
 .search .clear {
   position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
   border: 0; background: none; color: var(--text-muted); cursor: pointer;
@@ -622,7 +623,12 @@ button, input, select { font: inherit; color: inherit; }
                  (w.appellation || '') + ' ' + (w.visiting || '') +
                  (w.cave ? ' cave' : '')).toLowerCase();
       var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
-      for (var i = 0; i < terms.length; i++) if (hay.indexOf(terms[i]) === -1) return false;
+      for (var i = 0; i < terms.length; i++) {
+        var t = terms[i];
+        var hit = hay.indexOf(t) !== -1 ||
+          (t.length >= 5 && hay.indexOf(t.slice(0, -1)) !== -1);   // trailing-letter typo
+        if (!hit) return false;
+      }
     }
     return true;
   }
@@ -642,13 +648,36 @@ button, input, select { font: inherit; color: inherit; }
     cluster.addLayers(layers);
 
     state.kept = kept;
+    flyToResults(kept);
     renderList();
     renderChipCounts();
+    renderLegend();
     els.headCount.textContent = kept.length.toLocaleString() + ' of ' +
       state.all.length.toLocaleString() + ' wineries';
     els.clearApp.hidden = state.apps.size === 0;
     els.clearVis.hidden = state.vis.size === 0;
     syncUrl();
+  }
+
+  /* Searching should carry the map to what it found: a single hit gets selected
+     (fly + popup), several hits get framed together. Chip/toggle changes reuse
+     the same apply() path, so only a CHANGED query triggers movement. */
+  var lastFitQ = null;
+  function flyToResults(kept) {
+    if (!state.ready) return;
+    if (!state.q) { lastFitQ = null; return; }
+    if (state.q === lastFitQ) return;
+    lastFitQ = state.q;
+    var pts = kept.filter(function (w) { return w.lat != null; });
+    if (!pts.length) return;
+    if (pts.length === 1) {
+      select(pts[0].slug, true);
+    } else if (pts.length <= 400) {
+      map.flyToBounds(
+        L.latLngBounds(pts.map(function (w) { return [w.lat, w.lng]; })).pad(.2),
+        { maxZoom: 15, duration: .5 }
+      );
+    }
   }
 
   /* ------------------------------------------------------------------ list -- */
