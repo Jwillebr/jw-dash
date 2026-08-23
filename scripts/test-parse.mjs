@@ -101,6 +101,14 @@ test('real-markup page: author links skipped, comments never mined', () => {
   assert.equal(r.visiting, 'By appointment');
 });
 
+test('numeric-entity apostrophes decode into names', () => {
+  const r = parsePage(
+    '<html><head><title>Stag&#8217;s Leap Wine Cellars - The Napa Wine Project</title></head>' +
+    '<body><h1>Stag&#8217;s Leap Wine Cellars</h1></body></html>',
+    'https://www.napawineproject.com/stags-leap-wine-cellars/', null);
+  assert.equal(r.name, "Stag's Leap Wine Cellars");
+});
+
 let failed = 0;
 for (const [name, fn] of cases) {
   try { fn(); console.log(`  ok   ${name}`); }

@@ -84,6 +84,7 @@ function joinSpreadsheet(wineries) {
     w.phone = row.phone || w.phone;
     w.visiting = w.visiting || row.visiting;   // prose wording is more precise
     w.cave = row.cave;
+    w.archived = false;                        // the sheet lists active wineries only
   }
   return { matched, total: wineries.length };
 }
