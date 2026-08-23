@@ -125,6 +125,7 @@ button, input, select { font: inherit; color: inherit; }
   width: 100%; padding: 8px 30px 8px 32px;
   background: var(--surface-2); border: 1px solid var(--border);
   border-radius: 8px; -webkit-appearance: none;
+  font-size: 16px;   /* below 16px, iOS zooms the page in when the box is focused */
 }
 #q::placeholder { color: var(--text-muted); }
 #q::-webkit-search-cancel-button { -webkit-appearance: none; }
