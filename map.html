@@ -163,6 +163,14 @@ button, input, select { font: inherit; color: inherit; }
   display: grid; gap: 6px; flex: 0 0 auto;
   padding: 11px 14px; border-bottom: 1px solid var(--border);
 }
+/* Drag handle for the mobile bottom sheet; desktop hides it. */
+.grip {
+  display: none; place-items: center; flex: 0 0 auto;
+  height: 26px; cursor: grab; touch-action: none;
+}
+.grip span {
+  width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong);
+}
 .fgroup > .flabel {
   display: flex; align-items: center; justify-content: space-between;
   font-size: 11px; font-weight: 650; letter-spacing: .07em; text-transform: uppercase;
@@ -327,11 +335,8 @@ button, input, select { font: inherit; color: inherit; }
     transition: transform .22s ease, visibility 0s .22s;
   }
   #sidebar.open { transform: translateY(0); visibility: visible; transition: transform .22s ease; }
-  #sidebar::before {
-    content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
-    width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong);
-  }
-  .filters { max-height: 30vh; padding-top: 16px; }
+  .grip { display: grid; }
+  .filters { max-height: 30vh; }
   .legend {
     bottom: calc(52px + env(safe-area-inset-bottom, 0px));
     left: 8px; font-size: 11.5px; padding: 7px 9px; max-width: 180px;
@@ -380,6 +385,7 @@ button, input, select { font: inherit; color: inherit; }
 
 <div class="layout">
   <aside id="sidebar" aria-label="Filters and winery list">
+    <div class="grip" id="sheetGrip" role="button" aria-label="Close list" tabindex="0"><span></span></div>
     <div class="filters">
       <div class="fgroup">
         <div class="flabel"><span>Town</span><button type="button" id="clearApp" hidden>clear</button></div>
@@ -860,6 +866,42 @@ button, input, select { font: inherit; color: inherit; }
 
   els.panelToggle.addEventListener('click', function () {
     togglePanel(!els.sidebar.classList.contains('open'));
+  });
+
+  /* The sheet's grab handle: drag follows the finger; release closes on a real
+     pull (distance or flick), otherwise snaps back. A plain tap closes too. */
+  (function () {
+    var grip = $('sheetGrip');
+    var drag = null;
+    grip.addEventListener('touchstart', function (e) {
+      if (!els.sidebar.classList.contains('open')) return;
+      drag = { y: e.touches[0].clientY, t: Date.now(), d: 0 };
+      els.sidebar.style.transition = 'none';
+    }, { passive: true });
+    grip.addEventListener('touchmove', function (e) {
+      if (!drag) return;
+      drag.d = Math.max(0, e.touches[0].clientY - drag.y);
+      els.sidebar.style.transform = 'translateY(' + drag.d + 'px)';
+    }, { passive: true });
+    function endDrag() {
+      if (!drag) return;
+      var flick = drag.d / (Date.now() - drag.t + 1) > 0.45;
+      els.sidebar.style.transition = '';
+      els.sidebar.style.transform = '';
+      if (drag.d > 80 || (flick && drag.d > 24)) togglePanel(false);
+      drag = null;
+    }
+    grip.addEventListener('touchend', endDrag);
+    grip.addEventListener('touchcancel', endDrag);
+    grip.addEventListener('click', function () { togglePanel(false); });
+    grip.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePanel(false); }
+    });
+  })();
+
+  /* Tapping the visible map while the sheet is open dismisses it (scrim tap). */
+  map.on('click', function () {
+    if (innerWidth <= 820 && els.sidebar.classList.contains('open')) togglePanel(false);
   });
   function togglePanel(open) {
     els.sidebar.classList.toggle('open', open);
