@@ -260,6 +260,53 @@ button, input, select { font: inherit; color: inherit; }
 .marker-cluster { background: none; }
 .marker-cluster div { background: none; }
 
+/* trip */
+#tripBtn .n {
+  display: inline-grid; place-items: center; min-width: 18px; height: 18px;
+  padding: 0 4px; border-radius: 999px; font-size: 11px; font-weight: 650;
+  background: var(--accent); color: var(--accent-ink);
+}
+#tripBtn[data-on="1"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+#tripBtn[data-on="1"] .n { background: var(--accent-ink); color: var(--accent); }
+#tripPanel { display: none; flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; }
+body.tripmode #tripPanel { display: block; }
+body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tripmode #list { display: none; }
+.trip-head { padding: 12px 14px 8px; border-bottom: 1px solid var(--border); }
+.trip-head h2 { margin: 0; font-size: 15px; letter-spacing: -.01em; }
+.trip-head p { margin: 3px 0 0; font-size: 12.5px; color: var(--text-muted); }
+.trip-stop { display: flex; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.trip-stop .num {
+  flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%; margin-top: 1px;
+  display: grid; place-items: center; font-size: 12px; font-weight: 650;
+  background: var(--accent); color: var(--accent-ink);
+}
+.trip-stop .body { flex: 1 1 auto; min-width: 0; }
+.trip-stop .name { font-weight: 550; }
+.trip-stop .sub { font-size: 12.5px; color: var(--text-muted); }
+.trip-stop .warn { color: var(--cat-2); font-weight: 550; }
+.trip-stop .leg { font-size: 12px; color: var(--text-muted); padding: 2px 14px 2px 46px; border-bottom: 1px solid var(--border); }
+.trip-stop .rm {
+  flex: 0 0 auto; border: 0; background: none; color: var(--text-muted); cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 2px 4px; border-radius: 6px;
+}
+.trip-stop .rm:hover { background: var(--surface-3); color: var(--text-primary); }
+.trip-leg { font-size: 12px; color: var(--text-muted); padding: 3px 14px 3px 47px; border-bottom: 1px solid var(--border); }
+.trip-actions { display: grid; gap: 8px; padding: 12px 14px; }
+.trip-actions a, .trip-actions button {
+  display: block; width: 100%; text-align: center; padding: 9px 10px; border-radius: 8px;
+  font-size: 13.5px; font-weight: 550; text-decoration: none; cursor: pointer; border: 0;
+}
+.trip-actions .primary { background: var(--accent); color: var(--accent-ink); }
+.trip-actions .ghost { background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary); }
+.trip-empty { padding: 26px 18px; color: var(--text-muted); font-size: 13.5px; text-align: center; }
+.leaflet-tooltip.wm-trip { font-weight: 650; }
+.pop .tripbtn {
+  display: block; width: 100%; margin-top: 7px; text-align: center; padding: 6px 8px;
+  border-radius: 7px; font-size: 12.5px; font-weight: 550; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary);
+}
+.pop .tripbtn[data-in="1"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
 /* pin name labels (zoomed in) */
 .leaflet-tooltip.wm-label {
   background: var(--surface-1); color: var(--text-primary);
@@ -382,6 +429,9 @@ button, input, select { font: inherit; color: inherit; }
       <path d="M3 10a7 7 0 1 1 2.1 5" stroke-linecap="round"/><path d="M3 15v-4h4" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
+  <button class="btn" id="tripBtn" type="button" aria-pressed="false" title="Show my trip">
+    Trip <span class="n" id="tripCount" hidden>0</span>
+  </button>
   <button class="btn" id="panelToggle" type="button" aria-expanded="false" aria-controls="sidebar">List</button>
 </header>
 
@@ -406,6 +456,8 @@ button, input, select { font: inherit; color: inherit; }
       <label class="switch"><input type="checkbox" id="fApprox" checked> Include approximate locations</label>
       <label class="switch"><input type="checkbox" id="fArchived"> Include archived / closed</label>
     </div>
+
+    <div id="tripPanel" aria-label="Trip itinerary"></div>
 
     <div class="listhead">
       <span><strong id="listCount">0</strong> shown</span>
@@ -586,6 +638,9 @@ button, input, select { font: inherit; color: inherit; }
         '<a class="primary" href="' + esc(w.url) + '" target="_blank" rel="noopener">Read the review</a>' +
         '<a class="ghost" href="' + dir + '" target="_blank" rel="noopener">Directions</a>' +
       '</div>' +
+      '<button type="button" class="tripbtn" data-trip="' + esc(w.slug) + '" data-in="' + (inTrip(w.slug) ? 1 : 0) + '">' +
+        (inTrip(w.slug) ? '\u2713 In your trip \u2014 tap to remove' : '+ Add to trip') +
+      '</button>' +
       (w.precision === 'town'
         ? '<p class="approx">Pin placed at the centre of ' + esc(w.city || 'town') +
           ' &mdash; no street address was published.</p>'
@@ -635,6 +690,7 @@ button, input, select { font: inherit; color: inherit; }
   }
 
   function apply() {
+    if (trip.mode) { applyTrip(); return; }
     state.fArchivedOn = els.fArchived.checked;
     state.fApproxOn = els.fApprox.checked;
     state.fCaveOn = els.fCave.checked;
@@ -658,6 +714,241 @@ button, input, select { font: inherit; color: inherit; }
     els.clearApp.hidden = state.apps.size === 0;
     els.clearVis.hidden = state.vis.size === 0;
     syncUrl();
+  }
+
+  /* ------------------------------------------------------------------ trip -- */
+  /* The trip is a device-local list of winery slugs (localStorage + URL). Trip
+     mode filters the map to those stops, ordered by a shortest-drive solver
+     (nearest-neighbour from every start, refined by 2-opt) and handed to Google
+     Maps for real turn-by-turn. */
+  var trip = { slugs: [], mode: false, routed: [], unplaced: [] };
+  var tripLayer = L.layerGroup();
+  var routeLine = null;
+
+  function loadTrip() {
+    try {
+      var u = new URLSearchParams(location.search).get('trip');
+      if (u) return u.split('|').filter(Boolean);
+      return JSON.parse(localStorage.getItem('nwm-trip') || '[]');
+    } catch (e) { return []; }
+  }
+  function saveTrip() {
+    try { localStorage.setItem('nwm-trip', JSON.stringify(trip.slugs)); } catch (e) {}
+  }
+  var bySlug = function (slug) {
+    return state.all.find(function (w) { return w.slug === slug; });
+  };
+  function inTrip(slug) { return trip.slugs.indexOf(slug) !== -1; }
+  function toggleTrip(slug) {
+    var i = trip.slugs.indexOf(slug);
+    if (i === -1) trip.slugs.push(slug); else trip.slugs.splice(i, 1);
+    saveTrip();
+    renderTripButton();
+    if (trip.mode) applyTrip();
+    else syncUrl();
+  }
+  function renderTripButton() {
+    var el = $('tripCount');
+    el.hidden = !trip.slugs.length;
+    el.textContent = trip.slugs.length;
+  }
+
+  var havMi = function (a, b) {
+    var R = 3958.8, d = Math.PI / 180;
+    var la1 = a.lat * d, la2 = b.lat * d, dla = (b.lat - a.lat) * d, dlo = (b.lng - a.lng) * d;
+    var h = Math.sin(dla / 2) * Math.sin(dla / 2) +
+            Math.cos(la1) * Math.cos(la2) * Math.sin(dlo / 2) * Math.sin(dlo / 2);
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+  function pathMiles(path) {
+    var t = 0;
+    for (var i = 1; i < path.length; i++) t += havMi(path[i - 1], path[i]);
+    return t;
+  }
+  function routeOrder(stops) {
+    if (stops.length <= 2) return stops.slice();
+    var best = null, bestLen = Infinity;
+    for (var s = 0; s < stops.length; s++) {
+      var rest = stops.slice();
+      var cur = rest.splice(s, 1)[0];
+      var path = [cur];
+      while (rest.length) {
+        var bi = 0, bd = Infinity;
+        for (var i = 0; i < rest.length; i++) {
+          var dd = havMi(cur, rest[i]);
+          if (dd < bd) { bd = dd; bi = i; }
+        }
+        cur = rest.splice(bi, 1)[0];
+        path.push(cur);
+      }
+      var improved = true;
+      while (improved) {
+        improved = false;
+        for (var a = 0; a < path.length - 2; a++) {
+          for (var b = a + 2; b < path.length; b++) {
+            var next = path[b + 1] || null;
+            var delta = havMi(path[a], path[b]) + (next ? havMi(path[a + 1], next) : 0) -
+                        (havMi(path[a], path[a + 1]) + (next ? havMi(path[b], next) : 0));
+            if (delta < -1e-6) {
+              var seg = path.slice(a + 1, b + 1).reverse();
+              Array.prototype.splice.apply(path, [a + 1, seg.length].concat(seg));
+              improved = true;
+            }
+          }
+        }
+      }
+      var len = pathMiles(path);
+      if (len < bestLen) { bestLen = len; best = path; }
+    }
+    return best;
+  }
+  var legText = function (mi) {
+    var road = mi * 1.35;                             // crow-flies -> road estimate
+    var min = Math.max(2, Math.round(road / 32 * 60));
+    return '\u2193 ~' + (road < 9.5 ? road.toFixed(1) : Math.round(road)) + ' mi \u00b7 ~' + min + ' min drive';
+  };
+
+  function gmapsUrl(routed) {
+    var pt = function (w) { return w.lat + ',' + w.lng; };
+    if (routed.length === 1) {
+      return 'https://www.google.com/maps/dir/?api=1&destination=' + pt(routed[0]);
+    }
+    var stops = routed.slice(0, 11);                  // Google Maps URL cap: 9 waypoints
+    return 'https://www.google.com/maps/dir/?api=1' +
+      '&origin=' + pt(stops[0]) +
+      '&destination=' + pt(stops[stops.length - 1]) +
+      (stops.length > 2
+        ? '&waypoints=' + stops.slice(1, -1).map(pt).join('%7C')
+        : '');
+  }
+
+  function enterTripMode(on) {
+    trip.mode = on;
+    document.body.classList.toggle('tripmode', on);
+    $('tripBtn').dataset.on = on ? '1' : '0';
+    $('tripBtn').setAttribute('aria-pressed', String(on));
+    if (on) {
+      applyTrip();
+      if (innerWidth <= 820) togglePanel(true);
+    } else {
+      tripLayer.remove();
+      if (routeLine) { routeLine.remove(); routeLine = null; }
+      labelled = null;                                 // force normal label rebind
+      refreshLabels();
+      apply();
+      renderList();
+    }
+  }
+
+  function applyTrip() {
+    var stops = trip.slugs.map(bySlug).filter(Boolean);
+    var placed = stops.filter(function (w) { return w.lat != null; });
+    trip.routed = routeOrder(placed);
+    trip.unplaced = stops.filter(function (w) { return w.lat == null; });
+
+    cluster.clearLayers();
+    tripLayer.clearLayers().addTo(map);
+    if (routeLine) { routeLine.remove(); routeLine = null; }
+
+    trip.routed.forEach(function (w, i) {
+      var m = state.markers.get(w.slug);
+      if (!m) return;
+      m.unbindTooltip();
+      m.bindTooltip((i + 1) + ' \u00b7 ' + w.name,
+        { permanent: true, direction: 'right', offset: [9, 0], className: 'wm-label wm-trip' });
+      tripLayer.addLayer(m);
+    });
+    if (trip.routed.length > 1) {
+      routeLine = L.polyline(trip.routed.map(function (w) { return [w.lat, w.lng]; }), {
+        color: cssVar('--accent'), weight: 3, opacity: .55, dashArray: '6 7',
+      }).addTo(map);
+    }
+    if (trip.routed.length) {
+      map.flyToBounds(L.latLngBounds(trip.routed.map(function (w) { return [w.lat, w.lng]; })).pad(.25),
+        { maxZoom: 14, duration: .5 });
+    }
+    els.headCount.textContent = 'Trip \u00b7 ' + stops.length + ' stop' + (stops.length === 1 ? '' : 's');
+    renderTripPanel();
+    syncUrl();
+  }
+
+  function renderTripPanel() {
+    var panel = $('tripPanel');
+    var stops = trip.routed, extras = trip.unplaced;
+    if (!stops.length && !extras.length) {
+      panel.innerHTML = '<p class="trip-empty">No stops yet.<br>Tap a winery on the map, then ' +
+        '<strong>Add to trip</strong> in its popup.</p>' +
+        '<div class="trip-actions"><button class="ghost" type="button" id="tripExit">Back to all wineries</button></div>';
+      return;
+    }
+    var frag = document.createDocumentFragment();
+    var head = document.createElement('div');
+    head.className = 'trip-head';
+    var total = pathMiles(stops) * 1.35;
+    head.innerHTML = '<h2>Your trip \u00b7 ' + (stops.length + extras.length) + ' stops</h2>' +
+      '<p>Order optimised for the shortest drive' +
+      (stops.length > 1 ? ' \u2014 ~' + Math.round(total) + ' mi between stops' : '') + '</p>';
+    frag.appendChild(head);
+
+    stops.forEach(function (w, i) {
+      var row = document.createElement('div');
+      row.className = 'trip-stop';
+      var pol = policyOf(w);
+      var flag = '';
+      if (pol.key === 'appt') flag = '<span class="warn">book ahead</span> \u00b7 ';
+      if (pol.key === 'closed') flag = '<span class="warn">not open to visitors</span> \u00b7 ';
+      row.innerHTML =
+        '<span class="num">' + (i + 1) + '</span>' +
+        '<span class="body"><span class="name"></span>' +
+        '<div class="sub">' + flag + (w.city || 'Napa Valley') +
+        (w.phone ? ' \u00b7 <a href="tel:' + w.phone.replace(/[^\d+]/g, '') + '">' + w.phone + '</a>' : '') +
+        '</div></span>' +
+        '<button class="rm" type="button" aria-label="Remove stop" data-rm="' + w.slug + '">\u00d7</button>';
+      row.querySelector('.name').textContent = w.name;
+      row.querySelector('.body').addEventListener('click', function () { select(w.slug, true); });
+      frag.appendChild(row);
+      if (i < stops.length - 1) {
+        var leg = document.createElement('div');
+        leg.className = 'trip-leg';
+        leg.textContent = legText(havMi(w, stops[i + 1]));
+        frag.appendChild(leg);
+      }
+    });
+    extras.forEach(function (w) {
+      var row = document.createElement('div');
+      row.className = 'trip-stop';
+      row.innerHTML = '<span class="num">?</span><span class="body"><span class="name"></span>' +
+        '<div class="sub">no location \u2014 not part of the route</div></span>' +
+        '<button class="rm" type="button" aria-label="Remove stop" data-rm="' + w.slug + '">\u00d7</button>';
+      row.querySelector('.name').textContent = w.name;
+      frag.appendChild(row);
+    });
+
+    var actions = document.createElement('div');
+    actions.className = 'trip-actions';
+    if (stops.length) {
+      var a = document.createElement('a');
+      a.className = 'primary'; a.target = '_blank'; a.rel = 'noopener';
+      a.href = gmapsUrl(stops);
+      a.textContent = 'Directions for the full route (Google Maps)';
+      actions.appendChild(a);
+      if (stops.length > 11) {
+        var note = document.createElement('p');
+        note.className = 'trip-empty'; note.style.padding = '0';
+        note.textContent = 'Google Maps links cap at 11 stops; the first 11 are included.';
+        actions.appendChild(note);
+      }
+    }
+    var back = document.createElement('button');
+    back.className = 'ghost'; back.type = 'button'; back.id = 'tripExit';
+    back.textContent = 'Back to all wineries';
+    actions.appendChild(back);
+    var clear = document.createElement('button');
+    clear.className = 'ghost'; clear.type = 'button'; clear.id = 'tripClear';
+    clear.textContent = 'Clear trip';
+    actions.appendChild(clear);
+    frag.appendChild(actions);
+    panel.replaceChildren(frag);
   }
 
   /* Searching should carry the map to what it found: a single hit gets selected
@@ -755,7 +1046,10 @@ button, input, select { font: inherit; color: inherit; }
     if (w && pan && w.lat != null) {
       map.flyTo([w.lat, w.lng], Math.max(map.getZoom(), 14), { duration: .6 });
       var m = state.markers.get(slug);
-      if (m) cluster.zoomToShowLayer(m, function () { m.openPopup(); });
+      if (m) {
+        if (trip.mode) m.openPopup();
+        else cluster.zoomToShowLayer(m, function () { m.openPopup(); });
+      }
     }
     syncUrl();
   }
@@ -837,6 +1131,8 @@ button, input, select { font: inherit; color: inherit; }
       if (state.apps.size) p.set('town', [...state.apps].join('|'));
       if (state.vis.size) p.set('vis', [...state.vis].join('|'));
       if (state.selected) p.set('w', state.selected);
+      if (trip.slugs.length) p.set('trip', trip.slugs.join('|'));
+      if (trip.mode) p.set('tripmode', '1');
       if (els.fArchived.checked) p.set('archived', '1');
       if (els.fCave.checked) p.set('cave', '1');
       if (!els.fApprox.checked) p.set('approx', '0');
@@ -853,6 +1149,7 @@ button, input, select { font: inherit; color: inherit; }
     (p.get('town') || '').split('|').filter(Boolean).forEach(function (v) { state.apps.add(v); });
     (p.get('vis') || '').split('|').filter(Boolean).forEach(function (v) { state.vis.add(v); });
     if (p.get('archived') === '1') els.fArchived.checked = true;
+    state.wantTripMode = p.get('tripmode') === '1';
     if (p.get('cave') === '1') els.fCave.checked = true;
     if (p.get('approx') === '0') els.fApprox.checked = false;
     return p.get('w');
@@ -893,6 +1190,26 @@ button, input, select { font: inherit; color: inherit; }
     select(row.dataset.slug, true);
     if (innerWidth <= 820) togglePanel(false);
   });
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-trip]');
+    if (t) {
+      var slug = t.dataset.trip;
+      toggleTrip(slug);
+      t.dataset.in = inTrip(slug) ? '1' : '0';
+      t.textContent = inTrip(slug) ? '\u2713 In your trip \u2014 tap to remove' : '+ Add to trip';
+      return;
+    }
+    var rm = e.target.closest('[data-rm]');
+    if (rm) { toggleTrip(rm.dataset.rm); return; }
+    if (e.target.closest('#tripExit')) { enterTripMode(false); return; }
+    if (e.target.closest('#tripClear')) {
+      trip.slugs = []; saveTrip(); renderTripButton();
+      if (trip.mode) applyTrip();
+    }
+  });
+
+  $('tripBtn').addEventListener('click', function () { enterTripMode(!trip.mode); });
 
   els.panelToggle.addEventListener('click', function () {
     togglePanel(!els.sidebar.classList.contains('open'));
@@ -940,6 +1257,7 @@ button, input, select { font: inherit; color: inherit; }
   }
 
   $('reset').addEventListener('click', function () {
+    if (trip.mode) enterTripMode(false);
     state.q = ''; els.q.value = ''; els.qClear.hidden = true;
     state.apps.clear(); state.vis.clear(); state.selected = null;
     els.fArchived.checked = false; els.fApprox.checked = true; els.fCave.checked = false;
@@ -984,6 +1302,7 @@ button, input, select { font: inherit; color: inherit; }
     if (e.key === '/' && document.activeElement !== els.q) { e.preventDefault(); els.q.focus(); els.q.select(); }
     if (e.key === 'Escape') {
       if (document.activeElement === els.q && els.q.value) { els.qClear.click(); }
+      else if (trip.mode) { enterTripMode(false); }
       else { map.closePopup(); state.selected = null; repaint(); renderList(); }
     }
   });
@@ -1018,6 +1337,8 @@ button, input, select { font: inherit; color: inherit; }
       computeBigTowns();
       renderChips();
       var want = readUrl();
+      trip.slugs = loadTrip().filter(function (slug) { return !!bySlug(slug); });
+      renderTripButton();
       apply();
       state.ready = true;
       els.overlay.hidden = true;
@@ -1029,6 +1350,7 @@ button, input, select { font: inherit; color: inherit; }
       renderList();
       renderLegend();
       if (want) select(want, true);
+      if (state.wantTripMode && trip.slugs.length) enterTripMode(true);
 
       var missing = state.all.filter(function (w) { return w.lat == null; }).length;
       if (missing) {

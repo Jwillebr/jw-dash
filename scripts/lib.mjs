@@ -63,7 +63,11 @@ export function htmlToText(html) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/gi, ' ')
     .replace(/&amp;/gi, '&')
-    .replace(/&#0?39;|&apos;|&rsquo;/gi, "'")
+    .replace(/&#0?39;|&#821[67];|&apos;|&rsquo;|&lsquo;/gi, "'")
+    .replace(/&#(\d+);/g, (m, c) => {
+      const n = Number(c);
+      return n >= 32 && n < 65536 ? String.fromCharCode(n) : ' ';
+    })
     .replace(/&quot;|&ldquo;|&rdquo;/gi, '"')
     .replace(/&#8211;|&ndash;/gi, '-')
     .replace(/&#8212;|&mdash;/gi, '-')

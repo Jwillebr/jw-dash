@@ -307,10 +307,12 @@ function pickVisiting(text) {
 }
 
 function pickArchived(html, rawText) {
+  // Only an explicit archive marker counts: phrases like "the winery closed"
+  // appear in 150-year histories of very much alive wineries (Schramsberg).
   const text = rawText.replace(/\s+/g, ' ');
   return /\barchived\b/i.test(text.slice(0, 1500)) ||
     /class=["'][^"']*\barchive[d]?\b/i.test(html.slice(0, 4000)) ||
-    /no longer (in business|producing|exists)|winery (is )?closed|brand (is )?no longer/i.test(text);
+    /this (review|winery|brand) (has been|is) archived/i.test(text);
 }
 
 // Exported so scripts/test-parse.mjs can exercise extraction without the network.
