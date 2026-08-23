@@ -668,7 +668,9 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     if (w.archived) badges += '<span class="badge">Archived</span>';
 
     var dir = 'https://www.google.com/maps/dir/?api=1&destination=' +
-      encodeURIComponent(w.address ? w.address + ', CA' : w.lat + ',' + w.lng);
+      (w.address ? encodeURIComponent(w.name + ', ' + w.address)
+        : w.city ? encodeURIComponent(w.name + ', ' + w.city + ', CA')
+        : w.lat + ',' + w.lng);
 
     return '<div class="pop">' +
       '<h3><a href="' + esc(w.url) + '" target="_blank" rel="noopener">' + esc(w.name) + '</a></h3>' +
@@ -849,7 +851,14 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
   };
 
   function gmapsUrl(routed) {
-    var pt = function (w) { return w.lat + ',' + w.lng; };
+    /* Name + address lets Google match its own place listing, so stops read
+       "Bennett Lane Winery" instead of "Dropped pin"; coordinates are only the
+       last resort. */
+    var pt = function (w) {
+      if (w.address) return encodeURIComponent(w.name + ', ' + w.address);
+      if (w.city) return encodeURIComponent(w.name + ', ' + w.city + ', CA');
+      return w.lat + ',' + w.lng;
+    };
     if (routed.length === 1) {
       return 'https://www.google.com/maps/dir/?api=1&destination=' + pt(routed[0]);
     }
