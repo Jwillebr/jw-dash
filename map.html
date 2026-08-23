@@ -168,6 +168,8 @@ button, input, select { font: inherit; color: inherit; }
   display: grid; gap: 6px; flex: 0 0 auto;
   padding: 11px 14px; border-bottom: 1px solid var(--border);
 }
+.themerow { display: flex; align-items: center; gap: 10px; padding-bottom: 3px; }
+.themerow .tlabel { font-size: 13px; color: var(--text-secondary); }
 /* Drag handle for the mobile bottom sheet; desktop hides it. */
 .grip {
   display: none; place-items: center; flex: 0 0 auto;
@@ -485,6 +487,14 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     </div>
 
     <div class="toggles">
+      <div class="themerow">
+        <span class="tlabel">Appearance</span>
+        <div class="chips" id="themeChips" role="group" aria-label="Colour theme">
+          <button type="button" class="chip" data-theme-set="">Auto</button>
+          <button type="button" class="chip" data-theme-set="light">Light</button>
+          <button type="button" class="chip" data-theme-set="dark">Dark</button>
+        </div>
+      </div>
       <label class="switch"><input type="checkbox" id="fSync" checked> Only list wineries in view</label>
       <label class="switch"><input type="checkbox" id="fColor" checked> Colour pins by visiting policy</label>
       <label class="switch"><input type="checkbox" id="fCave"> Only wineries with a wine cave</label>
@@ -599,10 +609,21 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
   L.control.scale({ imperial: true, metric: false, position: 'bottomright' }).addTo(map);
 
   var dark = matchMedia('(prefers-color-scheme: dark)');
+  var themePref = '';
+  try { themePref = localStorage.getItem('nwm-theme') || ''; } catch (e) {}
+  var isDark = function () { return themePref ? themePref === 'dark' : dark.matches; };
   var tileUrl = function () {
-    return 'https://{s}.basemaps.cartocdn.com/' + (dark.matches ? 'dark_all' : 'rastertiles/voyager') +
+    return 'https://{s}.basemaps.cartocdn.com/' + (isDark() ? 'dark_all' : 'rastertiles/voyager') +
            '/{z}/{x}/{y}{r}.png';
   };
+  function applyTheme() {
+    if (themePref) document.documentElement.setAttribute('data-theme', themePref);
+    else document.documentElement.removeAttribute('data-theme');
+    document.querySelectorAll('#themeChips .chip').forEach(function (c) {
+      c.setAttribute('aria-pressed', String(c.dataset.themeSet === themePref));
+    });
+  }
+  applyTheme();
   var tiles = L.tileLayer(tileUrl(), {
     maxZoom: 19,
     crossOrigin: 'anonymous',
@@ -611,7 +632,9 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OSM</a> &middot; ' +
       '&copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
   }).addTo(map);
-  dark.addEventListener('change', function () { tiles.setUrl(tileUrl()); repaint(); });
+  dark.addEventListener('change', function () {
+    if (!themePref) { tiles.setUrl(tileUrl()); repaint(); }
+  });
 
   var cluster = L.markerClusterGroup({
     maxClusterRadius: 46,
@@ -1251,6 +1274,20 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
   }, 160));
   els.qClear.addEventListener('click', function () {
     els.q.value = ''; state.q = ''; els.qClear.hidden = true; apply(); els.q.focus();
+  });
+
+  $('themeChips').addEventListener('click', function (e) {
+    var c = e.target.closest('[data-theme-set]');
+    if (!c) return;
+    themePref = c.dataset.themeSet;
+    try {
+      if (themePref) localStorage.setItem('nwm-theme', themePref);
+      else localStorage.removeItem('nwm-theme');
+    } catch (err) {}
+    applyTheme();
+    tiles.setUrl(tileUrl());
+    repaint();
+    renderList();
   });
 
   els.appChips.addEventListener('click', function (e) {
