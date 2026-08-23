@@ -211,6 +211,16 @@ button, input, select { font: inherit; color: inherit; }
   padding: 9px 14px; border: 0; border-bottom: 1px solid var(--border);
   background: none; color: inherit;
 }
+.rowwrap { position: relative; }
+.rowwrap .row { padding-right: 46px; }
+.tripadd {
+  position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
+  width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface-2);
+  color: var(--text-secondary); font-size: 16px; line-height: 1;
+}
+.tripadd:hover { background: var(--surface-3); }
+.tripadd[data-in="1"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .row:hover { background: var(--surface-2); }
 .row[aria-current="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
 .row .rname { display: flex; align-items: baseline; gap: 7px; font-weight: 550; letter-spacing: -.004em; }
@@ -647,6 +657,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       '">' + esc(w.phone) + '</a></dd>';
     if (w.website) rows += '<dt>Site</dt><dd><a href="' + esc(w.website) + '" target="_blank" rel="noopener">' +
       esc(w.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')) + '</a></dd>';
+    if (w.aka) rows += '<dt>Labels</dt><dd>' + esc(w.aka) + '</dd>';
 
     var badges = '';
     if (w.appellation) badges += '<span class="badge">' + esc(w.appellation) + '</span>';
@@ -705,7 +716,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     if (state.vis.size && !state.vis.has(policyOf(w).key)) return false;
     if (state.q) {
       var hay = (w.name + ' ' + (w.address || '') + ' ' + (w.city || '') + ' ' +
-                 (w.appellation || '') + ' ' + (w.visiting || '') +
+                 (w.appellation || '') + ' ' + (w.visiting || '') + ' ' + (w.aka || '') +
                  (w.cave ? ' cave' : '')).toLowerCase();
       var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
       for (var i = 0; i < terms.length; i++) {
@@ -1010,7 +1021,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     if (els.fSync.checked && state.ready) {
       var b = map.getBounds();
       shown = kept.filter(function (w) {
-        return w.lat != null && b.contains([w.lat, w.lng]);
+        return w.lat == null || b.contains([w.lat, w.lng]);
       });
     }
     state.visible = shown;
@@ -1027,12 +1038,22 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     var frag = document.createDocumentFragment();
     shown.slice(0, LIST_CAP).forEach(function (w) {
       var pol = policyOf(w);
+      var wrap = document.createElement('div');
+      wrap.className = 'rowwrap';
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'row';
       btn.dataset.slug = w.slug;
       btn.setAttribute('role', 'listitem');
       if (w.slug === state.selected) btn.setAttribute('aria-current', 'true');
+      var add = document.createElement('button');
+      add.type = 'button';
+      add.className = 'tripadd';
+      add.dataset.trip = w.slug;
+      add.dataset.compact = '1';
+      add.dataset.in = inTrip(w.slug) ? '1' : '0';
+      add.textContent = inTrip(w.slug) ? '\u2713' : '+';
+      add.setAttribute('aria-label', inTrip(w.slug) ? 'Remove from trip' : 'Add to trip');
 
       var name = document.createElement('span');
       name.className = 'rname';
@@ -1057,7 +1078,9 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
 
       btn.appendChild(name);
       btn.appendChild(meta);
-      frag.appendChild(btn);
+      wrap.appendChild(btn);
+      wrap.appendChild(add);
+      frag.appendChild(wrap);
     });
     els.list.replaceChildren(frag);
   }
@@ -1268,8 +1291,14 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     if (t) {
       var slug = t.dataset.trip;
       toggleTrip(slug);
-      t.dataset.in = inTrip(slug) ? '1' : '0';
-      t.textContent = inTrip(slug) ? '\u2713 In your trip \u2014 tap to remove' : '+ Add to trip';
+      var on = inTrip(slug);
+      t.dataset.in = on ? '1' : '0';
+      if (t.dataset.compact) {
+        t.textContent = on ? '\u2713' : '+';
+        t.setAttribute('aria-label', on ? 'Remove from trip' : 'Add to trip');
+      } else {
+        t.textContent = on ? '\u2713 In your trip \u2014 tap to remove' : '+ Add to trip';
+      }
       return;
     }
     var rm = e.target.closest('[data-rm]');

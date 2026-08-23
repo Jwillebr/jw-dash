@@ -85,6 +85,7 @@ function joinSpreadsheet(wineries) {
     w.visiting = w.visiting || row.visiting;   // prose wording is more precise
     w.cave = row.cave;
     w.archived = false;                        // the sheet lists active wineries only
+    if (row.notes) w.aka = row.notes;          // second labels poured here
   }
   return { matched, total: wineries.length };
 }
@@ -176,6 +177,7 @@ async function main() {
       slug: w.slug, name: w.name, url: w.url, address: w.address, city: w.city,
       appellation: w.appellation, phone: w.phone, website: w.website,
       visiting: w.visiting, cave: !!w.cave, archived: !!w.archived,
+      aka: w.aka || null,
       lat: null, lng: null, precision: null,
     };
 
