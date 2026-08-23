@@ -105,11 +105,12 @@ button, input, select { font: inherit; color: inherit; }
   z-index: 1100; box-shadow: var(--shadow-sm);
   flex: 0 0 auto;
 }
-.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; flex: 1 1 auto; }
 .brand h1 {
   margin: 0; font-size: 17px; font-weight: 650; letter-spacing: -.012em;
-  white-space: nowrap;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;
 }
+.topbar > .btn { flex: 0 0 auto; }
 .brand h1 .mark { color: var(--accent); }
 .brand .count {
   font-size: 12.5px; color: var(--text-muted); white-space: nowrap;
@@ -216,6 +217,8 @@ button, input, select { font: inherit; color: inherit; }
 .mapwrap { flex: 1 1 auto; position: relative; min-width: 0; }
 #map { position: absolute; inset: 0; background: var(--surface-2); }
 .leaflet-container { font: inherit; background: var(--surface-2); }
+.leaflet-right .leaflet-control { margin-right: max(10px, env(safe-area-inset-right)); }
+.leaflet-bottom .leaflet-control { margin-bottom: max(10px, env(safe-area-inset-bottom)); }
 
 .legend {
   position: absolute; left: 12px; bottom: 22px; z-index: 800;
@@ -328,11 +331,18 @@ button, input, select { font: inherit; color: inherit; }
     width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong);
   }
   .filters { max-height: 30vh; padding-top: 16px; }
-  .legend { bottom: 12px; left: 8px; font-size: 11.5px; padding: 7px 9px; }
+  .legend {
+    bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+    left: 8px; font-size: 11.5px; padding: 7px 9px; max-width: 180px;
+  }
 }
 @media (prefers-reduced-motion: reduce) { #sidebar { transition: none; } }
 @media (max-width: 560px) {
-  .topbar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+  .topbar {
+    flex-wrap: wrap; gap: 8px; padding: 8px 10px;
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+  .brand h1 { font-size: 16px; }
   .search { max-width: none; order: 3; flex-basis: 100%; margin-left: 0; }
 }
 </style>
