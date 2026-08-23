@@ -323,9 +323,10 @@ button, input, select { font: inherit; color: inherit; }
     height: 68%; border-right: 0; border-top: 1px solid var(--border);
     border-radius: 14px 14px 0 0; box-shadow: var(--shadow-md);
     z-index: 1050;   /* Leaflet's control panes sit at 1000 */
-    transform: translateY(100%); transition: transform .22s ease;
+    transform: translateY(102%); visibility: hidden;
+    transition: transform .22s ease, visibility 0s .22s;
   }
-  #sidebar.open { transform: translateY(0); }
+  #sidebar.open { transform: translateY(0); visibility: visible; transition: transform .22s ease; }
   #sidebar::before {
     content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
     width: 36px; height: 4px; border-radius: 2px; background: var(--border-strong);
@@ -495,6 +496,7 @@ button, input, select { font: inherit; color: inherit; }
     minZoom: 8, maxZoom: 18,
   }).fitBounds(NAPA);
   L.control.zoom({ position: 'topright' }).addTo(map);
+  map.attributionControl.setPrefix(false);
   L.control.scale({ imperial: true, metric: false, position: 'bottomright' }).addTo(map);
 
   var dark = matchMedia('(prefers-color-scheme: dark)');
@@ -506,8 +508,8 @@ button, input, select { font: inherit; color: inherit; }
     maxZoom: 19,
     crossOrigin: 'anonymous',
     attribution:
-      'Reviews &copy; <a href="' + SOURCE + '" target="_blank" rel="noopener">The Napa Wine Project</a> &middot; ' +
-      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &middot; ' +
+      '&copy; <a href="' + SOURCE + '" target="_blank" rel="noopener">Napa Wine Project</a> &middot; ' +
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OSM</a> &middot; ' +
       '&copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
   }).addTo(map);
   dark.addEventListener('change', function () { tiles.setUrl(tileUrl()); repaint(); });
@@ -948,15 +950,15 @@ button, input, select { font: inherit; color: inherit; }
       state.ready = true;
       els.overlay.hidden = true;
 
-      var mapped = state.all.filter(function (w) { return w.lat != null; });
-      if (mapped.length) {
-        map.fitBounds(L.latLngBounds(mapped.map(function (w) { return [w.lat, w.lng]; })).pad(.05));
-      }
+      /* Frame the Napa-to-Calistoga corridor; distant outliers (tasting rooms in
+         Sonoma, offices elsewhere) shouldn't zoom the opening view out to half of
+         Northern California. */
+      map.fitBounds([[38.21, -122.55], [38.62, -122.21]]);
       renderList();
       renderLegend();
       if (want) select(want, true);
 
-      var missing = state.all.length - mapped.length;
+      var missing = state.all.filter(function (w) { return w.lat == null; }).length;
       if (missing) {
         console.info(missing + ' winery/wineries have no location and are not on the map.');
       }
