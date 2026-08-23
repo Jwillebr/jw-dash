@@ -239,10 +239,23 @@ button, input, select { font: inherit; color: inherit; }
   border-radius: 10px; padding: 9px 11px; box-shadow: var(--shadow-md);
   font-size: 12.5px; max-width: 220px;
 }
-.legend h2 {
-  margin: 0 0 6px; font-size: 10.5px; font-weight: 650; letter-spacing: .07em;
+.legend .lhead {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  border: 0; background: none; cursor: pointer; padding: 0; margin: 0 0 6px;
+}
+.legend .lhead .t {
+  font-size: 10.5px; font-weight: 650; letter-spacing: .07em;
   text-transform: uppercase; color: var(--text-muted);
 }
+.legend .lhead .n {
+  display: inline-grid; place-items: center; min-width: 16px; height: 16px;
+  padding: 0 4px; border-radius: 999px; font-size: 10.5px; font-weight: 650;
+  background: var(--accent); color: var(--accent-ink);
+}
+.legend .lhead .chev { margin-left: auto; color: var(--text-muted); font-size: 15px; line-height: 1; }
+.legend.collapsed ul, .legend.collapsed .note { display: none; }
+.legend.collapsed .lhead { margin-bottom: 0; }
+.legend.collapsed { padding: 8px 11px; }
 .legend li { margin-top: 3px; }
 .legend .lrow {
   display: flex; align-items: center; gap: 7px; width: 100%;
@@ -482,7 +495,11 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     <div id="map"></div>
 
     <div class="legend" id="legend" hidden>
-      <h2 id="legendTitle">Visiting policy</h2>
+      <button class="lhead" id="legendToggle" type="button" aria-expanded="true">
+        <span class="t" id="legendTitle">Visiting policy</span>
+        <span class="n" id="legendBadge" hidden></span>
+        <span class="chev" aria-hidden="true">&#8722;</span>
+      </button>
       <ul id="legendItems"></ul>
       <div class="note" id="legendNote"></div>
     </div>
@@ -1118,6 +1135,13 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
        double as filter toggles — tap to isolate a policy, tap again to clear. */
     if (!els.fColor.checked || trip.mode) { els.legend.hidden = true; return; }
     els.legend.hidden = false;
+    els.legend.classList.toggle('collapsed', legendMin);
+    $('legendToggle').setAttribute('aria-expanded', String(!legendMin));
+    $('legendToggle').querySelector('.chev').innerHTML = legendMin ? '&#43;' : '&#8722;';
+    els.legendTitle.textContent = legendMin ? 'Legend' : 'Visiting policy';
+    var badge = $('legendBadge');
+    badge.hidden = !(legendMin && state.vis.size);
+    badge.textContent = state.vis.size;
     els.legendItems.replaceChildren();
     POLICY.forEach(function (p) {
       var n = (state.kept || []).filter(function (w) { return policyOf(w).key === p.key; }).length;
@@ -1207,6 +1231,16 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     state.vis.has(c.dataset.vis) ? state.vis.delete(c.dataset.vis) : state.vis.add(c.dataset.vis);
     apply();
   });
+  /* The legend can shrink to a pill so it stops covering the map; the choice
+     sticks per device, and a badge keeps active policy filters visible. */
+  var legendMin = false;
+  try { legendMin = localStorage.getItem('nwm-legend') === 'min'; } catch (e) {}
+  $('legendToggle').addEventListener('click', function () {
+    legendMin = !legendMin;
+    try { localStorage.setItem('nwm-legend', legendMin ? 'min' : 'max'); } catch (e) {}
+    renderLegend();
+  });
+
   els.legendItems.addEventListener('click', function (e) {
     if (e.target.closest('#legendClear')) { state.vis.clear(); apply(); return; }
     var b = e.target.closest('.lrow[data-vis]');
