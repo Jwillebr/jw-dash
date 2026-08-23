@@ -87,6 +87,9 @@ body {
   background: var(--surface-1);
   display: flex; flex-direction: column;
   overflow: hidden;
+  /* Fixed shell: with no scrollable document, iOS cannot leave the page panned
+     half off-screen after the keyboard closes. */
+  position: fixed; inset: 0; width: 100%;
 }
 button, input, select { font: inherit; color: inherit; }
 :where(a) { color: var(--accent); }
@@ -1320,15 +1323,28 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
      input and sometimes leaves that offset stuck, chopping the layout in half
      with the header off-screen. Snap back and re-measure whenever it happens. */
   function unstickViewport() {
-    if (window.scrollY || window.scrollX) scrollTo(0, 0);
+    scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     setTimeout(function () { map.invalidateSize(); }, 60);
+    setTimeout(function () {
+      scrollTo(0, 0);
+      map.invalidateSize();
+    }, 400);
   }
   if (window.visualViewport) {
     visualViewport.addEventListener('resize', unstickViewport);
+    visualViewport.addEventListener('scroll', function () {
+      // A pan while no input is focused is never intentional here.
+      if (document.activeElement !== els.q) unstickViewport();
+    });
   }
   addEventListener('scroll', function () { if (window.scrollY) scrollTo(0, 0); });
   addEventListener('orientationchange', unstickViewport);
   els.q.addEventListener('blur', unstickViewport);
+  els.q.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') els.q.blur();   // "Go" closes the keyboard, restoring the view
+  });
 
   /* Show each pin's name once the zoom gives the text room to breathe; below
      that, names appear on hover (desktop) or tap (the popup). */
