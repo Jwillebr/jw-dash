@@ -240,7 +240,16 @@ button, input, select { font: inherit; color: inherit; }
   margin: 0 0 6px; font-size: 10.5px; font-weight: 650; letter-spacing: .07em;
   text-transform: uppercase; color: var(--text-muted);
 }
-.legend li { display: flex; align-items: center; gap: 7px; margin-top: 4px; color: var(--text-secondary); }
+.legend li { margin-top: 3px; }
+.legend .lrow {
+  display: flex; align-items: center; gap: 7px; width: 100%;
+  border: 0; background: none; color: var(--text-secondary); cursor: pointer;
+  font: inherit; font-size: 12.5px; padding: 3px 5px; margin: 0 -5px;
+  border-radius: 6px; text-align: left;
+}
+.legend .lrow:hover { background: var(--surface-2); }
+.legend .lrow[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.legend .lclear { color: var(--accent); font-weight: 600; justify-content: center; margin-top: 2px; }
 .legend ul { list-style: none; margin: 0; padding: 0; }
 .legend .sw {
   width: 11px; height: 11px; border-radius: 50%; flex: 0 0 11px;
@@ -1102,18 +1111,35 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
 
   function renderLegend() {
     /* A single-colour map needs no legend box; the policy encoding does, and its
-       labels are also the relief for the light-mode contrast warning. */
-    if (!els.fColor.checked) { els.legend.hidden = true; return; }
+       labels are also the relief for the light-mode contrast warning. The rows
+       double as filter toggles — tap to isolate a policy, tap again to clear. */
+    if (!els.fColor.checked || trip.mode) { els.legend.hidden = true; return; }
     els.legend.hidden = false;
     els.legendItems.replaceChildren();
     POLICY.forEach(function (p) {
       var n = (state.kept || []).filter(function (w) { return policyOf(w).key === p.key; }).length;
-      if (!n) return;
+      if (!n && !state.vis.size) return;
       var li = document.createElement('li');
-      li.innerHTML = '<span class="sw" style="background:var(' + p.css + ')"></span>' +
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'lrow';
+      btn.dataset.vis = p.key;
+      btn.setAttribute('aria-pressed', state.vis.has(p.key) ? 'true' : 'false');
+      btn.innerHTML = '<span class="sw" style="background:var(' + p.css + ')"></span>' +
         p.label + ' <span class="n" style="opacity:.6">' + n + '</span>';
+      li.appendChild(btn);
       els.legendItems.appendChild(li);
     });
+    if (state.vis.size) {
+      var li2 = document.createElement('li');
+      var clear = document.createElement('button');
+      clear.type = 'button';
+      clear.className = 'lrow lclear';
+      clear.id = 'legendClear';
+      clear.textContent = 'Show all policies';
+      li2.appendChild(clear);
+      els.legendItems.appendChild(li2);
+    }
     var approx = (state.kept || []).filter(function (w) { return w.precision === 'town'; }).length;
     els.legendNote.textContent = approx
       ? approx + ' faded pins are town-level approximations'
@@ -1178,6 +1204,15 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     state.vis.has(c.dataset.vis) ? state.vis.delete(c.dataset.vis) : state.vis.add(c.dataset.vis);
     apply();
   });
+  els.legendItems.addEventListener('click', function (e) {
+    if (e.target.closest('#legendClear')) { state.vis.clear(); apply(); return; }
+    var b = e.target.closest('.lrow[data-vis]');
+    if (!b) return;
+    var k = b.dataset.vis;
+    state.vis.has(k) ? state.vis.delete(k) : state.vis.add(k);
+    apply();
+  });
+
   els.clearApp.addEventListener('click', function () { state.apps.clear(); apply(); });
   els.clearVis.addEventListener('click', function () { state.vis.clear(); apply(); });
 
@@ -1280,6 +1315,20 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
   });
 
   map.on('moveend zoomend', function () { if (els.fSync.checked) renderList(); });
+
+  /* iOS (installed app): opening the keyboard scrolls the page to expose the
+     input and sometimes leaves that offset stuck, chopping the layout in half
+     with the header off-screen. Snap back and re-measure whenever it happens. */
+  function unstickViewport() {
+    if (window.scrollY || window.scrollX) scrollTo(0, 0);
+    setTimeout(function () { map.invalidateSize(); }, 60);
+  }
+  if (window.visualViewport) {
+    visualViewport.addEventListener('resize', unstickViewport);
+  }
+  addEventListener('scroll', function () { if (window.scrollY) scrollTo(0, 0); });
+  addEventListener('orientationchange', unstickViewport);
+  els.q.addEventListener('blur', unstickViewport);
 
   /* Show each pin's name once the zoom gives the text room to breathe; below
      that, names appear on hover (desktop) or tap (the popup). */
