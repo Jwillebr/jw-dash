@@ -1,7 +1,7 @@
 {
   "source": "https://www.napawineproject.com/reviews/",
-  "scrapedAt": "2026-08-23T01:52:05.702Z",
-  "geocodedAt": "2026-08-23T01:52:09.225Z",
+  "scrapedAt": "2026-08-24T15:01:26.158Z",
+  "geocodedAt": "2026-08-24T15:07:03.204Z",
   "count": 862,
   "mapped": 839,
   "wineries": [
@@ -2143,8 +2143,8 @@
       "cave": true,
       "archived": false,
       "aka": "Owned by Plumpjack",
-      "lat": 38.5569085,
-      "lng": -122.4532095,
+      "lat": 38.567652,
+      "lng": -122.4420764,
       "precision": "street"
     },
     {
@@ -3485,8 +3485,8 @@
       "cave": true,
       "archived": false,
       "aka": "Owns Harrison Vineyards",
-      "lat": 38.4165179,
-      "lng": -122.2497609,
+      "lat": 38.431226,
+      "lng": -122.24442,
       "precision": "street"
     },
     {
@@ -3676,8 +3676,8 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.5165757,
-      "lng": -122.4566628,
+      "lat": 38.5224,
+      "lng": -122.465816,
       "precision": "street"
     },
     {
@@ -4046,8 +4046,8 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.459174,
-      "lng": -122.42184,
+      "lat": 38.4600081,
+      "lng": -122.4204341,
       "precision": "street"
     },
     {
@@ -5256,8 +5256,8 @@
       "cave": false,
       "archived": false,
       "aka": "Former Slaughterhouse Cellars site",
-      "lat": 38.4536777,
-      "lng": -122.417974,
+      "lat": 38.4538194,
+      "lng": -122.4181051,
       "precision": "street"
     },
     {
@@ -5757,8 +5757,8 @@
       "cave": false,
       "archived": false,
       "aka": "Estate: 500 Taplin Road, St. Helena",
-      "lat": 38.49025,
-      "lng": -122.4517768,
+      "lat": 38.4924054,
+      "lng": -122.454287,
       "precision": "street"
     },
     {
@@ -6054,8 +6054,8 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.4641943,
-      "lng": -122.4133628,
+      "lat": 38.4612059,
+      "lng": -122.4186102,
       "precision": "street"
     },
     {
@@ -6212,8 +6212,8 @@
       "cave": true,
       "archived": false,
       "aka": null,
-      "lat": 38.2559494,
-      "lng": -122.3470361,
+      "lat": 38.2558636,
+      "lng": -122.3463037,
       "precision": "street"
     },
     {
@@ -6562,8 +6562,8 @@
       "cave": true,
       "archived": false,
       "aka": null,
-      "lat": 38.338228,
-      "lng": -122.26011,
+      "lat": 38.325811,
+      "lng": -122.273791,
       "precision": "street",
       "offset": true
     },
@@ -6580,8 +6580,8 @@
       "cave": true,
       "archived": false,
       "aka": null,
-      "lat": 38.338444,
-      "lng": -122.260586,
+      "lat": 38.325811,
+      "lng": -122.274426,
       "precision": "street",
       "offset": true
     },
@@ -9460,9 +9460,10 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.4434798,
-      "lng": -122.4087703,
-      "precision": "street"
+      "lat": 38.440871,
+      "lng": -122.406104,
+      "precision": "street",
+      "offset": true
     },
     {
       "slug": "nid-tisse-wines",
@@ -10200,8 +10201,8 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.502796,
-      "lng": -122.465886,
+      "lat": 38.498779,
+      "lng": -122.461179,
       "precision": "street",
       "offset": true
     },
@@ -11550,8 +11551,8 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.4612059,
-      "lng": -122.4186102,
+      "lat": 38.4641943,
+      "lng": -122.4133628,
       "precision": "street"
     },
     {
@@ -12593,10 +12594,9 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.338011,
-      "lng": -122.260586,
-      "precision": "street",
-      "offset": true
+      "lat": 38.3382275,
+      "lng": -122.2604275,
+      "precision": "street"
     },
     {
       "slug": "spelletich-family-wine-company",
@@ -12905,9 +12905,10 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.5050696,
-      "lng": -122.4699847,
-      "precision": "street"
+      "lat": 38.499029,
+      "lng": -122.461496,
+      "precision": "street",
+      "offset": true
     },
     {
       "slug": "stormy-weather-wine",
@@ -14021,8 +14022,8 @@
       "cave": true,
       "archived": false,
       "aka": "www.tfewines.com, Many labels, Quattro Theory, Mason",
-      "lat": 38.503012,
-      "lng": -122.466363,
+      "lat": 38.498779,
+      "lng": -122.461814,
       "precision": "street",
       "offset": true
     },
@@ -14143,8 +14144,8 @@
       "cave": false,
       "archived": false,
       "aka": "Tours require appointment",
-      "lat": 38.502579,
-      "lng": -122.466363,
+      "lat": 38.498529,
+      "lng": -122.461496,
       "precision": "street",
       "offset": true
     },
@@ -14513,9 +14514,10 @@
       "cave": false,
       "archived": false,
       "aka": null,
-      "lat": 38.4238423,
-      "lng": -122.3914693,
-      "precision": "street"
+      "lat": 38.440871,
+      "lng": -122.406739,
+      "precision": "street",
+      "offset": true
     },
     {
       "slug": "vineyard-29",
