@@ -639,12 +639,14 @@ body.tripmode .controls, body.tripmode .filters, body.tripmode .toggles, body.tr
   var themePref = '';
   try { themePref = localStorage.getItem('nwm-theme') || ''; } catch (e) {}
   var isDark = function () { return themePref ? themePref === 'dark' : dark.matches; };
-  /* CARTO basemap API key — registered to this app, domain-locked to this
-     site, and safe to ship in page source (that is how basemap keys deploy). */
-  var CARTO_KEY = 'cb1_2jw4_1_e978608834e3ab0197021ed3';
+  /* CARTO basemap API key (registered, domain-locked). Temporarily NOT sent:
+     appending it as ?api_key= made CARTO reject tiles it serves anonymously,
+     so the key evidently uses a different integration — re-enable once the
+     exact usage from CARTO's dashboard is confirmed. */
+  var CARTO_KEY = 'cb1_2jw4_1_e978608834e3ab0197021ed3';   // eslint-disable-line no-unused-vars
   var tileUrl = function () {
     return 'https://{s}.basemaps.cartocdn.com/' + (isDark() ? 'dark_all' : 'rastertiles/voyager') +
-           '/{z}/{x}/{y}{r}.png?api_key=' + CARTO_KEY;
+           '/{z}/{x}/{y}{r}.png';
   };
   function applyTheme() {
     if (themePref) document.documentElement.setAttribute('data-theme', themePref);
