@@ -164,6 +164,7 @@ button, input, select { font: inherit; color: inherit; }
   display: grid; gap: 11px; flex: 0 0 auto;
   max-height: 38vh; overflow-y: auto; overscroll-behavior: contain;
 }
+.controls { display: contents; }   /* desktop keeps the two separate sections */
 .toggles {
   display: grid; gap: 6px; flex: 0 0 auto;
   padding: 11px 14px; border-bottom: 1px solid var(--border);
@@ -289,11 +290,19 @@ button, input, select { font: inherit; color: inherit; }
 
 /* markers */
 .wm-cluster {
+  position: relative;
   background: var(--accent); color: var(--accent-ink);
   border: 2px solid var(--surface-1); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-weight: 650; font-size: 12px; font-variant-numeric: tabular-nums;
   box-shadow: var(--shadow-sm);
+}
+.wm-cluster .tick {
+  position: absolute; top: -4px; right: -4px;
+  width: 16px; height: 16px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 10px; font-weight: 700;
+  background: var(--surface-1); color: var(--accent);
+  box-shadow: 0 0 0 1.5px var(--accent);
 }
 .marker-cluster { background: none; }
 .marker-cluster div { background: none; }
@@ -308,7 +317,7 @@ button, input, select { font: inherit; color: inherit; }
 #tripBtn[data-on="1"] .n { background: var(--accent-ink); color: var(--accent); }
 #tripPanel { display: none; flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; }
 body.tripmode #tripPanel { display: block; }
-body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tripmode #list { display: none; }
+body.tripmode .controls, body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tripmode #list { display: none; }
 .trip-head { padding: 12px 14px 8px; border-bottom: 1px solid var(--border); }
 .trip-head h2 { margin: 0; font-size: 15px; letter-spacing: -.01em; }
 .trip-head p { margin: 3px 0 0; font-size: 12.5px; color: var(--text-muted); }
@@ -423,7 +432,13 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
   }
   #sidebar.open { transform: translateY(0); visibility: visible; transition: transform .22s ease; }
   .grip { display: grid; }
-  .filters { max-height: 30vh; }
+  /* On phones everything above the list scrolls as one region, so no setting
+     can ever sit unreachable below the fold. */
+  .controls {
+    display: block; flex: 0 1 auto; min-height: 0;
+    max-height: 52vh; overflow-y: auto; overscroll-behavior: contain;
+  }
+  .filters { max-height: none; overflow: visible; }
   .legend {
     bottom: calc(52px + env(safe-area-inset-bottom, 0px));
     left: 8px; font-size: 11.5px; padding: 7px 9px; max-width: 180px;
@@ -476,6 +491,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
 <div class="layout">
   <aside id="sidebar" aria-label="Filters and winery list">
     <div class="grip" id="sheetGrip" role="button" aria-label="Close list" tabindex="0"><span></span></div>
+    <div class="controls">
     <div class="filters">
       <div class="fgroup">
         <div class="flabel"><span>Town</span><button type="button" id="clearApp" hidden>clear</button></div>
@@ -501,6 +517,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       <label class="switch"><input type="checkbox" id="fCave"> Only wineries with a wine cave</label>
       <label class="switch"><input type="checkbox" id="fApprox" checked> Include approximate locations</label>
       <label class="switch"><input type="checkbox" id="fArchived"> Include archived / closed</label>
+    </div>
     </div>
 
     <div id="tripPanel" aria-label="Trip itinerary"></div>
@@ -646,8 +663,10 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     iconCreateFunction: function (c) {
       var n = c.getChildCount();
       var size = n < 10 ? 32 : n < 50 ? 38 : n < 200 ? 44 : 50;
+      var member = c.getAllChildMarkers().some(function (m) { return inTrip(m._wslug); });
       return L.divIcon({
-        html: '<div class="wm-cluster" style="width:' + size + 'px;height:' + size + 'px">' + n + '</div>',
+        html: '<div class="wm-cluster" style="width:' + size + 'px;height:' + size + 'px">' + n +
+              (member ? '<span class="tick">\u2713</span>' : '') + '</div>',
         className: '', iconSize: [size, size],
       });
     },
@@ -737,11 +756,13 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
 
   /* --------------------------------------------------------------- filters -- */
   function matches(w) {
-    if (!state.fArchivedOn && w.archived) return false;
-    if (!state.fApproxOn && w.precision === 'town') return false;
-    if (state.fCaveOn && !w.cave) return false;
-    if (state.apps.size && !state.apps.has(townOf(w))) return false;
-    if (state.vis.size && !state.vis.has(policyOf(w).key)) return false;
+    if (!inTrip(w.slug)) {   // planned stops always stay on the map
+      if (!state.fArchivedOn && w.archived) return false;
+      if (!state.fApproxOn && w.precision === 'town') return false;
+      if (state.fCaveOn && !w.cave) return false;
+      if (state.apps.size && !state.apps.has(townOf(w))) return false;
+      if (state.vis.size && !state.vis.has(policyOf(w).key)) return false;
+    }
     if (state.q) {
       var hay = (w.name + ' ' + (w.address || '') + ' ' + (w.city || '') + ' ' +
                  (w.appellation || '') + ' ' + (w.visiting || '') + ' ' + (w.aka || '') +
@@ -820,7 +841,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       if (m && w) m.setStyle(markerStyle(w, slug === state.selected));
       labelled = null;                       // labels re-bind to gain/lose the check
       refreshLabels();
-      syncUrl();
+      apply();                               // membership affects filters + cluster badges
     }
   }
   function renderTripButton() {
