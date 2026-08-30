@@ -1,5 +1,9 @@
 # jw-dash
 
+> **The winery map has moved to [Jwillebr/NapaWineMap](https://github.com/Jwillebr/NapaWineMap)**
+> (live at https://jwillebr.github.io/NapaWineMap/). This copy still serves at its old URL
+> but no longer refreshes its data automatically; new development happens in the new repo.
+
 Two independent static pages:
 
 | Page | What it is |

@@ -5,10 +5,8 @@
 name: Scrape winery data
 
 on:
-  # Weekly automatic refresh (Mondays ~6am Pacific). The job commits new data to
-  # main only when something changed, then redeploys Pages — fully hands-off.
-  schedule:
-    - cron: "17 14 * * 1"
+  # The weekly schedule moved with the app to Jwillebr/NapaWineMap so the source
+  # site is only crawled by one copy; manual runs here still work.
   workflow_dispatch:
     inputs:
       limit:
