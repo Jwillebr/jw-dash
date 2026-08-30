@@ -12,7 +12,7 @@
  */
 'use strict';
 
-const VERSION = 'v15';
+const VERSION = 'v16';
 const SHELL_CACHE = 'nwm-shell-' + VERSION;
 const DATA_CACHE = 'nwm-data-' + VERSION;
 const TILE_CACHE = 'nwm-tiles-' + VERSION;
