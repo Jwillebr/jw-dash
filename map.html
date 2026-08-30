@@ -264,6 +264,7 @@ button, input, select { font: inherit; color: inherit; }
   padding: 0 4px; border-radius: 999px; font-size: 10.5px; font-weight: 650;
   background: var(--accent); color: var(--accent-ink);
 }
+.legend .lhead .n[hidden] { display: none; }
 .legend .lhead .chev { margin-left: auto; color: var(--text-muted); font-size: 15px; line-height: 1; }
 .legend.collapsed ul, .legend.collapsed .note { display: none; }
 .legend.collapsed .lhead { margin-bottom: 0; }
@@ -655,13 +656,14 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
   /* --------------------------------------------------------------- markers -- */
   function markerStyle(w, selected) {
     var approx = w.precision === 'town';
+    var member = !trip.mode && inTrip(w.slug);   // trip mode numbers them instead
     var fill = els.fColor.checked ? cssVar(policyOf(w).css) : cssVar('--accent');
     return {
-      radius: selected ? 10 : (approx ? 6 : 7),
+      radius: selected ? 10 : member ? 8.5 : (approx ? 6 : 7),
       fillColor: fill,
       fillOpacity: approx ? .38 : .92,
-      color: selected ? cssVar('--text-primary') : cssVar('--surface-1'),
-      weight: selected ? 3 : 2,
+      color: selected ? cssVar('--text-primary') : member ? cssVar('--accent') : cssVar('--surface-1'),
+      weight: selected || member ? 3 : 2,
       opacity: 1,
       dashArray: approx ? '3 2' : null,
     };
@@ -719,6 +721,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       var m = L.circleMarker([w.lat, w.lng], markerStyle(w, false));
       m.bindPopup(function () { return popupHtml(w); }, { autoPanPadding: [40, 40], minWidth: 250 });
       m._wname = w.name;
+      m._wslug = w.slug;
       m.on('click', function () { select(w.slug, false); });
       state.markers.set(w.slug, m);
     });
@@ -809,8 +812,16 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     if (i === -1) trip.slugs.push(slug); else trip.slugs.splice(i, 1);
     saveTrip();
     renderTripButton();
-    if (trip.mode) applyTrip();
-    else syncUrl();
+    if (trip.mode) {
+      applyTrip();
+    } else {
+      var m = state.markers.get(slug);
+      var w = bySlug(slug);
+      if (m && w) m.setStyle(markerStyle(w, slug === state.selected));
+      labelled = null;                       // labels re-bind to gain/lose the check
+      refreshLabels();
+      syncUrl();
+    }
   }
   function renderTripButton() {
     var el = $('tripCount');
@@ -908,6 +919,7 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       labelled = null;                                 // force normal label rebind
       refreshLabels();
       apply();
+      repaint();                                       // restore member rings
       renderList();
     }
   }
@@ -1465,7 +1477,8 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
     labelled = on;
     state.markers.forEach(function (m) {
       m.unbindTooltip();
-      m.bindTooltip(m._wname, on
+      var label = (inTrip(m._wslug) ? '\u2713 ' : '') + m._wname;
+      m.bindTooltip(label, on
         ? { permanent: true, direction: 'right', offset: [9, 0], className: 'wm-label' }
         : { direction: 'top', offset: [0, -8], opacity: .95 });
     });
@@ -1506,12 +1519,12 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
       if (data.offline) throw new Error('offline');
       if (!state.all.length) throw new Error('empty');
 
-      buildMarkers();
+      trip.slugs = loadTrip().filter(function (slug) { return !!bySlug(slug); });
+      buildMarkers();                       // marker styles read trip membership
       refreshLabels();
       computeBigTowns();
       renderChips();
       var want = readUrl();
-      trip.slugs = loadTrip().filter(function (slug) { return !!bySlug(slug); });
       renderTripButton();
       apply();
       state.ready = true;
@@ -1552,6 +1565,16 @@ body.tripmode .filters, body.tripmode .toggles, body.tripmode .listhead, body.tr
           'Loader said: ' + (msg || 'unknown error') + '.</p>');
       }
     });
+  /* Test/debug hook — closure internals for automated checks; not a public API. */
+  window.__nwm = {
+    state: state, trip: trip,
+    inTrip: inTrip, repaint: repaint,
+    markerOpts: function (slug) {
+      var m = state.markers.get(slug);
+      return m ? { color: m.options.color, weight: m.options.weight, radius: m.options.radius,
+                   onMap: !!m._map } : null;
+    },
+  };
 })();
 
 /* Offline support: the service worker precaches the app shell, keeps the last
